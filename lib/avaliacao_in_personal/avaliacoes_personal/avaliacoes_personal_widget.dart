@@ -1,0 +1,708 @@
+import '/backend/backend.dart';
+import '/components/avaliacoes_parte_personal_widget.dart';
+import '/components/headerweb_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'avaliacoes_personal_model.dart';
+export 'avaliacoes_personal_model.dart';
+
+class AvaliacoesPersonalWidget extends StatefulWidget {
+  const AvaliacoesPersonalWidget({
+    super.key,
+    required this.cliente,
+  });
+
+  final DocumentReference? cliente;
+
+  static String routeName = 'avaliacoesPersonal';
+  static String routePath = 'avaliacoesPersonal';
+
+  @override
+  State<AvaliacoesPersonalWidget> createState() =>
+      _AvaliacoesPersonalWidgetState();
+}
+
+class _AvaliacoesPersonalWidgetState extends State<AvaliacoesPersonalWidget> {
+  late AvaliacoesPersonalModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => AvaliacoesPersonalModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Title(
+        title: 'avaliacoesPersonal',
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        child: GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: Scaffold(
+            key: scaffoldKey,
+            backgroundColor: FlutterFlowTheme.of(context).customColor2,
+            appBar: responsiveVisibility(
+              context: context,
+              desktop: false,
+            )
+                ? AppBar(
+                    backgroundColor:
+                        FlutterFlowTheme.of(context).primaryBackground,
+                    automaticallyImplyLeading: false,
+                    leading: FlutterFlowIconButton(
+                      borderColor: Colors.transparent,
+                      borderRadius: 30.0,
+                      borderWidth: 1.0,
+                      buttonSize: 60.0,
+                      icon: Icon(
+                        Icons.arrow_back_rounded,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        size: 30.0,
+                      ),
+                      onPressed: () async {
+                        logFirebaseEvent(
+                            'AVALIACOES_PERSONAL_arrow_back_rounded_I');
+                        context.pop();
+                      },
+                    ),
+                    actions: [],
+                    centerTitle: false,
+                    elevation: 0.0,
+                  )
+                : null,
+            body: SafeArea(
+              top: true,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    if (responsiveVisibility(
+                      context: context,
+                      desktop: false,
+                    ))
+                      FutureBuilder<UsersRecord>(
+                        future: UsersRecord.getDocumentOnce(widget.cliente!),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: SpinKitSquareCircle(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 50.0,
+                                ),
+                              ),
+                            );
+                          }
+
+                          final columnUsersRecord = snapshot.data!;
+
+                          return Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 5.0,
+                                      color: Color(0x230F1113),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 8.0, 16.0, 16.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        width: 80.0,
+                                        height: 80.0,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFE0E3E7),
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(2.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(60.0),
+                                            child: Image.network(
+                                              valueOrDefault<String>(
+                                                columnUsersRecord.photoUrl,
+                                                'https://wallpapers.com/images/hd/default-user-profile-icon-lemo857tj1b3io21.png',
+                                              ),
+                                              width: 80.0,
+                                              height: 80.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Flexible(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 0.0, 8.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              AutoSizeText(
+                                                columnUsersRecord.displayName,
+                                                minFontSize: 12.0,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                              if (columnUsersRecord
+                                                          .phoneNumber !=
+                                                      '')
+                                                Text(
+                                                  columnUsersRecord.phoneNumber,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .customColor3,
+                                                        fontSize: 14.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                                ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 8.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      'Aluno desde: ${dateTimeFormat(
+                                                        "d/M/y",
+                                                        columnUsersRecord
+                                                            .alunoDesde,
+                                                        locale:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode,
+                                                      )}',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Plus Jakarta Sans',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    1.0, 0.0),
+                                                child: Container(
+                                                  width: () {
+                                                    if (columnUsersRecord
+                                                            .tipoDeGerenciamento ==
+                                                        'Apenas avaliações físicas') {
+                                                      return 220.0;
+                                                    } else if (columnUsersRecord
+                                                            .tipoDeGerenciamento ==
+                                                        'Presencial') {
+                                                      return 130.0;
+                                                    } else {
+                                                      return 100.0;
+                                                    }
+                                                  }(),
+                                                  height: 32.0,
+                                                  constraints: BoxConstraints(
+                                                    maxHeight: 32.0,
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondary,
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        blurRadius: 4.0,
+                                                        color:
+                                                            Color(0x32171717),
+                                                        offset: Offset(
+                                                          0.0,
+                                                          2.0,
+                                                        ),
+                                                      )
+                                                    ],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(8.0, 0.0,
+                                                                8.0, 0.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      12.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            columnUsersRecord
+                                                                .tipoDeGerenciamento,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  color: Colors
+                                                                      .white,
+                                                                  fontSize:
+                                                                      14.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                        Icon(
+                                                          Icons
+                                                              .radio_button_checked_outlined,
+                                                          color: Colors.white,
+                                                          size: 12.0,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 12.0, 0.0, 0.0),
+                                child: ListView(
+                                  padding: EdgeInsets.zero,
+                                  primary: false,
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.vertical,
+                                  children: [
+                                    wrapWithModel(
+                                      model:
+                                          _model.avaliacoesPartePersonalModel1,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: AvaliacoesPartePersonalWidget(
+                                        user: widget.cliente!,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                    if (responsiveVisibility(
+                      context: context,
+                      phone: false,
+                      tablet: false,
+                      tabletLandscape: false,
+                    ))
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          wrapWithModel(
+                            model: _model.headerwebModel,
+                            updateCallback: () => safeSetState(() {}),
+                            child: HeaderwebWidget(),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                400.0, 0.0, 400.0, 0.0),
+                            child: FutureBuilder<UsersRecord>(
+                              future:
+                                  UsersRecord.getDocumentOnce(widget.cliente!),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: SpinKitSquareCircle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 50.0,
+                                      ),
+                                    ),
+                                  );
+                                }
+
+                                final columnUsersRecord = snapshot.data!;
+
+                                return Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: double.infinity,
+                                      height: 180.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0x02F1F4F8),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 8.0, 16.0, 16.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              width: 80.0,
+                                              height: 80.0,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFE0E3E7),
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsets.all(2.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          60.0),
+                                                  child: Image.network(
+                                                    valueOrDefault<String>(
+                                                      columnUsersRecord
+                                                          .photoUrl,
+                                                      'https://wallpapers.com/images/hd/default-user-profile-icon-lemo857tj1b3io21.png',
+                                                    ),
+                                                    width: 80.0,
+                                                    height: 80.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Flexible(
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 0.0, 8.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    AutoSizeText(
+                                                      columnUsersRecord
+                                                          .displayName,
+                                                      minFontSize: 12.0,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            fontSize: 24.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                    if (columnUsersRecord
+                                                                .phoneNumber !=
+                                                            '')
+                                                      Text(
+                                                        columnUsersRecord
+                                                            .phoneNumber,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .customColor3,
+                                                                  fontSize:
+                                                                      14.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                ),
+                                                      ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      8.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            'Aluno desde: ${dateTimeFormat(
+                                                              "d/M/y",
+                                                              columnUsersRecord
+                                                                  .alunoDesde,
+                                                              locale: FFLocalizations
+                                                                      .of(context)
+                                                                  .languageCode,
+                                                            )}',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  fontSize:
+                                                                      14.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: () {
+                                                          if (columnUsersRecord
+                                                                  .tipoDeGerenciamento ==
+                                                              'Apenas avaliações físicas') {
+                                                            return 220.0;
+                                                          } else if (columnUsersRecord
+                                                                  .tipoDeGerenciamento ==
+                                                              'Presencial') {
+                                                            return 130.0;
+                                                          } else {
+                                                            return 100.0;
+                                                          }
+                                                        }(),
+                                                        height: 32.0,
+                                                        constraints:
+                                                            BoxConstraints(
+                                                          maxHeight: 32.0,
+                                                        ),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondary,
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x32171717),
+                                                              offset: Offset(
+                                                                0.0,
+                                                                2.0,
+                                                              ),
+                                                            )
+                                                          ],
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      30.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      8.0,
+                                                                      0.0,
+                                                                      8.0,
+                                                                      0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            12.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  columnUsersRecord
+                                                                      .tipoDeGerenciamento,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        color: Colors
+                                                                            .white,
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.normal,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                              Icon(
+                                                                Icons
+                                                                    .radio_button_checked_outlined,
+                                                                color: Colors
+                                                                    .white,
+                                                                size: 12.0,
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 12.0, 0.0, 0.0),
+                                      child: ListView(
+                                        padding: EdgeInsets.zero,
+                                        primary: false,
+                                        shrinkWrap: true,
+                                        scrollDirection: Axis.vertical,
+                                        children: [
+                                          wrapWithModel(
+                                            model: _model
+                                                .avaliacoesPartePersonalModel2,
+                                            updateCallback: () =>
+                                                safeSetState(() {}),
+                                            child:
+                                                AvaliacoesPartePersonalWidget(
+                                              user: widget.cliente!,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ));
+  }
+}

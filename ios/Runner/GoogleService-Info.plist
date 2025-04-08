@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>733790875876-bdhb055p2ng79osu3cgr9dr9cft01li8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.733790875876-bdhb055p2ng79osu3cgr9dr9cft01li8</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>733790875876-2nd21bq3fr5h4h6grcf2uf1thvepnhhv.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAkED6nc5QEkb_W_0fOABnk_Ps3JQZDZ6w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>733790875876</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mycompany.mfitfitnessapp</string>
+	<key>PROJECT_ID</key>
+	<string>profissions-2746d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>profissions-2746d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:733790875876:ios:da945c2ef2eb22b3c53cf1</string>
+	<key>DATABASE_URL</key>
+	<string>https://profissions-2746d-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,410 @@
+import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
+
+import '/flutter_flow/flutter_flow_util.dart';
+import 'package:ff_commons/api_requests/api_manager.dart';
+
+
+export 'package:ff_commons/api_requests/api_manager.dart' show ApiCallResponse;
+
+const _kPrivateApiFunctionName = 'ffPrivateApiCall';
+
+/// Start OpenAI ChatGPT Group Code
+
+class OpenAIChatGPTGroup {
+  static String getBaseUrl() => 'https://api.openai.com/v1';
+  static Map<String, String> headers = {
+    'Content-Type': 'application/json',
+  };
+  static SendFullPromptCall sendFullPromptCall = SendFullPromptCall();
+}
+
+class SendFullPromptCall {
+  Future<ApiCallResponse> call({
+    String? apiKey = '',
+    dynamic promptJson,
+  }) async {
+    final baseUrl = OpenAIChatGPTGroup.getBaseUrl();
+
+    final prompt = _serializeJson(promptJson);
+    final ffApiRequestBody = '''
+{
+  "model": "gpt-3.5-turbo",
+  "messages": ${prompt}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Send Full Prompt',
+      apiUrl: '${baseUrl}/chat/completions',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${apiKey}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: true,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  int? createdTimestamp(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.created''',
+      ));
+  String? role(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.choices[:].message.role''',
+      ));
+  String? content(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.choices[:].message.content''',
+      ));
+}
+
+/// End OpenAI ChatGPT Group Code
+
+class GeminiApiCall {
+  static Future<ApiCallResponse> call({
+    String? prompt = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "contents": [
+    {
+      "parts": [
+        {
+          "text": "${prompt}"
+        }
+      ]
+    }
+  ]
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'GeminiApi',
+      apiUrl:
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyBnezv5hxCpD6rZYZSRyGJSdKe4IXiWC1c',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? textoGerado(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.candidates[:].content.parts[:].text''',
+      ));
+  static List? parts(dynamic response) => getJsonField(
+        response,
+        r'''$.candidates[:].content.parts''',
+        true,
+      ) as List?;
+}
+
+class CriarClienteCall {
+  static Future<ApiCallResponse> call({
+    String? name = '',
+    String? cpfCnpj = '',
+    String? email = '',
+    String? address = '',
+    double? addressNumber,
+    String? province = '',
+    double? postalCode,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'criarCliente',
+      apiUrl: 'https://api.asaas.com/v3/customers',
+      callType: ApiCallType.POST,
+      headers: {
+        'access_token':
+            '\$aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDA0OTg3MjU6OiRhYWNoXzM5NTg5NmI5LTA3ODgtNGMyMC1hYWI5LWJhNjUwZTU1Y2JkMw==',
+      },
+      params: {
+        'name': name,
+        'cpfCnpj': cpfCnpj,
+        'email': email,
+        'address': address,
+        'addressNumber': addressNumber,
+        'province': province,
+        'postalCode': postalCode,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetAllClientesCall {
+  static Future<ApiCallResponse> call({
+    String? cpfCnpj = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getAllClientes',
+      apiUrl: 'https://api.asaas.com/v3/customers',
+      callType: ApiCallType.GET,
+      headers: {
+        'access_token':
+            '\$aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDA0OTg3MjU6OiRhYWNoXzM5NTg5NmI5LTA3ODgtNGMyMC1hYWI5LWJhNjUwZTU1Y2JkMw==',
+      },
+      params: {
+        'cpfCnpj': cpfCnpj,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CriarAssinaturaComCartaoDeCreditoCall {
+  static Future<ApiCallResponse> call({
+    String? customer = '',
+    double? value,
+    String? nextDueDate = '',
+    String? holderName = '',
+    double? number,
+    double? expiryMonth,
+    double? expiryYear,
+    double? ccv,
+    String? remoteIp = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'criarAssinaturaComCartaoDeCredito',
+      apiUrl: 'https://api.asaas.com/v3/subscriptions',
+      callType: ApiCallType.POST,
+      headers: {
+        'access_token':
+            '\$aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDA0OTg3MjU6OiRhYWNoXzM5NTg5NmI5LTA3ODgtNGMyMC1hYWI5LWJhNjUwZTU1Y2JkMw==',
+      },
+      params: {
+        'customer': customer,
+        'billingType': "CREDIT_CARD",
+        'value': value,
+        'nextDueDate': nextDueDate,
+        'cycle': "MONTHLY",
+        'holderName': holderName,
+        'number': number,
+        'expiryMonth': expiryMonth,
+        'expiryYear': expiryYear,
+        'ccv': ccv,
+        'remoteIp': remoteIp,
+        'description': "Assinatura MH Personal Trainer (Personal)",
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetIPCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getIP',
+      apiUrl: 'https://api.country.is/',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? ip(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.ip''',
+      ));
+}
+
+class ListarAssinaturasCall {
+  static Future<ApiCallResponse> call({
+    String? customer = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'listarAssinaturas',
+      apiUrl: 'https://api.asaas.com/v3/subscriptions/',
+      callType: ApiCallType.GET,
+      headers: {
+        'access_token':
+            '\$aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDA0OTg3MjU6OiRhYWNoXzM5NTg5NmI5LTA3ODgtNGMyMC1hYWI5LWJhNjUwZTU1Y2JkMw==',
+      },
+      params: {
+        'customer': customer,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? nextDate(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.data[:].nextDueDate''',
+      ));
+}
+
+class PdfMonkeyCall {
+  static Future<ApiCallResponse> call({
+    String? title = '',
+    List<String>? treinosList,
+    String? documentTemplateId = '2EBAA80D-80A5-43FB-AB69-A3A8A5D02DA8',
+  }) async {
+    final treinos = _serializeList(treinosList);
+
+    final ffApiRequestBody = '''
+{
+  "document": {
+    "document_template_id": "2EBAA80D-80A5-43FB-AB69-A3A8A5D02DA8",
+    "status": "pending",
+    "payload": {
+      "treinos": [
+        ${treinos}
+      ],
+      "title": "${escapeStringForJson(title)}"
+    },
+    "meta": {
+      "_filename": "Treinos Semanais.pdf",
+      "clientRef": "unique-reference-id"
+    }
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'pdfMonkey',
+      apiUrl: 'https://api.pdfmonkey.io/api/v1/documents',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer KkKTouGpzFE9gbxE-H_L',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? url(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.document.preview_url''',
+      ));
+}
+
+class GoogleImagesCall {
+  static Future<ApiCallResponse> call({
+    String? key = 'AIzaSyBnezv5hxCpD6rZYZSRyGJSdKe4IXiWC1c',
+    String? q = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'googleImages',
+      apiUrl:
+          'https://www.googleapis.com/customsearch/v1?q=${q}&key=${key}&cx=9024e444f58c7431d',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'q': q,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? outherImgs(dynamic response) => (getJsonField(
+        response,
+        r'''$.items[:].pagemap.cse_image[:].src''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List? imgs(dynamic response) => getJsonField(
+        response,
+        r'''$.items[:].pagemap.cse_image''',
+        true,
+      ) as List?;
+}
+
+String _toEncodable(dynamic item) {
+  if (item is DocumentReference) {
+    return item.path;
+  }
+  return item;
+}
+
+String _serializeList(List? list) {
+  list ??= <String>[];
+  try {
+    return json.encode(list, toEncodable: _toEncodable);
+  } catch (_) {
+    if (kDebugMode) {
+      print("List serialization failed. Returning empty list.");
+    }
+    return '[]';
+  }
+}
+
+String _serializeJson(dynamic jsonVar, [bool isList = false]) {
+  jsonVar ??= (isList ? [] : {});
+  try {
+    return json.encode(jsonVar, toEncodable: _toEncodable);
+  } catch (_) {
+    if (kDebugMode) {
+      print("Json serialization failed. Returning empty json.");
+    }
+    return isList ? '[]' : '{}';
+  }
+}
+
+String? escapeStringForJson(String? input) {
+  if (input == null) {
+    return null;
+  }
+  return input
+      .replaceAll('\\', '\\\\')
+      .replaceAll('"', '\\"')
+      .replaceAll('\n', '\\n')
+      .replaceAll('\t', '\\t');
+}

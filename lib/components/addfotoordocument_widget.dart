@@ -1,0 +1,345 @@
+import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/material.dart';
+import 'addfotoordocument_model.dart';
+export 'addfotoordocument_model.dart';
+
+/// bottom sheet add documento ou foto
+class AddfotoordocumentWidget extends StatefulWidget {
+  const AddfotoordocumentWidget({
+    super.key,
+    required this.users,
+  });
+
+  final DocumentReference? users;
+
+  @override
+  State<AddfotoordocumentWidget> createState() =>
+      _AddfotoordocumentWidgetState();
+}
+
+class _AddfotoordocumentWidgetState extends State<AddfotoordocumentWidget> {
+  late AddfotoordocumentModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => AddfotoordocumentModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.maybeDispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+      ),
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: FlutterFlowTheme.of(context).secondaryBackground,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(0.0),
+            bottomRight: Radius.circular(0.0),
+            topLeft: Radius.circular(16.0),
+            topRight: Radius.circular(16.0),
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 40.0,
+                height: 4.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).alternate,
+                  borderRadius: BorderRadius.circular(4.0),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    'm4mnc33f' /* Adicione um documento ou uma f... */,
+                  ),
+                  textAlign: TextAlign.center,
+                  style: FlutterFlowTheme.of(context).headlineSmall.override(
+                        fontFamily: 'Outfit',
+                        letterSpacing: 0.0,
+                      ),
+                ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      logFirebaseEvent(
+                          'ADDFOTOORDOCUMENT_Container_ngp9zeu7_ON_');
+                      final selectedFiles = await selectFiles(
+                        multiFile: false,
+                      );
+                      if (selectedFiles != null) {
+                        safeSetState(() => _model.isDataUploading1 = true);
+                        var selectedUploadedFiles = <FFUploadedFile>[];
+
+                        var downloadUrls = <String>[];
+                        try {
+                          selectedUploadedFiles = selectedFiles
+                              .map((m) => FFUploadedFile(
+                                    name: m.storagePath.split('/').last,
+                                    bytes: m.bytes,
+                                  ))
+                              .toList();
+
+                          downloadUrls = (await Future.wait(
+                            selectedFiles.map(
+                              (f) async =>
+                                  await uploadData(f.storagePath, f.bytes),
+                            ),
+                          ))
+                              .where((u) => u != null)
+                              .map((u) => u!)
+                              .toList();
+                        } finally {
+                          _model.isDataUploading1 = false;
+                        }
+                        if (selectedUploadedFiles.length ==
+                                selectedFiles.length &&
+                            downloadUrls.length == selectedFiles.length) {
+                          safeSetState(() {
+                            _model.uploadedLocalFile1 =
+                                selectedUploadedFiles.first;
+                            _model.uploadedFileUrl1 = downloadUrls.first;
+                          });
+                        } else {
+                          safeSetState(() {});
+                          return;
+                        }
+                      }
+
+                      await ArquivosRecord.createDoc(widget.users!)
+                          .set(createArquivosRecordData(
+                        data: getCurrentTimestamp,
+                        arquivos: _model.uploadedFileUrl1,
+                        nome:
+                            'Arquivo ${random_data.randomInteger(0, 10).toString()}',
+                      ));
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      width: 160.0,
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).primaryBackground,
+                        borderRadius: BorderRadius.circular(12.0),
+                        border: Border.all(
+                          color: FlutterFlowTheme.of(context).alternate,
+                          width: 1.0,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            12.0, 12.0, 12.0, 12.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 0.0, 8.0, 0.0),
+                              child: Icon(
+                                Icons.file_copy_outlined,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 32.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 0.0, 8.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'ow3uukf8' /* Documento */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      logFirebaseEvent(
+                          'ADDFOTOORDOCUMENT_Container_qdw3rb2f_ON_');
+                      final selectedMedia =
+                          await selectMediaWithSourceBottomSheet(
+                        context: context,
+                        allowPhoto: true,
+                      );
+                      if (selectedMedia != null &&
+                          selectedMedia.every((m) =>
+                              validateFileFormat(m.storagePath, context))) {
+                        safeSetState(() => _model.isDataUploading2 = true);
+                        var selectedUploadedFiles = <FFUploadedFile>[];
+
+                        var downloadUrls = <String>[];
+                        try {
+                          selectedUploadedFiles = selectedMedia
+                              .map((m) => FFUploadedFile(
+                                    name: m.storagePath.split('/').last,
+                                    bytes: m.bytes,
+                                    height: m.dimensions?.height,
+                                    width: m.dimensions?.width,
+                                    blurHash: m.blurHash,
+                                  ))
+                              .toList();
+
+                          downloadUrls = (await Future.wait(
+                            selectedMedia.map(
+                              (m) async =>
+                                  await uploadData(m.storagePath, m.bytes),
+                            ),
+                          ))
+                              .where((u) => u != null)
+                              .map((u) => u!)
+                              .toList();
+                        } finally {
+                          _model.isDataUploading2 = false;
+                        }
+                        if (selectedUploadedFiles.length ==
+                                selectedMedia.length &&
+                            downloadUrls.length == selectedMedia.length) {
+                          safeSetState(() {
+                            _model.uploadedLocalFile2 =
+                                selectedUploadedFiles.first;
+                            _model.uploadedFileUrl2 = downloadUrls.first;
+                          });
+                        } else {
+                          safeSetState(() {});
+                          return;
+                        }
+                      }
+                    },
+                    child: Container(
+                      width: 160.0,
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).primaryBackground,
+                        borderRadius: BorderRadius.circular(12.0),
+                        border: Border.all(
+                          color: FlutterFlowTheme.of(context).alternate,
+                          width: 1.0,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            12.0, 12.0, 12.0, 12.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 0.0, 8.0, 0.0),
+                              child: Icon(
+                                Icons.photo_camera_outlined,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 32.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 0.0, 8.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'sezmjt20' /* Foto */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              FFButtonWidget(
+                onPressed: () async {
+                  logFirebaseEvent('ADDFOTOORDOCUMENT_CANCELAR_BTN_ON_TAP');
+                  Navigator.pop(context);
+                },
+                text: FFLocalizations.of(context).getText(
+                  'q8aqnaf8' /* Cancelar */,
+                ),
+                options: FFButtonOptions(
+                  width: double.infinity,
+                  height: 50.0,
+                  padding: EdgeInsets.all(8.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily: 'Readex Pro',
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        letterSpacing: 0.0,
+                      ),
+                  elevation: 0.0,
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).alternate,
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+              ),
+            ].divide(SizedBox(height: 16.0)),
+          ),
+        ),
+      ),
+    );
+  }
+}
