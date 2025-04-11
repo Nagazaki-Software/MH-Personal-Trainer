@@ -3,7 +3,7 @@
 **Transforme seu treino. Evolua sua jornada. Tudo em um só app.**  
 Aplicativo completo para personal trainers e alunos que buscam resultados reais, com tecnologia de ponta.
 
-![MH Personal Trainer](https://your-image-link.com/banner.png)
+![MH Personal Trainer](https://play-lh.googleusercontent.com/Nn5xVzk0H7xrpHT_tPFxkVmVCvoMXEDy8-PBqI_BcM612ZfPEPv1XHCXqEoaNGyMbrU=w240-h480-rw)
 
 ---
 
