@@ -189,9 +189,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: TreinosForClienteCopyWidget.routeName,
-              path: TreinosForClienteCopyWidget.routePath,
-              builder: (context, params) => TreinosForClienteCopyWidget(
+              name: TreinosProAlunoWidget.routeName,
+              path: TreinosProAlunoWidget.routePath,
+              builder: (context, params) => TreinosProAlunoWidget(
                 cliente: params.getParam(
                   'cliente',
                   ParamType.DocumentReference,
@@ -1206,6 +1206,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: PaginaDeCentralDeAjudaWidget.routeName,
               path: PaginaDeCentralDeAjudaWidget.routePath,
               builder: (context, params) => PaginaDeCentralDeAjudaWidget(),
+            ),
+            FFRoute(
+              name: TreinosArquivadosWidget.routeName,
+              path: TreinosArquivadosWidget.routePath,
+              builder: (context, params) => TreinosArquivadosWidget(
+                users: params.getParam(
+                  'users',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['users'],
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

@@ -483,8 +483,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -706,8 +707,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -832,8 +834,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1025,8 +1028,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1151,8 +1155,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1277,8 +1282,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1403,8 +1409,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1529,8 +1536,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1655,8 +1663,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1781,8 +1790,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1907,8 +1917,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2031,8 +2042,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2157,8 +2169,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2283,8 +2296,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2409,8 +2423,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2555,8 +2570,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2681,8 +2697,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2807,8 +2824,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2953,8 +2971,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -3079,8 +3098,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -3205,8 +3225,9 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF15161E),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -3337,7 +3358,7 @@ class _CreateAvaliacaoFisicaguedes1994tresdobrasWidgetState
                                                           fontFamily: 'Figtree',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .alternate,
+                                                              .primaryText,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:

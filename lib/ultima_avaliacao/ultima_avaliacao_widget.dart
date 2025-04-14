@@ -51,8 +51,8 @@ class _UltimaAvaliacaoWidgetState extends State<UltimaAvaliacaoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<AvaliacoesFisicasRecord>(
-      stream: AvaliacoesFisicasRecord.getDocument(widget.avaliacaoFisica!),
+    return FutureBuilder<AvaliacoesFisicasRecord>(
+      future: AvaliacoesFisicasRecord.getDocumentOnce(widget.avaliacaoFisica!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -127,8 +127,8 @@ class _UltimaAvaliacaoWidgetState extends State<UltimaAvaliacaoWidget> {
                     : null,
                 body: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
-                  child: StreamBuilder<UsersRecord>(
-                    stream: UsersRecord.getDocument(widget.users!),
+                  child: FutureBuilder<UsersRecord>(
+                    future: UsersRecord.getDocumentOnce(widget.users!),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {

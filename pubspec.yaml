@@ -225,20 +225,6 @@ flutter:
     - assets/rive_animations/
     - assets/pdfs/
     - assets/jsons/
-    - dependencies/utility_functions_library_8g4bud/assets/fonts/
-    - dependencies/utility_functions_library_8g4bud/assets/images/
-    - dependencies/utility_functions_library_8g4bud/assets/videos/
-    - dependencies/utility_functions_library_8g4bud/assets/audios/
-    - dependencies/utility_functions_library_8g4bud/assets/rive_animations/
-    - dependencies/utility_functions_library_8g4bud/assets/pdfs/
-    - dependencies/utility_functions_library_8g4bud/assets/jsons/
-    - dependencies/document_generation_app_library_kuplk5/assets/fonts/
-    - dependencies/document_generation_app_library_kuplk5/assets/images/
-    - dependencies/document_generation_app_library_kuplk5/assets/videos/
-    - dependencies/document_generation_app_library_kuplk5/assets/audios/
-    - dependencies/document_generation_app_library_kuplk5/assets/rive_animations/
-    - dependencies/document_generation_app_library_kuplk5/assets/pdfs/
-    - dependencies/document_generation_app_library_kuplk5/assets/jsons/
 
 
 

@@ -12,28 +12,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'treinos_for_cliente_copy_model.dart';
-export 'treinos_for_cliente_copy_model.dart';
+import 'treinos_pro_aluno_model.dart';
+export 'treinos_pro_aluno_model.dart';
 
-class TreinosForClienteCopyWidget extends StatefulWidget {
-  const TreinosForClienteCopyWidget({
+class TreinosProAlunoWidget extends StatefulWidget {
+  const TreinosProAlunoWidget({
     super.key,
     required this.cliente,
   });
 
   final DocumentReference? cliente;
 
-  static String routeName = 'treinosForClienteCopy';
-  static String routePath = 'treinosForClienteCopy';
+  static String routeName = 'treinosProAluno';
+  static String routePath = 'treinosProAluno';
 
   @override
-  State<TreinosForClienteCopyWidget> createState() =>
-      _TreinosForClienteCopyWidgetState();
+  State<TreinosProAlunoWidget> createState() => _TreinosProAlunoWidgetState();
 }
 
-class _TreinosForClienteCopyWidgetState
-    extends State<TreinosForClienteCopyWidget> with TickerProviderStateMixin {
-  late TreinosForClienteCopyModel _model;
+class _TreinosProAlunoWidgetState extends State<TreinosProAlunoWidget>
+    with TickerProviderStateMixin {
+  late TreinosProAlunoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var hasContainerTriggered1 = false;
@@ -43,7 +42,7 @@ class _TreinosForClienteCopyWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TreinosForClienteCopyModel());
+    _model = createModel(context, () => TreinosProAlunoModel());
 
     animationsMap.addAll({
       'containerOnActionTriggerAnimation1': AnimationInfo(
@@ -102,7 +101,7 @@ class _TreinosForClienteCopyWidgetState
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'treinosForClienteCopy',
+        title: 'treinosProAluno',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -132,7 +131,7 @@ class _TreinosForClienteCopyWidgetState
                       ),
                       onPressed: () async {
                         logFirebaseEvent(
-                            'TREINOS_FOR_CLIENTE_COPY_arrow_back_roun');
+                            'TREINOS_PRO_ALUNO_arrow_back_rounded_ICN');
                         if (Navigator.of(context).canPop()) {
                           context.pop();
                         }
@@ -163,8 +162,8 @@ class _TreinosForClienteCopyWidgetState
                       context: context,
                       desktop: false,
                     ))
-                      StreamBuilder<UsersRecord>(
-                        stream: UsersRecord.getDocument(widget.cliente!),
+                      FutureBuilder<UsersRecord>(
+                        future: UsersRecord.getDocumentOnce(widget.cliente!),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
@@ -436,7 +435,7 @@ class _TreinosForClienteCopyWidgetState
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       logFirebaseEvent(
-                                          'TREINOS_FOR_CLIENTE_COPY_Container_se8l8');
+                                          'TREINOS_PRO_ALUNO_Container_se8l8idh_ON_');
 
                                       context.pushNamed(
                                         CreateTreinoWidget.routeName,
@@ -590,26 +589,48 @@ class _TreinosForClienteCopyWidgetState
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
-                                            child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'z7igbc1p' /* Arquivos */,
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                logFirebaseEvent(
+                                                    'TREINOS_PRO_ALUNO_Text_9klvu6vy_ON_TAP');
+
+                                                context.pushNamed(
+                                                  TreinosArquivadosWidget
+                                                      .routeName,
+                                                  queryParameters: {
+                                                    'users': serializeParam(
+                                                      widget.cliente,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'z7igbc1p' /* Arquivos */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
                                             ),
                                           ),
                                         ],
@@ -731,7 +752,7 @@ class _TreinosForClienteCopyWidgetState
                                                                 onTap:
                                                                     () async {
                                                                   logFirebaseEvent(
-                                                                      'TREINOS_FOR_CLIENTE_COPY_Column_ccf5564s');
+                                                                      'TREINOS_PRO_ALUNO_Column_ccf5564s_ON_TAP');
 
                                                                   context
                                                                       .pushNamed(
@@ -866,7 +887,7 @@ class _TreinosForClienteCopyWidgetState
                                                                       .transparent,
                                                               onTap: () async {
                                                                 logFirebaseEvent(
-                                                                    'TREINOS_FOR_CLIENTE_COPY_Container_utdoy');
+                                                                    'TREINOS_PRO_ALUNO_Container_utdoyvie_ON_');
 
                                                                 context
                                                                     .pushNamed(
@@ -917,8 +938,7 @@ class _TreinosForClienteCopyWidgetState
                                                                         0.0,
                                                                         0.0),
                                                                 child: Icon(
-                                                                  Icons
-                                                                      .settings,
+                                                                  Icons.edit,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -1249,7 +1269,7 @@ class _TreinosForClienteCopyWidgetState
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             logFirebaseEvent(
-                                                'TREINOS_FOR_CLIENTE_COPY_Container_hn5q0');
+                                                'TREINOS_PRO_ALUNO_Container_hn5q0bk1_ON_');
 
                                             context.pushNamed(
                                               CreateTreinoWidget.routeName,
@@ -1568,7 +1588,7 @@ class _TreinosForClienteCopyWidgetState
                                                                       onTap:
                                                                           () async {
                                                                         logFirebaseEvent(
-                                                                            'TREINOS_FOR_CLIENTE_COPY_Column_pfveosrr');
+                                                                            'TREINOS_PRO_ALUNO_Column_pfveosrr_ON_TAP');
 
                                                                         context
                                                                             .pushNamed(
@@ -1689,7 +1709,7 @@ class _TreinosForClienteCopyWidgetState
                                                                     onTap:
                                                                         () async {
                                                                       logFirebaseEvent(
-                                                                          'TREINOS_FOR_CLIENTE_COPY_Container_l90yh');
+                                                                          'TREINOS_PRO_ALUNO_Container_l90yhz0r_ON_');
 
                                                                       context
                                                                           .pushNamed(

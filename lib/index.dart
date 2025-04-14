@@ -1,8 +1,7 @@
 // Export pages
 export '/autenticacao/criacao_de_contas/criacao_de_contas_widget.dart'
     show CriacaoDeContasWidget;
-export '/autenticacao/pagina_de_login/pagina_de_login_widget.dart'
-    show PaginaDeLoginWidget;
+export '/pagina_de_login/pagina_de_login_widget.dart' show PaginaDeLoginWidget;
 export '/autenticacao/esqueci_minha_senha/esqueci_minha_senha_widget.dart'
     show EsqueciMinhaSenhaWidget;
 export '/autenticacao/criar_dados_perfil/criar_dados_perfil_widget.dart'
@@ -22,8 +21,8 @@ export '/avaliacao_in_personal/avaliacoes_personal/avaliacoes_personal_widget.da
     show AvaliacoesPersonalWidget;
 export '/avaliacao_in_personal/create_avaliacao_fisica_pollock1984tresdobras/create_avaliacao_fisica_pollock1984tresdobras_widget.dart'
     show CreateAvaliacaoFisicaPollock1984tresdobrasWidget;
-export '/personal/treinos_for_cliente_copy/treinos_for_cliente_copy_widget.dart'
-    show TreinosForClienteCopyWidget;
+export '/personal/treinos_pro_aluno/treinos_pro_aluno_widget.dart'
+    show TreinosProAlunoWidget;
 export '/avaliacao_in_personal/create_avaliacao_fisicafalkner1968quatrodobras/create_avaliacao_fisicafalkner1968quatrodobras_widget.dart'
     show CreateAvaliacaoFisicafalkner1968quatrodobrasWidget;
 export '/avaliacao_in_personal/create_avaliacao_fisica_pollock1994setedobras/create_avaliacao_fisica_pollock1994setedobras_widget.dart'
@@ -211,3 +210,5 @@ export '/paginadetermosepoliticas/paginadetermosepoliticas_widget.dart'
     show PaginadetermosepoliticasWidget;
 export '/pagina_de_central_de_ajuda/pagina_de_central_de_ajuda_widget.dart'
     show PaginaDeCentralDeAjudaWidget;
+export '/treinos_arquivados/treinos_arquivados_widget.dart'
+    show TreinosArquivadosWidget;

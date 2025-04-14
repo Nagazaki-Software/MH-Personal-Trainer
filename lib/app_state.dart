@@ -748,6 +748,12 @@ class FFAppState extends ChangeNotifier {
         'ff_seriesData', _seriesData.map((x) => x.serialize()).toList());
   }
 
+  bool _nullTextfieldValue = false;
+  bool get nullTextfieldValue => _nullTextfieldValue;
+  set nullTextfieldValue(bool value) {
+    _nullTextfieldValue = value;
+  }
+
   final _cachePersonalsetreinoisManager =
       StreamRequestManager<List<CreateTreinosRecord>>();
   Stream<List<CreateTreinosRecord>> cachePersonalsetreinois({
@@ -764,6 +770,21 @@ class FFAppState extends ChangeNotifier {
       _cachePersonalsetreinoisManager.clear();
   void clearCachePersonalsetreinoisCacheKey(String? uniqueKey) =>
       _cachePersonalsetreinoisManager.clearRequest(uniqueKey);
+
+  final _allRotinaManager = StreamRequestManager<CreateTreinosRecord>();
+  Stream<CreateTreinosRecord> allRotina({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Stream<CreateTreinosRecord> Function() requestFn,
+  }) =>
+      _allRotinaManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearAllRotinaCache() => _allRotinaManager.clear();
+  void clearAllRotinaCacheKey(String? uniqueKey) =>
+      _allRotinaManager.clearRequest(uniqueKey);
 
   final _cacheManager = StreamRequestManager<List<SeriesRepeticoesRecord>>();
   Stream<List<SeriesRepeticoesRecord>> cache({

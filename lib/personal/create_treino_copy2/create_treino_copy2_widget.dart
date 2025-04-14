@@ -1844,7 +1844,7 @@ class _CreateTreinoCopy2WidgetState extends State<CreateTreinoCopy2Widget>
                                                     .delete();
 
                                                 context.pushNamed(
-                                                  TreinosForClienteCopyWidget
+                                                  TreinosProAlunoWidget
                                                       .routeName,
                                                   queryParameters: {
                                                     'cliente': serializeParam(

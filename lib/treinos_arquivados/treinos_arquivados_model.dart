@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'aba_de_feedback_widget.dart' show AbaDeFeedbackWidget;
+import 'treinos_arquivados_widget.dart' show TreinosArquivadosWidget;
 import 'package:flutter/material.dart';
 
-class AbaDeFeedbackModel extends FlutterFlowModel<AbaDeFeedbackWidget> {
+class TreinosArquivadosModel extends FlutterFlowModel<TreinosArquivadosWidget> {
   @override
   void initState(BuildContext context) {}
 

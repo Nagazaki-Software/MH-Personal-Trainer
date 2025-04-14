@@ -19,6 +19,8 @@ class CreateTreinoModel extends FlutterFlowModel<CreateTreinoWidget> {
 
   bool diaTreinoText = true;
 
+  bool nullTextfield = false;
+
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
@@ -46,6 +48,16 @@ class CreateTreinoModel extends FlutterFlowModel<CreateTreinoWidget> {
   FocusNode? ageFocusNode2;
   TextEditingController? ageTextController2;
   String? Function(BuildContext, String?)? ageTextController2Validator;
+  String? _ageTextController2Validator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'yt9punsn' /* Adicione um nome a esta rotina... */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for DropDown widget.
   String? dropDownValue3;
   FormFieldController<String>? dropDownValueController3;
@@ -98,6 +110,7 @@ class CreateTreinoModel extends FlutterFlowModel<CreateTreinoWidget> {
   @override
   void initState(BuildContext context) {
     ageTextController1Validator = _ageTextController1Validator;
+    ageTextController2Validator = _ageTextController2Validator;
     comecaemdarotinaModel = createModel(context, () => ComecaemdarotinaModel());
   }
 

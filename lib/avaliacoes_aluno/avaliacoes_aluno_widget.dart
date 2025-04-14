@@ -85,8 +85,8 @@ class _AvaliacoesAlunoWidgetState extends State<AvaliacoesAlunoWidget>
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<List<AvaliacoesFisicasRecord>>(
-      stream: queryAvaliacoesFisicasRecord(
+    return FutureBuilder<List<AvaliacoesFisicasRecord>>(
+      future: queryAvaliacoesFisicasRecordOnce(
         parent: currentUserReference,
         singleRecord: true,
       ),

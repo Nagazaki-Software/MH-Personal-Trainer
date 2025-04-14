@@ -134,7 +134,9 @@ class _AvaliacoesFisicasWidgetState extends State<AvaliacoesFisicasWidget>
                     child: AppBar(
                       backgroundColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
-                      automaticallyImplyLeading: false,
+                      iconTheme: IconThemeData(
+                          color: FlutterFlowTheme.of(context).primaryText),
+                      automaticallyImplyLeading: true,
                       title: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,

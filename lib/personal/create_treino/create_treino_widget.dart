@@ -14,6 +14,7 @@ import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'create_treino_model.dart';
 export 'create_treino_model.dart';
@@ -121,6 +122,8 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return StreamBuilder<UsersRecord>(
       stream: UsersRecord.getDocument(widget.users!),
       builder: (context, snapshot) {
@@ -296,7 +299,7 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
                   top: true,
                   child: Form(
                     key: _model.formKey,
-                    autovalidateMode: AutovalidateMode.disabled,
+                    autovalidateMode: AutovalidateMode.always,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1050,6 +1053,23 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
                                               ),
                                             ),
                                           ),
+                                          if (FFAppState().nullTextfieldValue)
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'm1dk2o9k' /* Você não pode criar um treino ... */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                            ),
                                         ]
                                             .divide(SizedBox(height: 12.0))
                                             .addToEnd(SizedBox(height: 32.0)),
@@ -2043,6 +2063,43 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
                                   onPressed: () async {
                                     logFirebaseEvent(
                                         'CREATE_TREINO_PAGE_SALVAR_BTN_ON_TAP');
+                                    if (_model.formKey.currentState == null ||
+                                        !_model.formKey.currentState!
+                                            .validate()) {
+                                      return;
+                                    }
+                                    if (_model.dropDownValue1 == null) {
+                                      FFAppState().nullTextfieldValue = true;
+                                      safeSetState(() {});
+                                      return;
+                                    }
+                                    if (_model.dropDownValue2 == null) {
+                                      FFAppState().nullTextfieldValue = true;
+                                      safeSetState(() {});
+                                      return;
+                                    }
+                                    if (_model.dropDownValue3 == null) {
+                                      FFAppState().nullTextfieldValue = true;
+                                      safeSetState(() {});
+                                      return;
+                                    }
+                                    if (_model.dropDownValue4 == null) {
+                                      FFAppState().nullTextfieldValue = true;
+                                      safeSetState(() {});
+                                      return;
+                                    }
+                                    if (_model
+                                            .comecaemdarotinaModel.datePicked ==
+                                        null) {
+                                      FFAppState().nullTextfieldValue = true;
+                                      safeSetState(() {});
+                                      return;
+                                    }
+                                    if (_model.datePicked == null) {
+                                      FFAppState().nullTextfieldValue = true;
+                                      safeSetState(() {});
+                                      return;
+                                    }
 
                                     await CreateTreinosRecord.createDoc(
                                             widget.users!)
@@ -2091,13 +2148,6 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
                                       parameterData: {},
                                     );
                                     context.safePop();
-                                    if (_model.formKey.currentState != null) {
-                                      _model.formKey.currentState!.validate();
-                                    }
-                                    if (_model.dropDownValue1 == null) {}
-                                    if (_model.dropDownValue2 == null) {}
-                                    if (_model.dropDownValue3 == null) {}
-                                    if (_model.dropDownValue4 == null) {}
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'lmw3w1s1' /* Salvar */,

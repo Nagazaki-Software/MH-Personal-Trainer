@@ -4,6 +4,7 @@ import '/components/nenhumfeedbackdisponivel_widget.dart';
 import '/components/reponderfeedback_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -154,7 +155,9 @@ class _AbaDeFeedbackWidgetState extends State<AbaDeFeedbackWidget> {
                                 onPressed: () async {
                                   logFirebaseEvent(
                                       'ABA_DE_FEEDBACK_close_rounded_ICN_ON_TAP');
-                                  context.pop();
+
+                                  context
+                                      .goNamed(PaginaInicialWidget.routeName);
                                 },
                               ),
                             ),

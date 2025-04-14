@@ -7,6 +7,7 @@ import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'notificacoes_model.dart';
 export 'notificacoes_model.dart';
 
@@ -553,6 +554,37 @@ class _NotificacoesWidgetState extends State<NotificacoesWidget> {
                                                                         context)
                                                                     .primary,
                                                                 size: 24.0,
+                                                              ),
+                                                            ),
+                                                          if (columnNotificacaoRecord
+                                                                  .tipo ==
+                                                              'Alerta')
+                                                            Container(
+                                                              width: 48.0,
+                                                              height: 48.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .customColor4,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            24.0),
+                                                              ),
+                                                              child: Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: FaIcon(
+                                                                  FontAwesomeIcons
+                                                                      .exclamationTriangle,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .error,
+                                                                  size: 24.0,
+                                                                ),
                                                               ),
                                                             ),
                                                           if (columnNotificacaoRecord

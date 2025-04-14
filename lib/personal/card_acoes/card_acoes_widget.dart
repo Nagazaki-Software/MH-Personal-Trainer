@@ -72,7 +72,7 @@ class _CardAcoesWidgetState extends State<CardAcoesWidget> {
                           logFirebaseEvent('CARD_ACOES_COMP_Card_11_ON_TAP');
 
                           context.pushNamed(
-                            TreinosForClienteCopyWidget.routeName,
+                            TreinosProAlunoWidget.routeName,
                             queryParameters: {
                               'cliente': serializeParam(
                                 widget.cliente,
@@ -677,7 +677,7 @@ class _CardAcoesWidgetState extends State<CardAcoesWidget> {
                                   'CARD_ACOES_COMP_Card_11_ON_TAP');
 
                               context.pushNamed(
-                                TreinosForClienteCopyWidget.routeName,
+                                TreinosProAlunoWidget.routeName,
                                 queryParameters: {
                                   'cliente': serializeParam(
                                     widget.cliente,

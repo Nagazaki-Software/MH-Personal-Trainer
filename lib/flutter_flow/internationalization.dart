@@ -1448,6 +1448,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Calidad de vida',
       'fr': 'Qualité de vie',
     },
+    'm1dk2o9k': {
+      'pt':
+          'Você não pode criar um treino sem ter adicionado todas as instruções.',
+      'de': '',
+      'en': '',
+      'es': '',
+      'fr': '',
+    },
     'exhhatfb': {
       'pt': 'Procurar treinos..',
       'de': 'Suche nach Trainings..',
@@ -1524,6 +1532,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose an option from the dropdown',
       'es': 'Por favor, seleccione una opción del menú desplegable.',
       'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    'yt9punsn': {
+      'pt': 'Adicione um nome a esta rotina de treinos.',
+      'de': '',
+      'en': '',
+      'es': '',
+      'fr': '',
     },
     'l3ha1bqi': {
       'pt': 'Please choose an option from the dropdown',
@@ -1875,7 +1890,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Maison',
     },
   },
-  // treinosForClienteCopy
+  // treinosProAluno
   {
     'lo1ehhib': {
       'pt': 'Criar treino',
@@ -21391,6 +21406,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'aejf7gei': {
       'pt': 'Nossa equipe está pronta para atendê-lo',
+      'de': '',
+      'en': '',
+      'es': '',
+      'fr': '',
+    },
+  },
+  // treinosArquivados
+  {
+    'vw2z4j7n': {
+      'pt': 'Arquivo de Treinos',
       'de': '',
       'en': '',
       'es': '',

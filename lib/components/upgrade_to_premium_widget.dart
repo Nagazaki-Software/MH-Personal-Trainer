@@ -40,9 +40,9 @@ class _UpgradeToPremiumWidgetState extends State<UpgradeToPremiumWidget>
         effectsBuilder: () => [
           ShimmerEffect(
             curve: Curves.linear,
-            delay: 1040.0.ms,
-            duration: 1690.0.ms,
-            color: FlutterFlowTheme.of(context).customColor4,
+            delay: 1650.0.ms,
+            duration: 1740.0.ms,
+            color: FlutterFlowTheme.of(context).secondary,
             angle: 0.524,
           ),
         ],
@@ -93,9 +93,10 @@ class _UpgradeToPremiumWidgetState extends State<UpgradeToPremiumWidget>
                     FFLocalizations.of(context).getText(
                       'n2votple' /* Venha para o Premium */,
                     ),
+                    textAlign: TextAlign.start,
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Outfit',
-                          color: FlutterFlowTheme.of(context).customColor3,
+                          color: FlutterFlowTheme.of(context).primary,
                           letterSpacing: 0.0,
                         ),
                   ).animateOnPageLoad(

@@ -127,7 +127,7 @@ class _PainelAdministrativoDoPersonalWidgetState
                                 'PAINEL_ADMINISTRATIVO_DO_PERSONAL_arrow_');
 
                             context.pushNamed(
-                              TreinosForClienteCopyWidget.routeName,
+                              TreinosProAlunoWidget.routeName,
                               queryParameters: {
                                 'cliente': serializeParam(
                                   widget.cliente,
@@ -152,8 +152,10 @@ class _PainelAdministrativoDoPersonalWidgetState
                 body: SafeArea(
                   top: true,
                   child: StreamBuilder<CreateTreinosRecord>(
-                    stream:
-                        CreateTreinosRecord.getDocument(widget.createTreinos!),
+                    stream: FFAppState().allRotina(
+                      requestFn: () => CreateTreinosRecord.getDocument(
+                          widget.createTreinos!),
+                    ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {

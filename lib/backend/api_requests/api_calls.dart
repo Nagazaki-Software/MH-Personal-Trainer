@@ -246,6 +246,10 @@ class GetIPCall {
         response,
         r'''$.ip''',
       ));
+  static String? country(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.country''',
+      ));
 }
 
 class ListarAssinaturasCall {

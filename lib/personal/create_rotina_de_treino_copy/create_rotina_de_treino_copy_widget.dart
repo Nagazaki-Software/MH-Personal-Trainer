@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
+import 'dart:async';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
@@ -271,9 +272,13 @@ class _CreateRotinaDeTreinoCopyWidgetState
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
-                          child: StreamBuilder<CreateTreinosRecord>(
-                            stream: CreateTreinosRecord.getDocument(
-                                widget.treino!),
+                          child: FutureBuilder<CreateTreinosRecord>(
+                            future: (_model.documentRequestCompleter ??=
+                                    Completer<CreateTreinosRecord>()
+                                      ..complete(
+                                          CreateTreinosRecord.getDocumentOnce(
+                                              widget.treino!)))
+                                .future,
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
@@ -293,767 +298,785 @@ class _CreateRotinaDeTreinoCopyWidgetState
                               final scrollingColumnCreateTreinosRecord =
                                   snapshot.data!;
 
-                              return SingleChildScrollView(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Expanded(
+                              return RefreshIndicator(
+                                onRefresh: () async {
+                                  logFirebaseEvent(
+                                      'CREATE_ROTINA_DE_TREINO_COPY_scrolling_C');
+                                  safeSetState(() =>
+                                      _model.documentRequestCompleter = null);
+                                  await _model
+                                      .waitForDocumentRequestCompleted();
+                                },
+                                child: SingleChildScrollView(
+                                  physics:
+                                      const AlwaysScrollableScrollPhysics(),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Expanded(
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        15.0, 0.0, 4.0, 0.0),
+                                                child: Container(
+                                                  width: 300.0,
+                                                  child: TextFormField(
+                                                    controller:
+                                                        _model.textController,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode,
+                                                    onChanged: (_) =>
+                                                        EasyDebounce.debounce(
+                                                      '_model.textController',
+                                                      Duration(
+                                                          milliseconds: 100),
+                                                      () async {
+                                                        logFirebaseEvent(
+                                                            'CREATE_ROTINA_DE_TREINO_COPY_TextField_k');
+                                                        safeSetState(() {
+                                                          _model.simpleSearchResults =
+                                                              TextSearch(
+                                                            _model.treinorsList!
+                                                                .map(
+                                                                  (record) => TextSearchItem
+                                                                      .fromTerms(
+                                                                          record,
+                                                                          [
+                                                                        record
+                                                                            .treinosNoLIst,
+                                                                        record
+                                                                            .colecao
+                                                                      ]),
+                                                                )
+                                                                .toList(),
+                                                          )
+                                                                  .search(_model
+                                                                      .textController
+                                                                      .text)
+                                                                  .map((r) =>
+                                                                      r.object)
+                                                                  .toList();
+                                                          ;
+                                                        });
+                                                        FFAppState()
+                                                                .searchBoolean =
+                                                            true;
+                                                        FFAppState()
+                                                                .fullListShow =
+                                                            false;
+                                                        safeSetState(() {});
+                                                      },
+                                                    ),
+                                                    autofocus: false,
+                                                    obscureText: false,
+                                                    decoration: InputDecoration(
+                                                      isDense: true,
+                                                      labelStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      hintText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        '5awxp6b9' /* Procure o treino ou coleção... */,
+                                                      ),
+                                                      hintStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      focusedErrorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      filled: true,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      suffixIcon: _model
+                                                              .textController!
+                                                              .text
+                                                              .isNotEmpty
+                                                          ? InkWell(
+                                                              onTap: () async {
+                                                                _model
+                                                                    .textController
+                                                                    ?.clear();
+                                                                logFirebaseEvent(
+                                                                    'CREATE_ROTINA_DE_TREINO_COPY_TextField_k');
+                                                                safeSetState(
+                                                                    () {
+                                                                  _model.simpleSearchResults =
+                                                                      TextSearch(
+                                                                    _model
+                                                                        .treinorsList!
+                                                                        .map(
+                                                                          (record) => TextSearchItem.fromTerms(
+                                                                              record,
+                                                                              [
+                                                                                record.treinosNoLIst,
+                                                                                record.colecao
+                                                                              ]),
+                                                                        )
+                                                                        .toList(),
+                                                                  )
+                                                                          .search(_model
+                                                                              .textController
+                                                                              .text)
+                                                                          .map((r) =>
+                                                                              r.object)
+                                                                          .toList();
+                                                                  ;
+                                                                });
+                                                                FFAppState()
+                                                                        .searchBoolean =
+                                                                    true;
+                                                                FFAppState()
+                                                                        .fullListShow =
+                                                                    false;
+                                                                safeSetState(
+                                                                    () {});
+                                                                safeSetState(
+                                                                    () {});
+                                                              },
+                                                              child: Icon(
+                                                                Icons.clear,
+                                                                size: 22,
+                                                              ),
+                                                            )
+                                                          : null,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    cursorColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    validator: _model
+                                                        .textControllerValidator
+                                                        .asValidator(context),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 14.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  logFirebaseEvent(
+                                                      'CREATE_ROTINA_DE_TREINO_COPY_Icon_1z7px8');
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    enableDrag: false,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return GestureDetector(
+                                                        onTap: () {
+                                                          FocusScope.of(context)
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              FiltroExercicioAdminWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      safeSetState(() {}));
+                                                },
+                                                child: Icon(
+                                                  Icons.filter_alt,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  size: 24.0,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      if (FFAppState().searchBoolean)
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, -1.0),
+                                          child: Container(
+                                            constraints: BoxConstraints(
+                                              maxWidth: 770.0,
+                                            ),
+                                            decoration: BoxDecoration(),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      15.0, 0.0, 4.0, 0.0),
-                                              child: Container(
-                                                width: 300.0,
-                                                child: TextFormField(
-                                                  controller:
-                                                      _model.textController,
-                                                  focusNode:
-                                                      _model.textFieldFocusNode,
-                                                  onChanged: (_) =>
-                                                      EasyDebounce.debounce(
-                                                    '_model.textController',
-                                                    Duration(milliseconds: 100),
-                                                    () async {
-                                                      logFirebaseEvent(
-                                                          'CREATE_ROTINA_DE_TREINO_COPY_TextField_k');
-                                                      safeSetState(() {
-                                                        _model.simpleSearchResults =
-                                                            TextSearch(
-                                                          _model.treinorsList!
-                                                              .map(
-                                                                (record) =>
-                                                                    TextSearchItem
-                                                                        .fromTerms(
-                                                                            record,
-                                                                            [
-                                                                      record
-                                                                          .treinosNoLIst,
-                                                                      record
-                                                                          .colecao
-                                                                    ]),
-                                                              )
-                                                              .toList(),
-                                                        )
-                                                                .search(_model
-                                                                    .textController
-                                                                    .text)
-                                                                .map((r) =>
-                                                                    r.object)
-                                                                .toList();
-                                                        ;
-                                                      });
-                                                      FFAppState()
-                                                          .searchBoolean = true;
-                                                      FFAppState()
-                                                          .fullListShow = false;
-                                                      safeSetState(() {});
+                                                      16.0, 12.0, 16.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Builder(
+                                                    builder: (context) {
+                                                      final treinois = _model
+                                                          .simpleSearchResults
+                                                          .map((e) => e)
+                                                          .toList();
+
+                                                      return SingleChildScrollView(
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: List.generate(
+                                                              treinois.length,
+                                                              (treinoisIndex) {
+                                                            final treinoisItem =
+                                                                treinois[
+                                                                    treinoisIndex];
+                                                            return Material(
+                                                              color: Colors
+                                                                  .transparent,
+                                                              child: Theme(
+                                                                data: ThemeData(
+                                                                  checkboxTheme:
+                                                                      CheckboxThemeData(
+                                                                    visualDensity:
+                                                                        VisualDensity
+                                                                            .compact,
+                                                                    materialTapTargetSize:
+                                                                        MaterialTapTargetSize
+                                                                            .shrinkWrap,
+                                                                  ),
+                                                                  unselectedWidgetColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                ),
+                                                                child:
+                                                                    CheckboxListTile(
+                                                                  value: _model
+                                                                          .checkboxListTileValueMap1[
+                                                                      treinoisItem] ??= false,
+                                                                  onChanged:
+                                                                      (newValue) async {
+                                                                    safeSetState(() =>
+                                                                        _model.checkboxListTileValueMap1[treinoisItem] =
+                                                                            newValue!);
+                                                                    if (newValue!) {
+                                                                      logFirebaseEvent(
+                                                                          'CREATE_ROTINA_DE_TREINO_COPY_CheckboxLis');
+                                                                      _model.addToTreinosSelecionados(
+                                                                          treinoisItem
+                                                                              .treinosNoLIst);
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    }
+                                                                  },
+                                                                  title: Text(
+                                                                    treinoisItem
+                                                                        .treinosNoLIst,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Outfit',
+                                                                          fontSize:
+                                                                              18.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                  subtitle:
+                                                                      Text(
+                                                                    treinoisItem
+                                                                        .colecao,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                  tileColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  activeColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                  checkColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .info,
+                                                                  dense: false,
+                                                                  controlAffinity:
+                                                                      ListTileControlAffinity
+                                                                          .trailing,
+                                                                  shape:
+                                                                      RoundedRectangleBorder(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            12.0),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }).divide(SizedBox(
+                                                              height: 8.0)),
+                                                        ),
+                                                      );
                                                     },
                                                   ),
-                                                  autofocus: false,
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    isDense: true,
-                                                    labelStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      '5awxp6b9' /* Procure o treino ou coleção... */,
-                                                    ),
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    enabledBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            Color(0x00000000),
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            Color(0x00000000),
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    filled: true,
-                                                    fillColor: FlutterFlowTheme
-                                                            .of(context)
-                                                        .secondaryBackground,
-                                                    suffixIcon: _model
-                                                            .textController!
-                                                            .text
-                                                            .isNotEmpty
-                                                        ? InkWell(
-                                                            onTap: () async {
-                                                              _model
-                                                                  .textController
-                                                                  ?.clear();
-                                                              logFirebaseEvent(
-                                                                  'CREATE_ROTINA_DE_TREINO_COPY_TextField_k');
-                                                              safeSetState(() {
-                                                                _model.simpleSearchResults =
-                                                                    TextSearch(
-                                                                  _model
-                                                                      .treinorsList!
-                                                                      .map(
-                                                                        (record) => TextSearchItem.fromTerms(
-                                                                            record,
-                                                                            [
-                                                                              record.treinosNoLIst,
-                                                                              record.colecao
-                                                                            ]),
-                                                                      )
-                                                                      .toList(),
-                                                                )
-                                                                        .search(_model
-                                                                            .textController
-                                                                            .text)
-                                                                        .map((r) =>
-                                                                            r.object)
-                                                                        .toList();
-                                                                ;
-                                                              });
-                                                              FFAppState()
-                                                                      .searchBoolean =
-                                                                  true;
-                                                              FFAppState()
-                                                                      .fullListShow =
-                                                                  false;
-                                                              safeSetState(
-                                                                  () {});
-                                                              safeSetState(
-                                                                  () {});
-                                                            },
-                                                            child: Icon(
-                                                              Icons.clear,
-                                                              size: 22,
-                                                            ),
-                                                          )
-                                                        : null,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  cursorColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                  validator: _model
-                                                      .textControllerValidator
-                                                      .asValidator(context),
-                                                ),
+                                                ]
+                                                    .divide(
+                                                        SizedBox(height: 12.0))
+                                                    .addToEnd(
+                                                        SizedBox(height: 32.0)),
                                               ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 14.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                logFirebaseEvent(
-                                                    'CREATE_ROTINA_DE_TREINO_COPY_Icon_1z7px8');
-                                                await showModalBottomSheet(
-                                                  isScrollControlled: true,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  enableDrag: false,
-                                                  context: context,
-                                                  builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () {
-                                                        FocusScope.of(context)
-                                                            .unfocus();
-                                                        FocusManager.instance
-                                                            .primaryFocus
-                                                            ?.unfocus();
-                                                      },
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child:
-                                                            FiltroExercicioAdminWidget(),
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then((value) =>
-                                                    safeSetState(() {}));
-                                              },
-                                              child: Icon(
-                                                Icons.filter_alt,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 24.0,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    if (FFAppState().searchBoolean)
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, -1.0),
-                                        child: Container(
-                                          constraints: BoxConstraints(
-                                            maxWidth: 770.0,
-                                          ),
-                                          decoration: BoxDecoration(),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 12.0, 16.0, 0.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Builder(
-                                                  builder: (context) {
-                                                    final treinois = _model
-                                                        .simpleSearchResults
-                                                        .map((e) => e)
-                                                        .toList();
-
-                                                    return SingleChildScrollView(
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: List.generate(
-                                                            treinois.length,
-                                                            (treinoisIndex) {
-                                                          final treinoisItem =
-                                                              treinois[
-                                                                  treinoisIndex];
-                                                          return Material(
-                                                            color: Colors
-                                                                .transparent,
-                                                            child: Theme(
-                                                              data: ThemeData(
-                                                                checkboxTheme:
-                                                                    CheckboxThemeData(
-                                                                  visualDensity:
-                                                                      VisualDensity
-                                                                          .compact,
-                                                                  materialTapTargetSize:
-                                                                      MaterialTapTargetSize
-                                                                          .shrinkWrap,
-                                                                ),
-                                                                unselectedWidgetColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                              ),
-                                                              child:
-                                                                  CheckboxListTile(
-                                                                value: _model
-                                                                        .checkboxListTileValueMap1[
-                                                                    treinoisItem] ??= false,
-                                                                onChanged:
-                                                                    (newValue) async {
-                                                                  safeSetState(() =>
-                                                                      _model.checkboxListTileValueMap1[
-                                                                              treinoisItem] =
-                                                                          newValue!);
-                                                                  if (newValue!) {
-                                                                    logFirebaseEvent(
-                                                                        'CREATE_ROTINA_DE_TREINO_COPY_CheckboxLis');
-                                                                    _model.addToTreinosSelecionados(
-                                                                        treinoisItem
-                                                                            .treinosNoLIst);
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  }
-                                                                },
-                                                                title: Text(
-                                                                  treinoisItem
-                                                                      .treinosNoLIst,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Outfit',
-                                                                        fontSize:
-                                                                            18.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                                subtitle: Text(
-                                                                  treinoisItem
-                                                                      .colecao,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                                tileColor: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                activeColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                checkColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .info,
-                                                                dense: false,
-                                                                controlAffinity:
-                                                                    ListTileControlAffinity
-                                                                        .trailing,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              12.0),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }).divide(SizedBox(
-                                                            height: 8.0)),
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ]
-                                                  .divide(
-                                                      SizedBox(height: 12.0))
-                                                  .addToEnd(
-                                                      SizedBox(height: 32.0)),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    if ((FFAppState().filtroAdmin != 'Todos') &&
-                                        (FFAppState().filterVideoFoto ==
-                                            'Sem vídeo'))
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, -1.0),
-                                        child: Container(
-                                          constraints: BoxConstraints(
-                                            maxWidth: 770.0,
-                                          ),
-                                          decoration: BoxDecoration(),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 12.0, 16.0, 0.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                FutureBuilder<
-                                                    List<TreinorsRecord>>(
-                                                  future: FFAppState()
-                                                      .cacheAllTreinos(
-                                                    requestFn: () =>
-                                                        queryTreinorsRecordOnce(
-                                                      queryBuilder:
-                                                          (treinorsRecord) =>
-                                                              treinorsRecord
-                                                                  .where(
-                                                                    'treinosNoLIst',
-                                                                    isEqualTo:
-                                                                        FFAppState()
-                                                                            .filtroAdmin,
-                                                                  )
-                                                                  .where(
-                                                                    'videoUrl',
-                                                                    isEqualTo:
-                                                                        null,
+                                      if ((FFAppState().filtroAdmin !=
+                                              'Todos') &&
+                                          (FFAppState().filterVideoFoto ==
+                                              'Sem vídeo'))
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, -1.0),
+                                          child: Container(
+                                            constraints: BoxConstraints(
+                                              maxWidth: 770.0,
+                                            ),
+                                            decoration: BoxDecoration(),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 12.0, 16.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  FutureBuilder<
+                                                      List<TreinorsRecord>>(
+                                                    future: FFAppState()
+                                                        .cacheAllTreinos(
+                                                      requestFn: () =>
+                                                          queryTreinorsRecordOnce(
+                                                        queryBuilder:
+                                                            (treinorsRecord) =>
+                                                                treinorsRecord
+                                                                    .where(
+                                                                      'treinosNoLIst',
+                                                                      isEqualTo:
+                                                                          FFAppState()
+                                                                              .filtroAdmin,
+                                                                    )
+                                                                    .where(
+                                                                      'videoUrl',
+                                                                      isEqualTo:
+                                                                          null,
+                                                                    ),
+                                                      ),
+                                                    ),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 50.0,
+                                                            height: 50.0,
+                                                            child:
+                                                                SpinKitSquareCircle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              size: 50.0,
+                                                            ),
+                                                          ),
+                                                        );
+                                                      }
+                                                      List<TreinorsRecord>
+                                                          columnTreinorsRecordList =
+                                                          snapshot.data!;
+
+                                                      return SingleChildScrollView(
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: List.generate(
+                                                              columnTreinorsRecordList
+                                                                  .length,
+                                                              (columnIndex) {
+                                                            final columnTreinorsRecord =
+                                                                columnTreinorsRecordList[
+                                                                    columnIndex];
+                                                            return Material(
+                                                              color: Colors
+                                                                  .transparent,
+                                                              child: Theme(
+                                                                data: ThemeData(
+                                                                  checkboxTheme:
+                                                                      CheckboxThemeData(
+                                                                    visualDensity:
+                                                                        VisualDensity
+                                                                            .compact,
+                                                                    materialTapTargetSize:
+                                                                        MaterialTapTargetSize
+                                                                            .shrinkWrap,
                                                                   ),
-                                                    ),
+                                                                  unselectedWidgetColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                ),
+                                                                child:
+                                                                    CheckboxListTile(
+                                                                  value: _model
+                                                                          .checkboxListTileValueMap2[
+                                                                      columnTreinorsRecord] ??= false,
+                                                                  onChanged:
+                                                                      (newValue) async {
+                                                                    safeSetState(() =>
+                                                                        _model.checkboxListTileValueMap2[columnTreinorsRecord] =
+                                                                            newValue!);
+                                                                    if (newValue!) {
+                                                                      logFirebaseEvent(
+                                                                          'CREATE_ROTINA_DE_TREINO_COPY_CheckboxLis');
+                                                                      _model.addToTreinosSelecionados(
+                                                                          columnTreinorsRecord
+                                                                              .treinosNoLIst);
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    }
+                                                                  },
+                                                                  title: Text(
+                                                                    columnTreinorsRecord
+                                                                        .treinosNoLIst,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Outfit',
+                                                                          fontSize:
+                                                                              18.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                  subtitle:
+                                                                      Text(
+                                                                    columnTreinorsRecord
+                                                                        .colecao,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                  tileColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  activeColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                  checkColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .info,
+                                                                  dense: false,
+                                                                  controlAffinity:
+                                                                      ListTileControlAffinity
+                                                                          .trailing,
+                                                                  shape:
+                                                                      RoundedRectangleBorder(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            12.0),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }).divide(SizedBox(
+                                                              height: 8.0)),
+                                                        ),
+                                                      );
+                                                    },
                                                   ),
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child: SizedBox(
-                                                          width: 50.0,
-                                                          height: 50.0,
-                                                          child:
-                                                              SpinKitSquareCircle(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            size: 50.0,
-                                                          ),
-                                                        ),
-                                                      );
-                                                    }
-                                                    List<TreinorsRecord>
-                                                        columnTreinorsRecordList =
-                                                        snapshot.data!;
-
-                                                    return SingleChildScrollView(
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: List.generate(
-                                                            columnTreinorsRecordList
-                                                                .length,
-                                                            (columnIndex) {
-                                                          final columnTreinorsRecord =
-                                                              columnTreinorsRecordList[
-                                                                  columnIndex];
-                                                          return Material(
-                                                            color: Colors
-                                                                .transparent,
-                                                            child: Theme(
-                                                              data: ThemeData(
-                                                                checkboxTheme:
-                                                                    CheckboxThemeData(
-                                                                  visualDensity:
-                                                                      VisualDensity
-                                                                          .compact,
-                                                                  materialTapTargetSize:
-                                                                      MaterialTapTargetSize
-                                                                          .shrinkWrap,
-                                                                ),
-                                                                unselectedWidgetColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                              ),
-                                                              child:
-                                                                  CheckboxListTile(
-                                                                value: _model
-                                                                        .checkboxListTileValueMap2[
-                                                                    columnTreinorsRecord] ??= false,
-                                                                onChanged:
-                                                                    (newValue) async {
-                                                                  safeSetState(() =>
-                                                                      _model.checkboxListTileValueMap2[
-                                                                              columnTreinorsRecord] =
-                                                                          newValue!);
-                                                                  if (newValue!) {
-                                                                    logFirebaseEvent(
-                                                                        'CREATE_ROTINA_DE_TREINO_COPY_CheckboxLis');
-                                                                    _model.addToTreinosSelecionados(
-                                                                        columnTreinorsRecord
-                                                                            .treinosNoLIst);
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  }
-                                                                },
-                                                                title: Text(
-                                                                  columnTreinorsRecord
-                                                                      .treinosNoLIst,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Outfit',
-                                                                        fontSize:
-                                                                            18.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                                subtitle: Text(
-                                                                  columnTreinorsRecord
-                                                                      .colecao,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                                tileColor: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                activeColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                checkColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .info,
-                                                                dense: false,
-                                                                controlAffinity:
-                                                                    ListTileControlAffinity
-                                                                        .trailing,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              12.0),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }).divide(SizedBox(
-                                                            height: 8.0)),
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ]
-                                                  .divide(
-                                                      SizedBox(height: 12.0))
-                                                  .addToEnd(
-                                                      SizedBox(height: 32.0)),
+                                                ]
+                                                    .divide(
+                                                        SizedBox(height: 12.0))
+                                                    .addToEnd(
+                                                        SizedBox(height: 32.0)),
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    if (FFAppState().fullListShow)
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, -1.0),
-                                        child: Container(
-                                          constraints: BoxConstraints(
-                                            maxWidth: 770.0,
-                                          ),
-                                          decoration: BoxDecoration(),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 12.0, 16.0, 0.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                StreamBuilder<
-                                                    List<TreinorsRecord>>(
-                                                  stream: queryTreinorsRecord(),
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child: SizedBox(
-                                                          width: 50.0,
-                                                          height: 50.0,
-                                                          child:
-                                                              SpinKitSquareCircle(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            size: 50.0,
+                                      if (FFAppState().fullListShow)
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, -1.0),
+                                          child: Container(
+                                            constraints: BoxConstraints(
+                                              maxWidth: 770.0,
+                                            ),
+                                            decoration: BoxDecoration(),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 12.0, 16.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  StreamBuilder<
+                                                      List<TreinorsRecord>>(
+                                                    stream:
+                                                        queryTreinorsRecord(),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 50.0,
+                                                            height: 50.0,
+                                                            child:
+                                                                SpinKitSquareCircle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              size: 50.0,
+                                                            ),
                                                           ),
+                                                        );
+                                                      }
+                                                      List<TreinorsRecord>
+                                                          columnTreinorsRecordList =
+                                                          snapshot.data!;
+
+                                                      return SingleChildScrollView(
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: List.generate(
+                                                              columnTreinorsRecordList
+                                                                  .length,
+                                                              (columnIndex) {
+                                                            final columnTreinorsRecord =
+                                                                columnTreinorsRecordList[
+                                                                    columnIndex];
+                                                            return Material(
+                                                              color: Colors
+                                                                  .transparent,
+                                                              child: Theme(
+                                                                data: ThemeData(
+                                                                  checkboxTheme:
+                                                                      CheckboxThemeData(
+                                                                    visualDensity:
+                                                                        VisualDensity
+                                                                            .compact,
+                                                                    materialTapTargetSize:
+                                                                        MaterialTapTargetSize
+                                                                            .shrinkWrap,
+                                                                  ),
+                                                                  unselectedWidgetColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                ),
+                                                                child:
+                                                                    CheckboxListTile(
+                                                                  value: _model
+                                                                          .checkboxListTileValueMap3[
+                                                                      columnTreinorsRecord] ??= false,
+                                                                  onChanged:
+                                                                      (newValue) async {
+                                                                    safeSetState(() =>
+                                                                        _model.checkboxListTileValueMap3[columnTreinorsRecord] =
+                                                                            newValue!);
+                                                                    if (newValue!) {
+                                                                      logFirebaseEvent(
+                                                                          'CREATE_ROTINA_DE_TREINO_COPY_CheckboxLis');
+                                                                      _model.addToTreinosSelecionados(
+                                                                          columnTreinorsRecord
+                                                                              .treinosNoLIst);
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    }
+                                                                  },
+                                                                  title: Text(
+                                                                    columnTreinorsRecord
+                                                                        .treinosNoLIst,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Outfit',
+                                                                          fontSize:
+                                                                              18.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                  subtitle:
+                                                                      Text(
+                                                                    columnTreinorsRecord
+                                                                        .colecao,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                  tileColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  activeColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                  checkColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .info,
+                                                                  dense: false,
+                                                                  controlAffinity:
+                                                                      ListTileControlAffinity
+                                                                          .trailing,
+                                                                  shape:
+                                                                      RoundedRectangleBorder(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            12.0),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }).divide(SizedBox(
+                                                              height: 8.0)),
                                                         ),
                                                       );
-                                                    }
-                                                    List<TreinorsRecord>
-                                                        columnTreinorsRecordList =
-                                                        snapshot.data!;
-
-                                                    return SingleChildScrollView(
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: List.generate(
-                                                            columnTreinorsRecordList
-                                                                .length,
-                                                            (columnIndex) {
-                                                          final columnTreinorsRecord =
-                                                              columnTreinorsRecordList[
-                                                                  columnIndex];
-                                                          return Material(
-                                                            color: Colors
-                                                                .transparent,
-                                                            child: Theme(
-                                                              data: ThemeData(
-                                                                checkboxTheme:
-                                                                    CheckboxThemeData(
-                                                                  visualDensity:
-                                                                      VisualDensity
-                                                                          .compact,
-                                                                  materialTapTargetSize:
-                                                                      MaterialTapTargetSize
-                                                                          .shrinkWrap,
-                                                                ),
-                                                                unselectedWidgetColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                              ),
-                                                              child:
-                                                                  CheckboxListTile(
-                                                                value: _model
-                                                                        .checkboxListTileValueMap3[
-                                                                    columnTreinorsRecord] ??= false,
-                                                                onChanged:
-                                                                    (newValue) async {
-                                                                  safeSetState(() =>
-                                                                      _model.checkboxListTileValueMap3[
-                                                                              columnTreinorsRecord] =
-                                                                          newValue!);
-                                                                  if (newValue!) {
-                                                                    logFirebaseEvent(
-                                                                        'CREATE_ROTINA_DE_TREINO_COPY_CheckboxLis');
-                                                                    _model.addToTreinosSelecionados(
-                                                                        columnTreinorsRecord
-                                                                            .treinosNoLIst);
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  }
-                                                                },
-                                                                title: Text(
-                                                                  columnTreinorsRecord
-                                                                      .treinosNoLIst,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Outfit',
-                                                                        fontSize:
-                                                                            18.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                                subtitle: Text(
-                                                                  columnTreinorsRecord
-                                                                      .colecao,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                                tileColor: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                activeColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                checkColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .info,
-                                                                dense: false,
-                                                                controlAffinity:
-                                                                    ListTileControlAffinity
-                                                                        .trailing,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              12.0),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }).divide(SizedBox(
-                                                            height: 8.0)),
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ]
-                                                  .divide(
-                                                      SizedBox(height: 12.0))
-                                                  .addToEnd(
-                                                      SizedBox(height: 32.0)),
+                                                    },
+                                                  ),
+                                                ]
+                                                    .divide(
+                                                        SizedBox(height: 12.0))
+                                                    .addToEnd(
+                                                        SizedBox(height: 32.0)),
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               );
                             },

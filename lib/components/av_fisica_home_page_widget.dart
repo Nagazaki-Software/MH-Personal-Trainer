@@ -198,7 +198,7 @@ class _AvFisicaHomePageWidgetState extends State<AvFisicaHomePageWidget> {
                                 width: 60.0,
                                 height: 60.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).accent2,
+                                  color: FlutterFlowTheme.of(context).secondary,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Padding(
@@ -207,11 +207,15 @@ class _AvFisicaHomePageWidgetState extends State<AvFisicaHomePageWidget> {
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(
-                                        Icons.align_horizontal_left,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
+                                      Text(
+                                        listViewAvaliacoesFisicasRecord
+                                            .protocoloDeAvaliacao,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ],
                                   ),

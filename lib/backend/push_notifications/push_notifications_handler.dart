@@ -145,7 +145,7 @@ final parametersBuilderMap =
           'users': getParameter<DocumentReference>(data, 'users'),
         },
       ),
-  'treinosForClienteCopy': (data) async => ParameterData(
+  'treinosProAluno': (data) async => ParameterData(
         allParams: {
           'cliente': getParameter<DocumentReference>(data, 'cliente'),
         },
@@ -496,6 +496,11 @@ final parametersBuilderMap =
   'admindashboard': ParameterData.none(),
   'paginadetermosepoliticas': ParameterData.none(),
   'PaginaDeCentralDeAjuda': ParameterData.none(),
+  'treinosArquivados': (data) async => ParameterData(
+        allParams: {
+          'users': getParameter<DocumentReference>(data, 'users'),
+        },
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

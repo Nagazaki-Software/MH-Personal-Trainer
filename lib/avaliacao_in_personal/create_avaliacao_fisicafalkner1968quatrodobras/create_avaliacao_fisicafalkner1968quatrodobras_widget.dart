@@ -604,7 +604,7 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                                 'Outfit',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .primaryBackground,
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -866,7 +866,7 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                                 'Outfit',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondaryText,
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -1029,7 +1029,7 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                                 'Outfit',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondaryText,
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -1270,7 +1270,7 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                                 'Outfit',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .alternate,
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -1429,8 +1429,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -1589,8 +1590,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -1748,8 +1750,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -1907,8 +1910,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -2066,8 +2070,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -2225,8 +2230,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -2384,8 +2390,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -2541,8 +2548,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -2700,8 +2708,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -2859,8 +2868,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -3018,8 +3028,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -3203,8 +3214,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -3362,8 +3374,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -3521,8 +3534,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -3680,8 +3694,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -3865,8 +3880,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -4024,8 +4040,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -4183,8 +4200,9 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
-                                                                0xFF15161E),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -4348,7 +4366,7 @@ class _CreateAvaliacaoFisicafalkner1968quatrodobrasWidgetState
                                                                 'Figtree',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .alternate,
+                                                                .primaryText,
                                                             fontSize: 16.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:

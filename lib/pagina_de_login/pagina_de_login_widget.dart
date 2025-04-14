@@ -1,8 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
+import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -397,9 +401,52 @@ class _PaginaDeLoginWidgetState extends State<PaginaDeLoginWidget>
                                         return;
                                       }
 
+                                      _model.user = await queryUsersRecordOnce(
+                                        queryBuilder: (usersRecord) =>
+                                            usersRecord.where(
+                                          'email',
+                                          isEqualTo: _model
+                                              .emailAddressTextController.text,
+                                        ),
+                                        singleRecord: true,
+                                      ).then((s) => s.firstOrNull);
+                                      _model.getIp = await GetIPCall.call();
+
+                                      triggerPushNotification(
+                                        notificationTitle:
+                                            'Você iniciou uma sessão?',
+                                        notificationText:
+                                            'Você iniciou uma sessão em ${GetIPCall.country(
+                                          (_model.getIp?.jsonBody ?? ''),
+                                        )}no IP: ${GetIPCall.ip(
+                                          (_model.getIp?.jsonBody ?? ''),
+                                        )}, altere sua senha se você acha que não foi você.',
+                                        notificationSound: 'default',
+                                        userRefs: [_model.user!.reference],
+                                        initialPageName: 'notificacoes',
+                                        parameterData: {},
+                                      );
+
+                                      await NotificacaoRecord.collection
+                                          .doc()
+                                          .set(createNotificacaoRecordData(
+                                            titulo: 'Você iniciou uma sessão?',
+                                            descricao:
+                                                'Você iniciou uma sessão em ${GetIPCall.country(
+                                              (_model.getIp?.jsonBody ?? ''),
+                                            )}no IP: ${GetIPCall.ip(
+                                              (_model.getIp?.jsonBody ?? ''),
+                                            )}, altere sua senha se você acha que não foi você.',
+                                            data: getCurrentTimestamp,
+                                            para: _model.user?.reference.id,
+                                            tipo: 'Alerta',
+                                          ));
+
                                       context.pushNamedAuth(
                                           PaginaInicialWidget.routeName,
                                           context.mounted);
+
+                                      safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'xijwkq6v' /* Entrar */,

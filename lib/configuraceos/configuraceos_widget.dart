@@ -1156,17 +1156,17 @@ class _ConfiguraceosWidgetState extends State<ConfiguraceosWidget> {
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color: Color(0xFF02408B),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -1205,17 +1205,17 @@ class _ConfiguraceosWidgetState extends State<ConfiguraceosWidget> {
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color: Color(0xFF02408B),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -1325,17 +1325,17 @@ class _ConfiguraceosWidgetState extends State<ConfiguraceosWidget> {
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color: Color(0xFF02408B),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -1383,17 +1383,17 @@ class _ConfiguraceosWidgetState extends State<ConfiguraceosWidget> {
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color: Color(0xFF02408B),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -1430,17 +1430,17 @@ class _ConfiguraceosWidgetState extends State<ConfiguraceosWidget> {
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color: Color(0xFF02408B),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(

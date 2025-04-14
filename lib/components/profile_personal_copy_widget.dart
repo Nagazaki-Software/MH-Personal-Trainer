@@ -158,7 +158,7 @@ class _ProfilePersonalCopyWidgetState extends State<ProfilePersonalCopyWidget>
                               ));
 
                               context.pushNamed(
-                                TreinosForClienteCopyWidget.routeName,
+                                TreinosProAlunoWidget.routeName,
                                 queryParameters: {
                                   'cliente': serializeParam(
                                     widget.user,
@@ -210,7 +210,7 @@ class _ProfilePersonalCopyWidgetState extends State<ProfilePersonalCopyWidget>
                                   'PROFILE_PERSONAL_COPY_SAIR_BTN_ON_TAP');
 
                               context.pushNamed(
-                                TreinosForClienteCopyWidget.routeName,
+                                TreinosProAlunoWidget.routeName,
                                 queryParameters: {
                                   'cliente': serializeParam(
                                     widget.user,

@@ -1,3 +1,5 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'pagina_de_login_widget.dart' show PaginaDeLoginWidget;
@@ -15,6 +17,10 @@ class PaginaDeLoginModel extends FlutterFlowModel<PaginaDeLoginWidget> {
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  UsersRecord? user;
+  // Stores action output result for [Backend Call - API (getIP)] action in Button widget.
+  ApiCallResponse? getIp;
 
   @override
   void initState(BuildContext context) {
