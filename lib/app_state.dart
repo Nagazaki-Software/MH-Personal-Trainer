@@ -282,7 +282,7 @@ class FFAppState extends ChangeNotifier {
     _isNotification = value;
   }
 
-  String _versaoDoApp = '8.8.10';
+  String _versaoDoApp = '8.8.15';
   String get versaoDoApp => _versaoDoApp;
   set versaoDoApp(String value) {
     _versaoDoApp = value;
