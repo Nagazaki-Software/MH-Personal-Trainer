@@ -8,6 +8,7 @@ import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'iniciar_treino_aluno_model.dart';
 export 'iniciar_treino_aluno_model.dart';
@@ -64,8 +65,8 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitSquareCircle(
-                  color: FlutterFlowTheme.of(context).primary,
+                child: SpinKitFadingFour(
+                  color: FlutterFlowTheme.of(context).customColor3,
                   size: 50.0,
                 ),
               ),
@@ -114,9 +115,22 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                fontFamily: 'Outfit',
+                                font: GoogleFonts.outfit(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineMedium
+                                      .fontStyle,
+                                ),
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .fontStyle,
                               ),
                         ),
                         actions: [],
@@ -158,9 +172,26 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMedium
+                                                    .fontStyle,
+                                          ),
                                           color: Colors.white,
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMedium
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -173,9 +204,26 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          font: GoogleFonts.readexPro(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
                                           color: Color(0xFFE0E0E0),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -217,10 +265,31 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          font: GoogleFonts
+                                                              .readexPro(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                   Text(
@@ -232,10 +301,31 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          font: GoogleFonts
+                                                              .readexPro(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ],
@@ -266,10 +356,31 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          font: GoogleFonts
+                                                              .readexPro(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -321,8 +432,25 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                   Builder(
@@ -366,11 +494,11 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                   child: SizedBox(
                                                     width: 50.0,
                                                     height: 50.0,
-                                                    child: SpinKitSquareCircle(
+                                                    child: SpinKitFadingFour(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primary,
+                                                              .customColor3,
                                                       size: 50.0,
                                                     ),
                                                   ),
@@ -434,9 +562,13 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyLarge
                                                                             .override(
-                                                                              fontFamily: 'Readex Pro',
+                                                                              font: GoogleFonts.readexPro(
+                                                                                fontWeight: FontWeight.w600,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                              ),
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -505,8 +637,8 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -548,11 +680,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         '6ftmdpkt' /* Series/Rep:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -564,9 +700,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -594,11 +735,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         '6psbvrqz' /* Intervalo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -610,9 +755,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -640,11 +790,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'lngpc8p1' /* Carga:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -656,9 +810,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -686,11 +845,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'pssdnmb1' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -702,9 +865,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -745,8 +913,8 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -788,11 +956,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'mtdjh9je' /* Intervalo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -804,9 +976,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -834,11 +1011,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'cw2qxpfk' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -850,9 +1031,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -880,11 +1066,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         '9njsgj2m' /* Inclinação:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -896,9 +1086,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -926,11 +1121,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         '4i1nc7sr' /* Velocidade:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -942,9 +1141,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -973,11 +1177,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                           'kvhlxokv' /* Distância:  */,
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Readex Pro',
+                                                                                                              font: GoogleFonts.readexPro(
+                                                                                                                fontWeight: FontWeight.normal,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                              ),
                                                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                                                               fontSize: 13.0,
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                             ),
                                                                                                       ),
                                                                                                       TextSpan(
@@ -989,9 +1197,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                       )
                                                                                                     ],
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          fontFamily: 'Readex Pro',
+                                                                                                          font: GoogleFonts.readexPro(
+                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                          ),
                                                                                                           fontSize: 13.0,
                                                                                                           letterSpacing: 0.0,
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                         ),
                                                                                                   ),
                                                                                                 ),
@@ -1020,11 +1233,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                           '5eqmtano' /* Pace:  */,
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Readex Pro',
+                                                                                                              font: GoogleFonts.readexPro(
+                                                                                                                fontWeight: FontWeight.normal,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                              ),
                                                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                                                               fontSize: 13.0,
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                             ),
                                                                                                       ),
                                                                                                       TextSpan(
@@ -1036,9 +1253,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                       )
                                                                                                     ],
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          fontFamily: 'Readex Pro',
+                                                                                                          font: GoogleFonts.readexPro(
+                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                          ),
                                                                                                           fontSize: 13.0,
                                                                                                           letterSpacing: 0.0,
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                         ),
                                                                                                   ),
                                                                                                 ),
@@ -1079,8 +1301,8 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -1122,11 +1344,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'tbhtbtqw' /* Series/Rep:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1138,9 +1364,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1168,11 +1399,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         '73em26qt' /* Intervalo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1184,9 +1419,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1214,11 +1454,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         '60xe9tnn' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1230,9 +1474,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1273,8 +1522,8 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -1316,11 +1565,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'btewyuop' /* Intervalo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1332,9 +1585,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1362,11 +1620,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         '9rogy2kt' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1378,9 +1640,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1408,11 +1675,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'gbzjxwre' /* Inclinação:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1424,9 +1695,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1473,8 +1749,8 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -1516,11 +1792,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         '7cqkh5id' /* Series/Rep:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1532,9 +1812,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1562,11 +1847,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'jp9vqvxc' /* Intervalo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1578,9 +1867,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1608,11 +1902,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'v3gmay6r' /* Carga:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1624,9 +1922,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1667,8 +1970,8 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -1710,11 +2013,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'xqno848f' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1726,9 +2033,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1756,11 +2068,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         '2xx3mxxn' /* Observações:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1772,9 +2088,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1815,8 +2136,8 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -1858,11 +2179,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'sfrm7rst' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1874,9 +2199,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1904,11 +2234,15 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                         'bysa1dzs' /* Cadência:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1920,9 +2254,14 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -2057,12 +2396,25 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
+                                                                        font: GoogleFonts
+                                                                            .readexPro(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodySmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodySmall
+                                                                            .fontStyle,
                                                                       ),
                                                               elevation: 0.0,
                                                               borderRadius:
@@ -2116,8 +2468,25 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                   Container(
@@ -2147,14 +2516,35 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                     .getText(
                                                   'g6l6of7m' /* Mantenha-se hidratado durante ... */,
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.readexPro(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ].divide(SizedBox(width: 12.0)),
                                           ),
@@ -2173,14 +2563,35 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                     .getText(
                                                   'cw9bguwi' /* Descanse 60-90 segundos entre ... */,
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font:
+                                                          GoogleFonts.readexPro(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ].divide(SizedBox(width: 12.0)),
                                           ),
@@ -2204,9 +2615,30 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
+                                                        font: GoogleFonts
+                                                            .readexPro(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -2254,9 +2686,22 @@ class _IniciarTreinoAlunoWidgetState extends State<IniciarTreinoAlunoWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    font: GoogleFonts.readexPro(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .fontStyle,
                                   ),
                               elevation: 3.0,
                               borderRadius: BorderRadius.circular(28.0),

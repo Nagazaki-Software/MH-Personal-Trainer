@@ -282,7 +282,7 @@ class FFAppState extends ChangeNotifier {
     _isNotification = value;
   }
 
-  String _versaoDoApp = '8.8.15';
+  String _versaoDoApp = '8.8.186';
   String get versaoDoApp => _versaoDoApp;
   set versaoDoApp(String value) {
     _versaoDoApp = value;
@@ -752,6 +752,12 @@ class FFAppState extends ChangeNotifier {
   bool get nullTextfieldValue => _nullTextfieldValue;
   set nullTextfieldValue(bool value) {
     _nullTextfieldValue = value;
+  }
+
+  DateTime? _comecaemdarotina;
+  DateTime? get comecaemdarotina => _comecaemdarotina;
+  set comecaemdarotina(DateTime? value) {
+    _comecaemdarotina = value;
   }
 
   final _cachePersonalsetreinoisManager =

@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/components/comecaemdarotina_widget.dart';
+import '/components/headerweb_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
@@ -65,53 +66,51 @@ class CreateTreinoModel extends FlutterFlowModel<CreateTreinoWidget> {
   String? dropDownValue4;
   FormFieldController<String>? dropDownValueController4;
   // Model for comecaemdarotina component.
-  late ComecaemdarotinaModel comecaemdarotinaModel;
-  DateTime? datePicked;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  List<TreinorsRecord> simpleSearchResults = [];
-  // State field(s) for ChoiceChips widget.
-  FormFieldController<List<String>>? choiceChipsValueController;
-  String? get choiceChipsValue =>
-      choiceChipsValueController?.value?.firstOrNull;
-  set choiceChipsValue(String? val) =>
-      choiceChipsValueController?.value = val != null ? [val] : [];
-  // State field(s) for TabBar widget.
-  TabController? tabBarController;
-  int get tabBarCurrentIndex =>
-      tabBarController != null ? tabBarController!.index : 0;
-
-  // State field(s) for CheckboxListTile widget.
-  Map<TreinorsRecord, bool> checkboxListTileValueMap1 = {};
-  List<TreinorsRecord> get checkboxListTileCheckedItems1 =>
-      checkboxListTileValueMap1.entries
-          .where((e) => e.value)
-          .map((e) => e.key)
-          .toList();
-
-  // State field(s) for CheckboxListTile widget.
-  Map<TreinosDoProfessorRecord, bool> checkboxListTileValueMap2 = {};
-  List<TreinosDoProfessorRecord> get checkboxListTileCheckedItems2 =>
-      checkboxListTileValueMap2.entries
-          .where((e) => e.value)
-          .map((e) => e.key)
-          .toList();
-
-  // State field(s) for CheckboxListTile widget.
-  Map<TreinorsRecord, bool> checkboxListTileValueMap3 = {};
-  List<TreinorsRecord> get checkboxListTileCheckedItems3 =>
-      checkboxListTileValueMap3.entries
-          .where((e) => e.value)
-          .map((e) => e.key)
-          .toList();
+  late ComecaemdarotinaModel comecaemdarotinaModel1;
+  DateTime? datePicked1;
+  // Stores action output result for [Validate Form] action in Button widget.
+  bool? forms;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  CreateTreinosRecord? treinoscreates;
+  // Model for headerweb component.
+  late HeaderwebModel headerwebModel;
+  // State field(s) for DropDown widget.
+  String? dropDownValue5;
+  FormFieldController<String>? dropDownValueController5;
+  // State field(s) for DropDown widget.
+  String? dropDownValue6;
+  FormFieldController<String>? dropDownValueController6;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode3;
+  TextEditingController? ageTextController3;
+  String? Function(BuildContext, String?)? ageTextController3Validator;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode4;
+  TextEditingController? ageTextController4;
+  String? Function(BuildContext, String?)? ageTextController4Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue7;
+  FormFieldController<String>? dropDownValueController7;
+  // State field(s) for DropDown widget.
+  String? dropDownValue8;
+  FormFieldController<String>? dropDownValueController8;
+  // Model for comecaemdarotina component.
+  late ComecaemdarotinaModel comecaemdarotinaModel2;
+  DateTime? datePicked2;
+  // Stores action output result for [Validate Form] action in Button widget.
+  bool? formsr;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  CreateTreinosRecord? treinoscreatesrs;
 
   @override
   void initState(BuildContext context) {
     ageTextController1Validator = _ageTextController1Validator;
     ageTextController2Validator = _ageTextController2Validator;
-    comecaemdarotinaModel = createModel(context, () => ComecaemdarotinaModel());
+    comecaemdarotinaModel1 =
+        createModel(context, () => ComecaemdarotinaModel());
+    headerwebModel = createModel(context, () => HeaderwebModel());
+    comecaemdarotinaModel2 =
+        createModel(context, () => ComecaemdarotinaModel());
   }
 
   @override
@@ -122,10 +121,14 @@ class CreateTreinoModel extends FlutterFlowModel<CreateTreinoWidget> {
     ageFocusNode2?.dispose();
     ageTextController2?.dispose();
 
-    comecaemdarotinaModel.dispose();
-    textFieldFocusNode?.dispose();
-    textController3?.dispose();
+    comecaemdarotinaModel1.dispose();
+    headerwebModel.dispose();
+    ageFocusNode3?.dispose();
+    ageTextController3?.dispose();
 
-    tabBarController?.dispose();
+    ageFocusNode4?.dispose();
+    ageTextController4?.dispose();
+
+    comecaemdarotinaModel2.dispose();
   }
 }

@@ -262,6 +262,16 @@ class UsersRecord extends FirestoreRecord {
   List<double> get subescapilar => _subescapilar ?? const [];
   bool hasSubescapilar() => _subescapilar != null;
 
+  // "alunos" field.
+  List<DocumentReference>? _alunos;
+  List<DocumentReference> get alunos => _alunos ?? const [];
+  bool hasAlunos() => _alunos != null;
+
+  // "subscribeId" field.
+  String? _subscribeId;
+  String get subscribeId => _subscribeId ?? '';
+  bool hasSubscribeId() => _subscribeId != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -312,6 +322,8 @@ class UsersRecord extends FirestoreRecord {
     _satisfacaocomoapp = castToType<double>(snapshotData['satisfacaocomoapp']);
     _suprallicas = getDataList(snapshotData['suprallicas']);
     _subescapilar = getDataList(snapshotData['subescapilar']);
+    _alunos = getDataList(snapshotData['alunos']);
+    _subscribeId = snapshotData['subscribeId'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -391,6 +403,7 @@ Map<String, dynamic> createUsersRecordData({
   DateTime? desde,
   String? password,
   double? satisfacaocomoapp,
+  String? subscribeId,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -437,6 +450,7 @@ Map<String, dynamic> createUsersRecordData({
       'desde': desde,
       'password': password,
       'satisfacaocomoapp': satisfacaocomoapp,
+      'subscribeId': subscribeId,
     }.withoutNulls,
   );
 
@@ -498,7 +512,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.password == e2?.password &&
         e1?.satisfacaocomoapp == e2?.satisfacaocomoapp &&
         listEquality.equals(e1?.suprallicas, e2?.suprallicas) &&
-        listEquality.equals(e1?.subescapilar, e2?.subescapilar);
+        listEquality.equals(e1?.subescapilar, e2?.subescapilar) &&
+        listEquality.equals(e1?.alunos, e2?.alunos) &&
+        e1?.subscribeId == e2?.subscribeId;
   }
 
   @override
@@ -551,7 +567,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.password,
         e?.satisfacaocomoapp,
         e?.suprallicas,
-        e?.subescapilar
+        e?.subescapilar,
+        e?.alunos,
+        e?.subscribeId
       ]);
 
   @override

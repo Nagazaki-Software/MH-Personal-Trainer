@@ -41,10 +41,10 @@ class PaginaInicialModel extends FlutterFlowModel<PaginaInicialWidget> {
   late TreinosPopularesChatGPTCopyModel treinosPopularesChatGPTCopyModel;
   // Model for treinosPopularesChatGPT component.
   late TreinosPopularesChatGPTModel treinosPopularesChatGPTModel2;
-  // Model for headerweb component.
-  late HeaderwebModel headerwebModel;
   // Model for upgradeToPremium component.
   late UpgradeToPremiumModel upgradeToPremiumModel;
+  // Model for headerweb component.
+  late HeaderwebModel headerwebModel;
   // Model for headerwebCopy component.
   late HeaderwebCopyModel headerwebCopyModel;
   // Model for personal component.
@@ -68,8 +68,8 @@ class PaginaInicialModel extends FlutterFlowModel<PaginaInicialWidget> {
         createModel(context, () => TreinosPopularesChatGPTCopyModel());
     treinosPopularesChatGPTModel2 =
         createModel(context, () => TreinosPopularesChatGPTModel());
-    headerwebModel = createModel(context, () => HeaderwebModel());
     upgradeToPremiumModel = createModel(context, () => UpgradeToPremiumModel());
+    headerwebModel = createModel(context, () => HeaderwebModel());
     headerwebCopyModel = createModel(context, () => HeaderwebCopyModel());
     personalModel = createModel(context, () => PersonalModel());
     funcoesAlunoModel = createModel(context, () => FuncoesAlunoModel());
@@ -84,8 +84,8 @@ class PaginaInicialModel extends FlutterFlowModel<PaginaInicialWidget> {
     treinosPopularesChatGPTModel1.dispose();
     treinosPopularesChatGPTCopyModel.dispose();
     treinosPopularesChatGPTModel2.dispose();
-    headerwebModel.dispose();
     upgradeToPremiumModel.dispose();
+    headerwebModel.dispose();
     headerwebCopyModel.dispose();
     personalModel.dispose();
     funcoesAlunoModel.dispose();

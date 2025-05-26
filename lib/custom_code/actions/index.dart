@@ -5,3 +5,5 @@ export 'replicar_series_treino.dart' show replicarSeriesTreino;
 export 'mutevideos.dart' show mutevideos;
 export 'reorder_series_rep.dart' show reorderSeriesRep;
 export 'reorder.dart' show reorder;
+export 'update_series_rep_with_treinos.dart' show updateSeriesRepWithTreinos;
+export 'generate_and_upload_pdf.dart' show generateAndUploadPdf;

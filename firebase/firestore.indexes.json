@@ -1,20 +1,6 @@
 {
   "indexes": [
     {
-      "collectionGroup": "treinors",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "colecao",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "treinosNoLIst",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "createTreinos",
       "queryScope": "COLLECTION",
       "fields": [
@@ -39,6 +25,20 @@
         {
           "fieldPath": "treinos",
           "arrayConfig": "CONTAINS"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "treinors",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "colecao",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "treinosNoLIst",
+          "order": "DESCENDING"
         }
       ]
     },

@@ -62,6 +62,8 @@ class CreateTreinoCopy2Model extends FlutterFlowModel<CreateTreinoCopy2Widget> {
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
+  int get tabBarPreviousIndex =>
+      tabBarController != null ? tabBarController!.previousIndex : 0;
 
   // State field(s) for CheckboxListTile widget.
   Map<TreinorsRecord, bool> checkboxListTileValueMap1 = {};

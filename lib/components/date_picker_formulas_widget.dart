@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'date_picker_formulas_model.dart';
 export 'date_picker_formulas_model.dart';
 
@@ -56,13 +57,20 @@ class _DatePickerFormulasWidgetState extends State<DatePickerFormulasWidget> {
               child!,
               headerBackgroundColor: FlutterFlowTheme.of(context).primary,
               headerForegroundColor: FlutterFlowTheme.of(context).info,
-              headerTextStyle:
-                  FlutterFlowTheme.of(context).headlineLarge.override(
-                        fontFamily: 'Outfit',
-                        fontSize: 32.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
-                      ),
+              headerTextStyle: FlutterFlowTheme.of(context)
+                  .headlineLarge
+                  .override(
+                    font: GoogleFonts.outfit(
+                      fontWeight: FontWeight.w600,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).headlineLarge.fontStyle,
+                    ),
+                    fontSize: 32.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w600,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineLarge.fontStyle,
+                  ),
               pickerBackgroundColor:
                   FlutterFlowTheme.of(context).secondaryBackground,
               pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
@@ -114,10 +122,20 @@ class _DatePickerFormulasWidgetState extends State<DatePickerFormulasWidget> {
                     '6fxej9k8' /* Próxima avaliação */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
+                        font: GoogleFonts.readexPro(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 14.0,
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
                 ),
               ),
@@ -136,11 +154,19 @@ class _DatePickerFormulasWidgetState extends State<DatePickerFormulasWidget> {
                     'Adicione a data da próxima avaliação.',
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Outfit',
+                        font: GoogleFonts.outfit(
+                          fontWeight: FontWeight.w500,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .headlineMedium
+                              .fontStyle,
+                        ),
                         color: FlutterFlowTheme.of(context).primary,
                         fontSize: 15.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        fontStyle: FlutterFlowTheme.of(context)
+                            .headlineMedium
+                            .fontStyle,
                       ),
                 ),
               ),

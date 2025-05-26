@@ -1,4 +1,4 @@
-import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
 import '/components/headerweb_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -24,8 +24,10 @@ class PainelAdministrativoDoPersonalModel
 
   // Stores action output result for [Custom Action - generateDocument] action in Row widget.
   String? outputDocumentCopy;
-  // Stores action output result for [Backend Call - API (pdfMonkey)] action in Button widget.
-  ApiCallResponse? apiResultv20;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<SeriesRepeticoesRecord>? querySeriesList;
+  // Stores action output result for [Custom Action - generateAndUploadPdf] action in Button widget.
+  String? customPdf;
   // Stores action output result for [Custom Action - reorder] action in ListView widget.
   List<String>? newlist;
   // State field(s) for DropDown widget.
@@ -40,12 +42,12 @@ class PainelAdministrativoDoPersonalModel
   String? Function(BuildContext, String?)? fullNameTextController1Validator;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue1;
-  // Model for headerweb component.
-  late HeaderwebModel headerwebModel;
   // Stores action output result for [Custom Action - generateDocument] action in Row widget.
   String? outputDocumentCopy3;
-  // Stores action output result for [Backend Call - API (pdfMonkey)] action in Button widget.
-  ApiCallResponse? apiResultv200;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<SeriesRepeticoesRecord>? querySeriesListCopys;
+  // Stores action output result for [Custom Action - generateAndUploadPdf] action in Button widget.
+  String? customPdfCopy;
   // Stores action output result for [Custom Action - reorder] action in ListView widget.
   List<String>? newlists;
   // State field(s) for DropDown widget.
@@ -60,6 +62,8 @@ class PainelAdministrativoDoPersonalModel
   String? Function(BuildContext, String?)? fullNameTextController2Validator;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue2;
+  // Model for headerweb component.
+  late HeaderwebModel headerwebModel;
 
   @override
   void initState(BuildContext context) {
@@ -71,8 +75,9 @@ class PainelAdministrativoDoPersonalModel
     fullNameFocusNode1?.dispose();
     fullNameTextController1?.dispose();
 
-    headerwebModel.dispose();
     fullNameFocusNode2?.dispose();
     fullNameTextController2?.dispose();
+
+    headerwebModel.dispose();
   }
 }

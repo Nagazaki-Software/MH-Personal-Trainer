@@ -70,10 +70,55 @@ class CardAcoesCopyCopyModel extends FlutterFlowModel<CardAcoesCopyCopyWidget> {
   TextEditingController? ageTextController10;
   String? Function(BuildContext, String?)? ageTextController10Validator;
   // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  String? dropDownValue1;
+  FormFieldController<String>? dropDownValueController1;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   SeriesRepeticoesRecord? seriesReps;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode11;
+  TextEditingController? ageTextController11;
+  String? Function(BuildContext, String?)? ageTextController11Validator;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode12;
+  TextEditingController? ageTextController12;
+  String? Function(BuildContext, String?)? ageTextController12Validator;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode13;
+  TextEditingController? ageTextController13;
+  String? Function(BuildContext, String?)? ageTextController13Validator;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode14;
+  TextEditingController? ageTextController14;
+  String? Function(BuildContext, String?)? ageTextController14Validator;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode15;
+  TextEditingController? ageTextController15;
+  String? Function(BuildContext, String?)? ageTextController15Validator;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode16;
+  TextEditingController? ageTextController16;
+  String? Function(BuildContext, String?)? ageTextController16Validator;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode17;
+  TextEditingController? ageTextController17;
+  String? Function(BuildContext, String?)? ageTextController17Validator;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode18;
+  TextEditingController? ageTextController18;
+  String? Function(BuildContext, String?)? ageTextController18Validator;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode19;
+  TextEditingController? ageTextController19;
+  String? Function(BuildContext, String?)? ageTextController19Validator;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode20;
+  TextEditingController? ageTextController20;
+  String? Function(BuildContext, String?)? ageTextController20Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue2;
+  FormFieldController<String>? dropDownValueController2;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  SeriesRepeticoesRecord? seriesRepser;
 
   @override
   void initState(BuildContext context) {}
@@ -109,5 +154,35 @@ class CardAcoesCopyCopyModel extends FlutterFlowModel<CardAcoesCopyCopyWidget> {
 
     ageFocusNode10?.dispose();
     ageTextController10?.dispose();
+
+    ageFocusNode11?.dispose();
+    ageTextController11?.dispose();
+
+    ageFocusNode12?.dispose();
+    ageTextController12?.dispose();
+
+    ageFocusNode13?.dispose();
+    ageTextController13?.dispose();
+
+    ageFocusNode14?.dispose();
+    ageTextController14?.dispose();
+
+    ageFocusNode15?.dispose();
+    ageTextController15?.dispose();
+
+    ageFocusNode16?.dispose();
+    ageTextController16?.dispose();
+
+    ageFocusNode17?.dispose();
+    ageTextController17?.dispose();
+
+    ageFocusNode18?.dispose();
+    ageTextController18?.dispose();
+
+    ageFocusNode19?.dispose();
+    ageTextController19?.dispose();
+
+    ageFocusNode20?.dispose();
+    ageTextController20?.dispose();
   }
 }

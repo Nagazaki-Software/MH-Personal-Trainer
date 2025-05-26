@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'comecaemdarotina_model.dart';
 export 'comecaemdarotina_model.dart';
 
@@ -55,13 +56,20 @@ class _ComecaemdarotinaWidgetState extends State<ComecaemdarotinaWidget> {
               child!,
               headerBackgroundColor: FlutterFlowTheme.of(context).primary,
               headerForegroundColor: FlutterFlowTheme.of(context).info,
-              headerTextStyle:
-                  FlutterFlowTheme.of(context).headlineLarge.override(
-                        fontFamily: 'Outfit',
-                        fontSize: 32.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
-                      ),
+              headerTextStyle: FlutterFlowTheme.of(context)
+                  .headlineLarge
+                  .override(
+                    font: GoogleFonts.outfit(
+                      fontWeight: FontWeight.w600,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).headlineLarge.fontStyle,
+                    ),
+                    fontSize: 32.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w600,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineLarge.fontStyle,
+                  ),
               pickerBackgroundColor:
                   FlutterFlowTheme.of(context).secondaryBackground,
               pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
@@ -89,6 +97,8 @@ class _ComecaemdarotinaWidgetState extends State<ComecaemdarotinaWidget> {
             _model.datePicked = getCurrentTimestamp;
           });
         }
+        FFAppState().comecaemdarotina = _model.datePicked;
+        FFAppState().update(() {});
       },
       child: Container(
         width: double.infinity,
@@ -112,10 +122,16 @@ class _ComecaemdarotinaWidgetState extends State<ComecaemdarotinaWidget> {
                 locale: FFLocalizations.of(context).languageCode,
               )}',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
+                    font: GoogleFonts.readexPro(
+                      fontWeight: FontWeight.w500,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
                     color: FlutterFlowTheme.of(context).secondaryText,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                   ),
             ),
           ),

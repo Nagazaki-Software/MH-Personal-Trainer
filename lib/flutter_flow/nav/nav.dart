@@ -140,18 +140,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => EntrarPersonalTrainerWidget(),
             ),
             FFRoute(
-              name: RotinaDeTreinoWidget.routeName,
-              path: RotinaDeTreinoWidget.routePath,
-              builder: (context, params) => RotinaDeTreinoWidget(
-                users: params.getParam(
-                  'users',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['users'],
-                ),
-              ),
-            ),
-            FFRoute(
               name: CreateTreinoWidget.routeName,
               path: CreateTreinoWidget.routePath,
               builder: (context, params) => CreateTreinoWidget(
@@ -1218,6 +1206,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   collectionNamePath: ['users'],
                 ),
               ),
+            ),
+            FFRoute(
+              name: DeletarcontaWidget.routeName,
+              path: DeletarcontaWidget.routePath,
+              builder: (context, params) => DeletarcontaWidget(),
+            ),
+            FFRoute(
+              name: DetalhesdaassintauraWidget.routeName,
+              path: DetalhesdaassintauraWidget.routePath,
+              builder: (context, params) => DetalhesdaassintauraWidget(),
+            ),
+            FFRoute(
+              name: AlterarSenhaWidget.routeName,
+              path: AlterarSenhaWidget.routePath,
+              builder: (context, params) => AlterarSenhaWidget(),
+            ),
+            FFRoute(
+              name: ComocancelarassinaturaWidget.routeName,
+              path: ComocancelarassinaturaWidget.routePath,
+              builder: (context, params) => ComocancelarassinaturaWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

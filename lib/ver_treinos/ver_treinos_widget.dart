@@ -6,6 +6,7 @@ import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'ver_treinos_model.dart';
 export 'ver_treinos_model.dart';
 
@@ -69,8 +70,8 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitSquareCircle(
-                  color: FlutterFlowTheme.of(context).primary,
+                child: SpinKitFadingFour(
+                  color: FlutterFlowTheme.of(context).customColor3,
                   size: 50.0,
                 ),
               ),
@@ -105,8 +106,8 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
-                          child: SpinKitSquareCircle(
-                            color: FlutterFlowTheme.of(context).primary,
+                          child: SpinKitFadingFour(
+                            color: FlutterFlowTheme.of(context).customColor3,
                             size: 50.0,
                           ),
                         ),
@@ -156,9 +157,18 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
-                                        fontFamily: 'Figtree',
+                                        font: GoogleFonts.figtree(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontStyle,
                                       ),
                                 ),
                               ],
@@ -176,12 +186,20 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
-                                      fontFamily: 'Outfit',
+                                      font: GoogleFonts.outfit(
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineMedium
+                                            .fontStyle,
+                                      ),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       fontSize: 20.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -237,10 +255,10 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                 child: SizedBox(
                                                   width: 50.0,
                                                   height: 50.0,
-                                                  child: SpinKitSquareCircle(
+                                                  child: SpinKitFadingFour(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primary,
+                                                        .customColor3,
                                                     size: 50.0,
                                                   ),
                                                 ),
@@ -289,10 +307,10 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                           width: 50.0,
                                                           height: 50.0,
                                                           child:
-                                                              SpinKitSquareCircle(
+                                                              SpinKitFadingFour(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .primary,
+                                                                .customColor3,
                                                             size: 50.0,
                                                           ),
                                                         ),
@@ -341,9 +359,13 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyLarge
                                                                             .override(
-                                                                              fontFamily: 'Readex Pro',
+                                                                              font: GoogleFonts.readexPro(
+                                                                                fontWeight: FontWeight.w600,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                              ),
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -397,8 +419,8 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -440,11 +462,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'yoc7eoit' /* Series/Rep:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -456,9 +482,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -486,11 +517,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         '3ee2oe5v' /* Intervalo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -502,9 +537,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -532,11 +572,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'gttir5ff' /* Carga:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -548,9 +592,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -578,11 +627,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'm4tnfvkj' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -594,9 +647,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -639,8 +697,8 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -682,11 +740,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'rk6ze18p' /* Intervalo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -698,9 +760,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -728,11 +795,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         's4vu6t1y' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -744,9 +815,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -774,11 +850,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'tc8f6eid' /* Inclinação:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -790,9 +870,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -820,11 +905,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'gn57aspu' /* Velocidade:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -836,9 +925,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -867,11 +961,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                           'pk4bhgcg' /* Distância:  */,
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Readex Pro',
+                                                                                                              font: GoogleFonts.readexPro(
+                                                                                                                fontWeight: FontWeight.normal,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                              ),
                                                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                                                               fontSize: 13.0,
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                             ),
                                                                                                       ),
                                                                                                       TextSpan(
@@ -883,9 +981,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                       )
                                                                                                     ],
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          fontFamily: 'Readex Pro',
+                                                                                                          font: GoogleFonts.readexPro(
+                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                          ),
                                                                                                           fontSize: 13.0,
                                                                                                           letterSpacing: 0.0,
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                         ),
                                                                                                   ),
                                                                                                 ),
@@ -914,11 +1017,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                           'j2ggwtbz' /* Pace:  */,
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Readex Pro',
+                                                                                                              font: GoogleFonts.readexPro(
+                                                                                                                fontWeight: FontWeight.normal,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                              ),
                                                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                                                               fontSize: 13.0,
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                             ),
                                                                                                       ),
                                                                                                       TextSpan(
@@ -930,9 +1037,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                       )
                                                                                                     ],
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          fontFamily: 'Readex Pro',
+                                                                                                          font: GoogleFonts.readexPro(
+                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                          ),
                                                                                                           fontSize: 13.0,
                                                                                                           letterSpacing: 0.0,
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                         ),
                                                                                                   ),
                                                                                                 ),
@@ -975,8 +1087,8 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -1018,11 +1130,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         's8td0i0b' /* Series/Rep:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1034,9 +1150,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1064,11 +1185,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'oye7drng' /* Intervalo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1080,9 +1205,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1110,11 +1240,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         '0dlhzdj5' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1126,9 +1260,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1171,8 +1310,8 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -1214,11 +1353,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'zo8noqjo' /* Intervalo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1230,9 +1373,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1260,11 +1408,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'edussadd' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1276,9 +1428,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1306,11 +1463,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'j5d8q4g6' /* Inclinação:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1322,9 +1483,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1373,8 +1539,8 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -1416,11 +1582,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'g3qhseos' /* Series/Rep:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1432,9 +1602,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1462,11 +1637,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'umix7w9o' /* Intervalo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1478,9 +1657,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1508,11 +1692,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         '6ml74o2v' /* Carga:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1524,9 +1712,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1569,8 +1762,8 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -1612,11 +1805,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         '4c40eao4' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1628,9 +1825,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1658,11 +1860,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'rn4igwky' /* Observações:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1674,9 +1880,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1719,8 +1930,8 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                   child: SizedBox(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
-                                                                                    child: SpinKitSquareCircle(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    child: SpinKitFadingFour(
+                                                                                      color: FlutterFlowTheme.of(context).customColor3,
                                                                                       size: 50.0,
                                                                                     ),
                                                                                   ),
@@ -1762,11 +1973,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'dlvmx8u0' /* Tempo:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1778,9 +1993,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1808,11 +2028,15 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                         'jz5ohppd' /* Cadência:  */,
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Readex Pro',
+                                                                                                            font: GoogleFonts.readexPro(
+                                                                                                              fontWeight: FontWeight.normal,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
                                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                                             fontSize: 13.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.normal,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                           ),
                                                                                                     ),
                                                                                                     TextSpan(
@@ -1824,9 +2048,14 @@ class _VerTreinosWidgetState extends State<VerTreinosWidget> {
                                                                                                     )
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Readex Pro',
+                                                                                                        font: GoogleFonts.readexPro(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),

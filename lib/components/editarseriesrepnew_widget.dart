@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'editarseriesrepnew_model.dart';
 export 'editarseriesrepnew_model.dart';
 
@@ -59,8 +60,8 @@ class _EditarseriesrepnewWidgetState extends State<EditarseriesrepnewWidget> {
             child: SizedBox(
               width: 50.0,
               height: 50.0,
-              child: SpinKitSquareCircle(
-                color: FlutterFlowTheme.of(context).primary,
+              child: SpinKitFadingFour(
+                color: FlutterFlowTheme.of(context).customColor3,
                 size: 50.0,
               ),
             ),
@@ -113,8 +114,21 @@ class _EditarseriesrepnewWidgetState extends State<EditarseriesrepnewWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                fontFamily: 'Outfit',
+                                font: GoogleFonts.outfit(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontStyle,
+                                ),
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .fontStyle,
                               ),
                         ),
                         FlutterFlowIconButton(
@@ -151,8 +165,9 @@ class _EditarseriesrepnewWidgetState extends State<EditarseriesrepnewWidget> {
                             child: SizedBox(
                               width: 50.0,
                               height: 50.0,
-                              child: SpinKitSquareCircle(
-                                color: FlutterFlowTheme.of(context).primary,
+                              child: SpinKitFadingFour(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
                                 size: 50.0,
                               ),
                             ),

@@ -208,8 +208,8 @@ class _FlutterFlowVideoPlayerState extends State<FlutterFlowVideoPlayer>
                         SizedBox(
                           width: 50.0,
                           height: 50.0,
-                          child: SpinKitSquareCircle(
-                            color: FlutterFlowTheme.of(context).primary,
+                          child: SpinKitFadingFour(
+                            color: FlutterFlowTheme.of(context).customColor3,
                             size: 50.0,
                           ),
                         ),

@@ -1,6 +1,6 @@
 
-class InitStripeSubscriptionCloudFunctionCallResponse {
-  InitStripeSubscriptionCloudFunctionCallResponse({
+class CreateInscricaoCloudFunctionCallResponse {
+  CreateInscricaoCloudFunctionCallResponse({
     this.errorCode,
     this.succeeded,
     this.jsonBody,

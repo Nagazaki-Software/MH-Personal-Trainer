@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/components/date_picker_formulas_widget.dart';
+import '/components/headerweb_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'create_avaliacao_fisicaguedes1994tresdobras_widget.dart'
@@ -15,7 +16,8 @@ class CreateAvaliacaoFisicaguedes1994tresdobrasModel
 
   ///  State fields for stateful widgets in this page.
 
-  final formKey = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
+  final formKey1 = GlobalKey<FormState>();
   // State field(s) for fullName widget.
   FocusNode? fullNameFocusNode1;
   TextEditingController? fullNameTextController1;
@@ -29,7 +31,7 @@ class CreateAvaliacaoFisicaguedes1994tresdobrasModel
   String? _fullNameTextController2Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '0vmdtjf8' /* Please enter the patients full... */,
+        'ayk88fhh' /* Please enter the patients full... */,
       );
     }
 
@@ -131,35 +133,180 @@ class CreateAvaliacaoFisicaguedes1994tresdobrasModel
   TextEditingController? fullNameTextController21;
   String? Function(BuildContext, String?)? fullNameTextController21Validator;
   // Model for datePickerFormulas component.
-  late DatePickerFormulasModel datePickerFormulasModel;
+  late DatePickerFormulasModel datePickerFormulasModel1;
   // State field(s) for age widget.
-  FocusNode? ageFocusNode;
-  TextEditingController? ageTextController;
-  String? Function(BuildContext, String?)? ageTextControllerValidator;
-  String? _ageTextControllerValidator(BuildContext context, String? val) {
+  FocusNode? ageFocusNode1;
+  TextEditingController? ageTextController1;
+  String? Function(BuildContext, String?)? ageTextController1Validator;
+  String? _ageTextController1Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'z97znc35' /* Please enter an age for the pa... */,
+        'gqwhyzkt' /* Please enter an age for the pa... */,
       );
     }
 
     return null;
   }
 
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl1 = '';
 
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   AvaliacoesFisicasRecord? avaliacaoFisica;
+  // Model for headerweb component.
+  late HeaderwebModel headerwebModel;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode22;
+  TextEditingController? fullNameTextController22;
+  final fullNameMask22 = MaskTextInputFormatter(mask: '##');
+  String? Function(BuildContext, String?)? fullNameTextController22Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode23;
+  TextEditingController? fullNameTextController23;
+  final fullNameMask23 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController23Validator;
+  String? _fullNameTextController23Validator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'p7bozi97' /* Please enter the patients full... */,
+      );
+    }
+
+    return null;
+  }
+
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode24;
+  TextEditingController? fullNameTextController24;
+  final fullNameMask24 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController24Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode25;
+  TextEditingController? fullNameTextController25;
+  final fullNameMask25 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController25Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode26;
+  TextEditingController? fullNameTextController26;
+  final fullNameMask26 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController26Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode27;
+  TextEditingController? fullNameTextController27;
+  final fullNameMask27 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController27Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode28;
+  TextEditingController? fullNameTextController28;
+  final fullNameMask28 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController28Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode29;
+  TextEditingController? fullNameTextController29;
+  final fullNameMask29 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController29Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode30;
+  TextEditingController? fullNameTextController30;
+  final fullNameMask30 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController30Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode31;
+  TextEditingController? fullNameTextController31;
+  final fullNameMask31 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController31Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode32;
+  TextEditingController? fullNameTextController32;
+  final fullNameMask32 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController32Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode33;
+  TextEditingController? fullNameTextController33;
+  final fullNameMask33 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController33Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode34;
+  TextEditingController? fullNameTextController34;
+  final fullNameMask34 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController34Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode35;
+  TextEditingController? fullNameTextController35;
+  final fullNameMask35 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController35Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode36;
+  TextEditingController? fullNameTextController36;
+  final fullNameMask36 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController36Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode37;
+  TextEditingController? fullNameTextController37;
+  final fullNameMask37 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController37Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode38;
+  TextEditingController? fullNameTextController38;
+  final fullNameMask38 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController38Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode39;
+  TextEditingController? fullNameTextController39;
+  final fullNameMask39 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController39Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode40;
+  TextEditingController? fullNameTextController40;
+  final fullNameMask40 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController40Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode41;
+  TextEditingController? fullNameTextController41;
+  final fullNameMask41 = MaskTextInputFormatter(mask: '##.#');
+  String? Function(BuildContext, String?)? fullNameTextController41Validator;
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode42;
+  TextEditingController? fullNameTextController42;
+  String? Function(BuildContext, String?)? fullNameTextController42Validator;
+  // Model for datePickerFormulas component.
+  late DatePickerFormulasModel datePickerFormulasModel2;
+  // State field(s) for age widget.
+  FocusNode? ageFocusNode2;
+  TextEditingController? ageTextController2;
+  String? Function(BuildContext, String?)? ageTextController2Validator;
+  String? _ageTextController2Validator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'hg73wu9s' /* Please enter an age for the pa... */,
+      );
+    }
+
+    return null;
+  }
+
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl2 = '';
+
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  AvaliacoesFisicasRecord? avaliacaoFisicas;
 
   @override
   void initState(BuildContext context) {
     fullNameTextController2Validator = _fullNameTextController2Validator;
-    datePickerFormulasModel =
+    datePickerFormulasModel1 =
         createModel(context, () => DatePickerFormulasModel());
-    ageTextControllerValidator = _ageTextControllerValidator;
+    ageTextController1Validator = _ageTextController1Validator;
+    headerwebModel = createModel(context, () => HeaderwebModel());
+    fullNameTextController23Validator = _fullNameTextController23Validator;
+    datePickerFormulasModel2 =
+        createModel(context, () => DatePickerFormulasModel());
+    ageTextController2Validator = _ageTextController2Validator;
   }
 
   @override
@@ -227,8 +374,76 @@ class CreateAvaliacaoFisicaguedes1994tresdobrasModel
     fullNameFocusNode21?.dispose();
     fullNameTextController21?.dispose();
 
-    datePickerFormulasModel.dispose();
-    ageFocusNode?.dispose();
-    ageTextController?.dispose();
+    datePickerFormulasModel1.dispose();
+    ageFocusNode1?.dispose();
+    ageTextController1?.dispose();
+
+    headerwebModel.dispose();
+    fullNameFocusNode22?.dispose();
+    fullNameTextController22?.dispose();
+
+    fullNameFocusNode23?.dispose();
+    fullNameTextController23?.dispose();
+
+    fullNameFocusNode24?.dispose();
+    fullNameTextController24?.dispose();
+
+    fullNameFocusNode25?.dispose();
+    fullNameTextController25?.dispose();
+
+    fullNameFocusNode26?.dispose();
+    fullNameTextController26?.dispose();
+
+    fullNameFocusNode27?.dispose();
+    fullNameTextController27?.dispose();
+
+    fullNameFocusNode28?.dispose();
+    fullNameTextController28?.dispose();
+
+    fullNameFocusNode29?.dispose();
+    fullNameTextController29?.dispose();
+
+    fullNameFocusNode30?.dispose();
+    fullNameTextController30?.dispose();
+
+    fullNameFocusNode31?.dispose();
+    fullNameTextController31?.dispose();
+
+    fullNameFocusNode32?.dispose();
+    fullNameTextController32?.dispose();
+
+    fullNameFocusNode33?.dispose();
+    fullNameTextController33?.dispose();
+
+    fullNameFocusNode34?.dispose();
+    fullNameTextController34?.dispose();
+
+    fullNameFocusNode35?.dispose();
+    fullNameTextController35?.dispose();
+
+    fullNameFocusNode36?.dispose();
+    fullNameTextController36?.dispose();
+
+    fullNameFocusNode37?.dispose();
+    fullNameTextController37?.dispose();
+
+    fullNameFocusNode38?.dispose();
+    fullNameTextController38?.dispose();
+
+    fullNameFocusNode39?.dispose();
+    fullNameTextController39?.dispose();
+
+    fullNameFocusNode40?.dispose();
+    fullNameTextController40?.dispose();
+
+    fullNameFocusNode41?.dispose();
+    fullNameTextController41?.dispose();
+
+    fullNameFocusNode42?.dispose();
+    fullNameTextController42?.dispose();
+
+    datePickerFormulasModel2.dispose();
+    ageFocusNode2?.dispose();
+    ageTextController2?.dispose();
   }
 }

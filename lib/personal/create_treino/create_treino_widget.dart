@@ -1,9 +1,8 @@
 import '/backend/backend.dart';
 import '/backend/push_notifications/push_notifications_util.dart';
 import '/components/comecaemdarotina_widget.dart';
+import '/components/headerweb_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_button_tabbar.dart';
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -12,10 +11,11 @@ import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:text_search/text_search.dart';
 import 'create_treino_model.dart';
 export 'create_treino_model.dart';
 
@@ -53,14 +53,12 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
     _model.ageTextController2 ??= TextEditingController();
     _model.ageFocusNode2 ??= FocusNode();
     _model.ageFocusNode2!.addListener(() => safeSetState(() {}));
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
-
-    _model.tabBarController = TabController(
-      vsync: this,
-      length: 3,
-      initialIndex: 0,
-    )..addListener(() => safeSetState(() {}));
+    _model.ageTextController3 ??= TextEditingController();
+    _model.ageFocusNode3 ??= FocusNode();
+    _model.ageFocusNode3!.addListener(() => safeSetState(() {}));
+    _model.ageTextController4 ??= TextEditingController();
+    _model.ageFocusNode4 ??= FocusNode();
+    _model.ageFocusNode4!.addListener(() => safeSetState(() {}));
     animationsMap.addAll({
       'containerOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -135,8 +133,8 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitSquareCircle(
-                  color: FlutterFlowTheme.of(context).primary,
+                child: SpinKitFadingFour(
+                  color: FlutterFlowTheme.of(context).customColor3,
                   size: 50.0,
                 ),
               ),
@@ -168,37 +166,75 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
                           backgroundColor:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           automaticallyImplyLeading: false,
-                          title: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'lrgkbn5r' /* Rotina de Treino */,
+                          title: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                50.0, 0.0, 50.0, 0.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'lrgkbn5r' /* Rotina de Treino */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .override(
+                                            font: GoogleFonts.outfit(
+                                              fontWeight: FontWeight.w500,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 24.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMedium
+                                                    .fontStyle,
+                                          ),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineMedium
-                                        .override(
-                                          fontFamily: 'Outfit',
+                                    if (responsiveVisibility(
+                                      context: context,
+                                      phone: false,
+                                      tablet: false,
+                                      tabletLandscape: false,
+                                      desktop: false,
+                                    ))
+                                      FlutterFlowIconButton(
+                                        borderRadius: 20.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 40.0,
+                                        icon: Icon(
+                                          Icons.add,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          fontSize: 24.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
+                                          size: 24.0,
                                         ),
-                                  ),
-                                  if (responsiveVisibility(
-                                    context: context,
-                                    phone: false,
-                                    tablet: false,
-                                    tabletLandscape: false,
-                                    desktop: false,
-                                  ))
+                                        onPressed: () async {
+                                          logFirebaseEvent(
+                                              'CREATE_TREINO_PAGE_add_ICN_ON_TAP');
+
+                                          context.pushNamed(
+                                            CreateTreinoCopyWidget.routeName,
+                                            queryParameters: {
+                                              'users': serializeParam(
+                                                widget.users,
+                                                ParamType.DocumentReference,
+                                              ),
+                                            }.withoutNulls,
+                                          );
+                                        },
+                                      ),
                                     FlutterFlowIconButton(
                                       borderRadius: 20.0,
                                       borderWidth: 1.0,
@@ -224,48 +260,33 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
                                         );
                                       },
                                     ),
-                                  FlutterFlowIconButton(
-                                    borderRadius: 20.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 40.0,
-                                    icon: Icon(
-                                      Icons.add,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 24.0,
-                                    ),
-                                    onPressed: () async {
-                                      logFirebaseEvent(
-                                          'CREATE_TREINO_PAGE_add_ICN_ON_TAP');
-
-                                      context.pushNamed(
-                                        CreateTreinoCopyWidget.routeName,
-                                        queryParameters: {
-                                          'users': serializeParam(
-                                            widget.users,
-                                            ParamType.DocumentReference,
-                                          ),
-                                        }.withoutNulls,
-                                      );
-                                    },
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'ryoz7arq' /* Crie uma rotina de treino para... */,
+                                  ],
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      color: Color(0xFF606A85),
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
-                            ].divide(SizedBox(height: 4.0)),
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'ryoz7arq' /* Crie uma rotina de treino para... */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        font: GoogleFonts.outfit(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: Color(0xFF606A85),
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
+                                      ),
+                                ),
+                              ].divide(SizedBox(height: 4.0)),
+                            ),
                           ),
                           actions: [
                             Padding(
@@ -299,1244 +320,1968 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
                   top: true,
                   child: Form(
                     key: _model.formKey,
-                    autovalidateMode: AutovalidateMode.always,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    autovalidateMode: AutovalidateMode.disabled,
+                    child: Stack(
                       children: [
-                        Expanded(
-                          child: SingleChildScrollView(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
-                                  child: Container(
-                                    constraints: BoxConstraints(
-                                      maxWidth: 770.0,
-                                    ),
-                                    decoration: BoxDecoration(),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 12.0, 16.0, 0.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          if (_model.diaDoTreino)
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  1.0, 1.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  logFirebaseEvent(
-                                                      'CREATE_TREINO_PAGE_Text_k0j4hn65_ON_TAP');
-                                                  _model.diaDoTreino = false;
-                                                  _model.diaTreinoText = true;
-                                                  safeSetState(() {});
-                                                },
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'qtq7n27j' /* Mudar dia do treino por dias d... */,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        fontSize: 13.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ),
-                                            ),
-                                          if (_model.diaTreinoText)
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  1.0, 1.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  logFirebaseEvent(
-                                                      'CREATE_TREINO_PAGE_Text_riza3urs_ON_TAP');
-                                                  _model.diaDoTreino = true;
-                                                  _model.diaTreinoText = false;
-                                                  safeSetState(() {});
-                                                },
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'l8yc1ijv' /* Mudar dia do treino por número */,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        fontSize: 13.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ),
-                                            ),
-                                          if (_model.diaTreinoText)
-                                            FlutterFlowDropDown<String>(
-                                              controller: _model
-                                                      .dropDownValueController1 ??=
-                                                  FormFieldController<String>(
-                                                      null),
-                                              options: [
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'psjga5md' /* Domingo */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'ors3xecn' /* Segunda */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'dha5slem' /* Terça */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'sw45g1ey' /* Quarta */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'f1p7vd26' /* Quinta */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '8lr5zt5n' /* Sexta */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '6m24oh20' /* Sabado */,
-                                                )
-                                              ],
-                                              onChanged: (val) => safeSetState(
-                                                  () => _model.dropDownValue1 =
-                                                      val),
-                                              width: double.infinity,
-                                              height: 56.0,
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                              hintText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                '6w05ixhh' /* Dia do treino */,
-                                              ),
-                                              icon: Icon(
-                                                Icons
-                                                    .keyboard_arrow_down_rounded,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24.0,
-                                              ),
-                                              elevation: 2.0,
-                                              borderColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              borderWidth: 2.0,
-                                              borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
-                                              hidesUnderline: true,
-                                              isOverButton: true,
-                                              isSearchable: false,
-                                              isMultiSelect: false,
-                                            ),
-                                          if (_model.diaDoTreino)
-                                            FlutterFlowDropDown<String>(
-                                              controller: _model
-                                                      .dropDownValueController2 ??=
-                                                  FormFieldController<String>(
-                                                      null),
-                                              options: [
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'lybu93a4' /* 1 */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  's9vhmgs9' /* 2 */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '6sprsf5h' /* 3 */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'ly1muii7' /* 4 */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'udh71gml' /* 5 */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'rjv5oxce' /* 6 */,
-                                                ),
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'tme0lpol' /* 7 */,
-                                                )
-                                              ],
-                                              onChanged: (val) => safeSetState(
-                                                  () => _model.dropDownValue2 =
-                                                      val),
-                                              width: double.infinity,
-                                              height: 56.0,
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                              hintText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'xvaei8n0' /* Dia do treino por número */,
-                                              ),
-                                              icon: Icon(
-                                                Icons
-                                                    .keyboard_arrow_down_rounded,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24.0,
-                                              ),
-                                              elevation: 2.0,
-                                              borderColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              borderWidth: 2.0,
-                                              borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
-                                              hidesUnderline: true,
-                                              isOverButton: true,
-                                              isSearchable: false,
-                                              isMultiSelect: false,
-                                            ),
-                                          TextFormField(
-                                            controller:
-                                                _model.ageTextController1,
-                                            focusNode: _model.ageFocusNode1,
-                                            autofocus: true,
-                                            textCapitalization:
-                                                TextCapitalization.none,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              labelText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'g6m658v7' /* Nome da rotina de treino: */,
-                                              ),
-                                              labelStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                              hintStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                              errorStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Figtree',
-                                                    color: Color(0xFFFF5963),
-                                                    fontSize: 12.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondary,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0xFFFF5963),
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              focusedErrorBorder:
-                                                  OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0xFFFF5963),
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              filled: true,
-                                              fillColor: Colors.transparent,
-                                              contentPadding:
-                                                  EdgeInsetsDirectional
-                                                      .fromSTEB(16.0, 20.0,
-                                                          16.0, 20.0),
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Figtree',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  fontSize: 16.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                            cursorColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                            validator: _model
-                                                .ageTextController1Validator
-                                                .asValidator(context),
-                                          ),
-                                          TextFormField(
-                                            controller:
-                                                _model.ageTextController2,
-                                            focusNode: _model.ageFocusNode2,
-                                            autofocus: true,
-                                            textCapitalization:
-                                                TextCapitalization.none,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              labelText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'zmgdf454' /* Obs/Instruções */,
-                                              ),
-                                              labelStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                              hintStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                              errorStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Figtree',
-                                                    color: Color(0xFFFF5963),
-                                                    fontSize: 12.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondary,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0xFFFF5963),
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              focusedErrorBorder:
-                                                  OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0xFFFF5963),
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                              ),
-                                              filled: true,
-                                              fillColor: Colors.transparent,
-                                              contentPadding:
-                                                  EdgeInsetsDirectional
-                                                      .fromSTEB(16.0, 20.0,
-                                                          16.0, 20.0),
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Figtree',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  fontSize: 16.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                            maxLines: 4,
-                                            cursorColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                            validator: _model
-                                                .ageTextController2Validator
-                                                .asValidator(context),
-                                          ),
-                                          FlutterFlowDropDown<String>(
-                                            controller: _model
-                                                    .dropDownValueController3 ??=
-                                                FormFieldController<String>(
-                                                    null),
-                                            options: [
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '65rkcjrj' /* Adaptação */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'mty005by' /* Iniciante */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'd1vzrh2y' /* Intermédiario */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'm6z48xde' /* Avançado */,
-                                              )
-                                            ],
-                                            onChanged: (val) => safeSetState(
-                                                () => _model.dropDownValue3 =
-                                                    val),
-                                            width: double.infinity,
-                                            height: 56.0,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            hintText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'ksp19lsf' /* Dificuldade */,
-                                            ),
-                                            icon: Icon(
-                                              Icons.keyboard_arrow_down_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
-                                            ),
-                                            elevation: 2.0,
-                                            borderColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderWidth: 2.0,
-                                            borderRadius: 8.0,
-                                            margin:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
-                                            hidesUnderline: true,
-                                            isOverButton: true,
-                                            isSearchable: false,
-                                            isMultiSelect: false,
-                                          ),
-                                          FlutterFlowDropDown<String>(
-                                            controller: _model
-                                                    .dropDownValueController4 ??=
-                                                FormFieldController<String>(
-                                                    null),
-                                            options: [
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'gl22cs8h' /* Hipertrofia */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'xna0n3aw' /* Redução de gordura */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'naq71o8b' /* Redução de gordura/Hipertrofia */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '04c56ko8' /* Definição muscular */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'pwn1vceo' /* Condicionamento físico */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'izlorgyy' /* Qualidade de vida */,
-                                              )
-                                            ],
-                                            onChanged: (val) => safeSetState(
-                                                () => _model.dropDownValue4 =
-                                                    val),
-                                            width: double.infinity,
-                                            height: 56.0,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            hintText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              '3cmnbyq3' /* Objetivo */,
-                                            ),
-                                            icon: Icon(
-                                              Icons.keyboard_arrow_down_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
-                                            ),
-                                            elevation: 2.0,
-                                            borderColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderWidth: 2.0,
-                                            borderRadius: 8.0,
-                                            margin:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
-                                            hidesUnderline: true,
-                                            isOverButton: true,
-                                            isSearchable: false,
-                                            isMultiSelect: false,
-                                          ),
-                                          wrapWithModel(
-                                            model: _model.comecaemdarotinaModel,
-                                            updateCallback: () =>
-                                                safeSetState(() {}),
-                                            child: ComecaemdarotinaWidget(),
-                                          ),
-                                          InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              logFirebaseEvent(
-                                                  'CREATE_TREINO_Container_b3uyq8f4_ON_TAP');
-                                              final _datePickedDate =
-                                                  await showDatePicker(
-                                                context: context,
-                                                initialDate:
-                                                    getCurrentTimestamp,
-                                                firstDate: getCurrentTimestamp,
-                                                lastDate: DateTime(2050),
-                                                builder: (context, child) {
-                                                  return wrapInMaterialDatePickerTheme(
-                                                    context,
-                                                    child!,
-                                                    headerBackgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                    headerForegroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .info,
-                                                    headerTextStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .headlineLarge
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize: 32.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                    pickerBackgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryBackground,
-                                                    pickerForegroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
-                                                    selectedDateTimeBackgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondary,
-                                                    selectedDateTimeForegroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .info,
-                                                    actionButtonForegroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
-                                                    iconSize: 24.0,
-                                                  );
-                                                },
-                                              );
-
-                                              if (_datePickedDate != null) {
-                                                safeSetState(() {
-                                                  _model.datePicked = DateTime(
-                                                    _datePickedDate.year,
-                                                    _datePickedDate.month,
-                                                    _datePickedDate.day,
-                                                  );
-                                                });
-                                              } else if (_model.datePicked !=
-                                                  null) {
-                                                safeSetState(() {
-                                                  _model.datePicked =
-                                                      getCurrentTimestamp;
-                                                });
-                                              }
-                                            },
-                                            child: Container(
-                                              width: double.infinity,
-                                              height: 50.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                border: Border.all(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                  width: 2.0,
-                                                ),
-                                              ),
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    -1.0, 0.0),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          10.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    'Rotina termina em: ${dateTimeFormat(
-                                                      "d/M/y",
-                                                      _model.datePicked,
-                                                      locale:
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .languageCode,
-                                                    )}',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          if (FFAppState().nullTextfieldValue)
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'm1dk2o9k' /* Você não pode criar um treino ... */,
-                                              ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                            ),
-                                        ]
-                                            .divide(SizedBox(height: 12.0))
-                                            .addToEnd(SizedBox(height: 32.0)),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                if (responsiveVisibility(
-                                  context: context,
-                                  phone: false,
-                                ))
+                        Builder(
+                          builder: (context) {
+                            if (MediaQuery.sizeOf(context).width > 1000.0) {
+                              return Stack(
+                                children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 2.0, 0.0, 0.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      constraints: BoxConstraints(
-                                        maxWidth: 770.0,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 12.0,
-                                            color: Color(0x1E000000),
-                                            offset: Offset(
-                                              0.0,
-                                              5.0,
-                                            ),
-                                          )
-                                        ],
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                      ),
-                                      child: SingleChildScrollView(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              height: 80.0,
-                                              child: Stack(
-                                                children: [
-                                                  TextFormField(
-                                                    controller:
-                                                        _model.textController3,
-                                                    focusNode: _model
-                                                        .textFieldFocusNode,
-                                                    autofocus: true,
-                                                    obscureText: false,
-                                                    decoration: InputDecoration(
-                                                      hintText:
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                        'exhhatfb' /* Procurar treinos.. */,
-                                                      ),
-                                                      hintStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                color: Color(
-                                                                    0xFF57636C),
-                                                                fontSize: 18.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                              ),
-                                                      enabledBorder:
-                                                          UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .alternate,
-                                                          width: 2.0,
-                                                        ),
-                                                        borderRadius:
-                                                            const BorderRadius
-                                                                .only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                        ),
-                                                      ),
-                                                      focusedBorder:
-                                                          UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          width: 2.0,
-                                                        ),
-                                                        borderRadius:
-                                                            const BorderRadius
-                                                                .only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                        ),
-                                                      ),
-                                                      errorBorder:
-                                                          UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                              Color(0x00000000),
-                                                          width: 2.0,
-                                                        ),
-                                                        borderRadius:
-                                                            const BorderRadius
-                                                                .only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                        ),
-                                                      ),
-                                                      focusedErrorBorder:
-                                                          UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                              Color(0x00000000),
-                                                          width: 2.0,
-                                                        ),
-                                                        borderRadius:
-                                                            const BorderRadius
-                                                                .only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                        ),
-                                                      ),
-                                                      contentPadding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  24.0,
-                                                                  32.0,
-                                                                  0.0,
-                                                                  32.0),
+                                        0.0, 28.0, 0.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Expanded(
+                                          child: SingleChildScrollView(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, -1.0),
+                                                  child: Container(
+                                                    constraints: BoxConstraints(
+                                                      maxWidth: 770.0,
                                                     ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color: Colors.white,
-                                                          fontSize: 18.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                                    validator: _model
-                                                        .textController3Validator
-                                                        .asValidator(context),
-                                                  ),
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
+                                                    decoration: BoxDecoration(),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
+                                                                  16.0,
+                                                                  12.0,
                                                                   16.0,
                                                                   0.0),
-                                                      child: FFButtonWidget(
-                                                        onPressed: () async {
-                                                          logFirebaseEvent(
-                                                              'CREATE_TREINO_PAGE_PROCURAR_BTN_ON_TAP');
-                                                          await queryTreinorsRecordOnce()
-                                                              .then(
-                                                                (records) => _model
-                                                                        .simpleSearchResults =
-                                                                    TextSearch(
-                                                                  records
-                                                                      .map(
-                                                                        (record) => TextSearchItem.fromTerms(
-                                                                            record,
-                                                                            [
-                                                                              record.treinosNoLIst,
-                                                                              record.colecao
-                                                                            ]),
-                                                                      )
-                                                                      .toList(),
-                                                                )
-                                                                        .search(_model
-                                                                            .textController3
-                                                                            .text)
-                                                                        .map((r) =>
-                                                                            r.object)
-                                                                        .toList(),
-                                                              )
-                                                              .onError((_,
-                                                                      __) =>
-                                                                  _model.simpleSearchResults =
-                                                                      [])
-                                                              .whenComplete(() =>
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          if (_model
+                                                              .diaDoTreino)
+                                                            Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      1.0, 1.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  logFirebaseEvent(
+                                                                      'CREATE_TREINO_PAGE_Text_k0j4hn65_ON_TAP');
+                                                                  _model.diaDoTreino =
+                                                                      false;
+                                                                  _model.diaTreinoText =
+                                                                      true;
                                                                   safeSetState(
-                                                                      () {}));
-                                                        },
-                                                        text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'y03kdo6n' /* Procurar */,
-                                                        ),
-                                                        options:
-                                                            FFButtonOptions(
-                                                          width: 90.0,
-                                                          height: 40.0,
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    color: Colors
-                                                                        .white,
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    letterSpacing:
-                                                                        0.0,
+                                                                      () {});
+                                                                },
+                                                                child: Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '2t0q8o46' /* Mudar dia do treino por dias d... */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .readexPro(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        fontSize:
+                                                                            13.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          if (_model
+                                                              .diaTreinoText)
+                                                            Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      1.0, 1.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  logFirebaseEvent(
+                                                                      'CREATE_TREINO_PAGE_Text_riza3urs_ON_TAP');
+                                                                  _model.diaDoTreino =
+                                                                      true;
+                                                                  _model.diaTreinoText =
+                                                                      false;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                },
+                                                                child: Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'lfcpz3lv' /* Mudar dia do treino por número */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .readexPro(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        fontSize:
+                                                                            13.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          if (_model
+                                                              .diaTreinoText)
+                                                            FlutterFlowDropDown<
+                                                                String>(
+                                                              controller: _model
+                                                                      .dropDownValueController1 ??=
+                                                                  FormFieldController<
+                                                                          String>(
+                                                                      null),
+                                                              options: [
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'ds9r98dg' /* Domingo */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  '5871sxnz' /* Segunda */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'mqae99n1' /* Terça */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  '5c9k3zoj' /* Quarta */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'yobbd5rm' /* Quinta */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'pp8fae30' /* Sexta */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'a4ct3zd3' /* Sabado */,
+                                                                )
+                                                              ],
+                                                              onChanged: (val) =>
+                                                                  safeSetState(() =>
+                                                                      _model.dropDownValue1 =
+                                                                          val),
+                                                              width: double
+                                                                  .infinity,
+                                                              height: 56.0,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .readexPro(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                              hintText:
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                'qckmed96' /* Dia do treino */,
+                                                              ),
+                                                              icon: Icon(
+                                                                Icons
+                                                                    .keyboard_arrow_down_rounded,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                size: 24.0,
+                                                              ),
+                                                              elevation: 2.0,
+                                                              borderColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                              borderWidth: 2.0,
+                                                              borderRadius: 8.0,
+                                                              margin:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          4.0,
+                                                                          16.0,
+                                                                          4.0),
+                                                              hidesUnderline:
+                                                                  true,
+                                                              isOverButton:
+                                                                  true,
+                                                              isSearchable:
+                                                                  false,
+                                                              isMultiSelect:
+                                                                  false,
+                                                            ),
+                                                          if (_model
+                                                              .diaDoTreino)
+                                                            FlutterFlowDropDown<
+                                                                String>(
+                                                              controller: _model
+                                                                      .dropDownValueController2 ??=
+                                                                  FormFieldController<
+                                                                          String>(
+                                                                      null),
+                                                              options: [
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  '7vphzbia' /* 1 */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  '4lc8wgst' /* 2 */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  '7r1i1hgc' /* 3 */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'oiaicblr' /* 4 */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'r8661w31' /* 5 */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'wqn64oh3' /* 6 */,
+                                                                ),
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  't4dtn8vd' /* 7 */,
+                                                                )
+                                                              ],
+                                                              onChanged: (val) =>
+                                                                  safeSetState(() =>
+                                                                      _model.dropDownValue2 =
+                                                                          val),
+                                                              width: double
+                                                                  .infinity,
+                                                              height: 56.0,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .readexPro(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                              hintText:
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                '8ohff4ol' /* Dia do treino por número */,
+                                                              ),
+                                                              icon: Icon(
+                                                                Icons
+                                                                    .keyboard_arrow_down_rounded,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                size: 24.0,
+                                                              ),
+                                                              elevation: 2.0,
+                                                              borderColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                              borderWidth: 2.0,
+                                                              borderRadius: 8.0,
+                                                              margin:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          4.0,
+                                                                          16.0,
+                                                                          4.0),
+                                                              hidesUnderline:
+                                                                  true,
+                                                              isOverButton:
+                                                                  true,
+                                                              isSearchable:
+                                                                  false,
+                                                              isMultiSelect:
+                                                                  false,
+                                                            ),
+                                                          TextFormField(
+                                                            controller: _model
+                                                                .ageTextController1,
+                                                            focusNode: _model
+                                                                .ageFocusNode1,
+                                                            autofocus: true,
+                                                            textCapitalization:
+                                                                TextCapitalization
+                                                                    .none,
+                                                            obscureText: false,
+                                                            decoration:
+                                                                InputDecoration(
+                                                              labelText:
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                'riabx4nn' /* Nome da rotina de treino: */,
+                                                              ),
+                                                              labelStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .outfit(
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                              hintStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .outfit(
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                              errorStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .figtree(
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: Color(
+                                                                            0xFFFF5963),
+                                                                        fontSize:
+                                                                            12.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                              enabledBorder:
+                                                                  OutlineInputBorder(
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                                  width: 2.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                              ),
+                                                              focusedBorder:
+                                                                  OutlineInputBorder(
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary,
+                                                                  width: 2.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                              ),
+                                                              errorBorder:
+                                                                  OutlineInputBorder(
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: Color(
+                                                                      0xFFFF5963),
+                                                                  width: 2.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                              ),
+                                                              focusedErrorBorder:
+                                                                  OutlineInputBorder(
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: Color(
+                                                                      0xFFFF5963),
+                                                                  width: 2.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                              ),
+                                                              filled: true,
+                                                              fillColor: Colors
+                                                                  .transparent,
+                                                              contentPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          20.0,
+                                                                          16.0,
+                                                                          20.0),
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyLarge
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .figtree(
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w500,
+                                                                            .w600,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
                                                                   ),
-                                                          elevation: 2.0,
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors
-                                                                .transparent,
-                                                            width: 1.0,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                            cursorColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                            validator: _model
+                                                                .ageTextController1Validator
+                                                                .asValidator(
+                                                                    context),
+                                                            inputFormatters: [
+                                                              if (!isAndroid &&
+                                                                  !isiOS)
+                                                                TextInputFormatter
+                                                                    .withFunction(
+                                                                        (oldValue,
+                                                                            newValue) {
+                                                                  return TextEditingValue(
+                                                                    selection:
+                                                                        newValue
+                                                                            .selection,
+                                                                    text: newValue
+                                                                        .text
+                                                                        .toCapitalization(
+                                                                            TextCapitalization.none),
+                                                                  );
+                                                                }),
+                                                            ],
                                                           ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      40.0),
-                                                        ),
+                                                          TextFormField(
+                                                            controller: _model
+                                                                .ageTextController2,
+                                                            focusNode: _model
+                                                                .ageFocusNode2,
+                                                            autofocus: true,
+                                                            textCapitalization:
+                                                                TextCapitalization
+                                                                    .none,
+                                                            obscureText: false,
+                                                            decoration:
+                                                                InputDecoration(
+                                                              labelText:
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                'dqc17kqd' /* Obs/Instruções */,
+                                                              ),
+                                                              labelStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .outfit(
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                              hintStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .outfit(
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                              errorStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .figtree(
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: Color(
+                                                                            0xFFFF5963),
+                                                                        fontSize:
+                                                                            12.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                              enabledBorder:
+                                                                  OutlineInputBorder(
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                                  width: 2.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                              ),
+                                                              focusedBorder:
+                                                                  OutlineInputBorder(
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary,
+                                                                  width: 2.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                              ),
+                                                              errorBorder:
+                                                                  OutlineInputBorder(
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: Color(
+                                                                      0xFFFF5963),
+                                                                  width: 2.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                              ),
+                                                              focusedErrorBorder:
+                                                                  OutlineInputBorder(
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: Color(
+                                                                      0xFFFF5963),
+                                                                  width: 2.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                              ),
+                                                              filled: true,
+                                                              fillColor: Colors
+                                                                  .transparent,
+                                                              contentPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          20.0,
+                                                                          16.0,
+                                                                          20.0),
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyLarge
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .figtree(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                            maxLines: 4,
+                                                            cursorColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                            validator: _model
+                                                                .ageTextController2Validator
+                                                                .asValidator(
+                                                                    context),
+                                                            inputFormatters: [
+                                                              if (!isAndroid &&
+                                                                  !isiOS)
+                                                                TextInputFormatter
+                                                                    .withFunction(
+                                                                        (oldValue,
+                                                                            newValue) {
+                                                                  return TextEditingValue(
+                                                                    selection:
+                                                                        newValue
+                                                                            .selection,
+                                                                    text: newValue
+                                                                        .text
+                                                                        .toCapitalization(
+                                                                            TextCapitalization.none),
+                                                                  );
+                                                                }),
+                                                            ],
+                                                          ),
+                                                          FlutterFlowDropDown<
+                                                              String>(
+                                                            controller: _model
+                                                                    .dropDownValueController3 ??=
+                                                                FormFieldController<
+                                                                        String>(
+                                                                    null),
+                                                            options: [
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                '593gg4a3' /* Adaptação */,
+                                                              ),
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'vnwqjjoa' /* Iniciante */,
+                                                              ),
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'grhpzc2y' /* Intermédiario */,
+                                                              ),
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'ezau3epc' /* Avançado */,
+                                                              )
+                                                            ],
+                                                            onChanged: (val) =>
+                                                                safeSetState(() =>
+                                                                    _model.dropDownValue3 =
+                                                                        val),
+                                                            width:
+                                                                double.infinity,
+                                                            height: 56.0,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .readexPro(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                            hintText:
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                              'g9hdyrir' /* Dificuldade */,
+                                                            ),
+                                                            icon: Icon(
+                                                              Icons
+                                                                  .keyboard_arrow_down_rounded,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                              size: 24.0,
+                                                            ),
+                                                            elevation: 2.0,
+                                                            borderColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .alternate,
+                                                            borderWidth: 2.0,
+                                                            borderRadius: 8.0,
+                                                            margin:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        4.0,
+                                                                        16.0,
+                                                                        4.0),
+                                                            hidesUnderline:
+                                                                true,
+                                                            isOverButton: true,
+                                                            isSearchable: false,
+                                                            isMultiSelect:
+                                                                false,
+                                                          ),
+                                                          FlutterFlowDropDown<
+                                                              String>(
+                                                            controller: _model
+                                                                    .dropDownValueController4 ??=
+                                                                FormFieldController<
+                                                                        String>(
+                                                                    null),
+                                                            options: [
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'g15b1o91' /* Hipertrofia */,
+                                                              ),
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'bvpohs8e' /* Redução de gordura */,
+                                                              ),
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'fs2wtk2r' /* Redução de gordura/Hipertrofia */,
+                                                              ),
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'ta29ssyh' /* Definição muscular */,
+                                                              ),
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'j9t8ict7' /* Condicionamento físico */,
+                                                              ),
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                '6eyzw63c' /* Qualidade de vida */,
+                                                              )
+                                                            ],
+                                                            onChanged: (val) =>
+                                                                safeSetState(() =>
+                                                                    _model.dropDownValue4 =
+                                                                        val),
+                                                            width:
+                                                                double.infinity,
+                                                            height: 56.0,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .readexPro(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                            hintText:
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                              'd3u4ld08' /* Objetivo */,
+                                                            ),
+                                                            icon: Icon(
+                                                              Icons
+                                                                  .keyboard_arrow_down_rounded,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                              size: 24.0,
+                                                            ),
+                                                            elevation: 2.0,
+                                                            borderColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .alternate,
+                                                            borderWidth: 2.0,
+                                                            borderRadius: 8.0,
+                                                            margin:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        4.0,
+                                                                        16.0,
+                                                                        4.0),
+                                                            hidesUnderline:
+                                                                true,
+                                                            isOverButton: true,
+                                                            isSearchable: false,
+                                                            isMultiSelect:
+                                                                false,
+                                                          ),
+                                                          wrapWithModel(
+                                                            model: _model
+                                                                .comecaemdarotinaModel1,
+                                                            updateCallback: () =>
+                                                                safeSetState(
+                                                                    () {}),
+                                                            child:
+                                                                ComecaemdarotinaWidget(),
+                                                          ),
+                                                          InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              logFirebaseEvent(
+                                                                  'CREATE_TREINO_Container_b3uyq8f4_ON_TAP');
+                                                              final _datePicked1Date =
+                                                                  await showDatePicker(
+                                                                context:
+                                                                    context,
+                                                                initialDate:
+                                                                    getCurrentTimestamp,
+                                                                firstDate:
+                                                                    getCurrentTimestamp,
+                                                                lastDate:
+                                                                    DateTime(
+                                                                        2050),
+                                                                builder:
+                                                                    (context,
+                                                                        child) {
+                                                                  return wrapInMaterialDatePickerTheme(
+                                                                    context,
+                                                                    child!,
+                                                                    headerBackgroundColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                    headerForegroundColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .info,
+                                                                    headerTextStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineLarge
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.outfit(
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).headlineLarge.fontStyle,
+                                                                          ),
+                                                                          fontSize:
+                                                                              32.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .headlineLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                    pickerBackgroundColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                    pickerForegroundColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                    selectedDateTimeBackgroundColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .secondary,
+                                                                    selectedDateTimeForegroundColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .info,
+                                                                    actionButtonForegroundColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                    iconSize:
+                                                                        24.0,
+                                                                  );
+                                                                },
+                                                              );
+
+                                                              if (_datePicked1Date !=
+                                                                  null) {
+                                                                safeSetState(
+                                                                    () {
+                                                                  _model.datePicked1 =
+                                                                      DateTime(
+                                                                    _datePicked1Date
+                                                                        .year,
+                                                                    _datePicked1Date
+                                                                        .month,
+                                                                    _datePicked1Date
+                                                                        .day,
+                                                                  );
+                                                                });
+                                                              } else if (_model
+                                                                      .datePicked1 !=
+                                                                  null) {
+                                                                safeSetState(
+                                                                    () {
+                                                                  _model.datePicked1 =
+                                                                      getCurrentTimestamp;
+                                                                });
+                                                              }
+                                                            },
+                                                            child: Container(
+                                                              width: double
+                                                                  .infinity,
+                                                              height: 50.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                                  width: 2.0,
+                                                                ),
+                                                              ),
+                                                              child: Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.0,
+                                                                        0.0),
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    'Rotina termina em: ${dateTimeFormat(
+                                                                      "d/M/y",
+                                                                      _model
+                                                                          .datePicked1,
+                                                                      locale: FFLocalizations.of(
+                                                                              context)
+                                                                          .languageCode,
+                                                                    )}',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.readexPro(
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          if (FFAppState()
+                                                              .nullTextfieldValue)
+                                                            Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                's0le47gj' /* Você não pode criar um treino ... */,
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .readexPro(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .error,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                            ),
+                                                        ]
+                                                            .divide(SizedBox(
+                                                                height: 12.0))
+                                                            .addToEnd(SizedBox(
+                                                                height: 32.0)),
                                                       ),
                                                     ),
                                                   ),
-                                                ],
-                                              ),
-                                            ),
-                                            if (responsiveVisibility(
-                                              context: context,
-                                              phone: false,
-                                            ))
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Expanded(
-                                                    child:
-                                                        FlutterFlowChoiceChips(
-                                                      options: [
-                                                        ChipData(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'riwszrlw' /* Peitoral */,
-                                                        )),
-                                                        ChipData(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          '97ch1fqm' /* Costas */,
-                                                        )),
-                                                        ChipData(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'a5co4o95' /* Meus treinos */,
-                                                        ))
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 2.0, 0.0, 0.0),
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    constraints: BoxConstraints(
+                                                      maxWidth: 770.0,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                          blurRadius: 12.0,
+                                                          color:
+                                                              Color(0x1E000000),
+                                                          offset: Offset(
+                                                            0.0,
+                                                            5.0,
+                                                          ),
+                                                        )
                                                       ],
-                                                      onChanged: (val) async {
-                                                        safeSetState(() => _model
-                                                                .choiceChipsValue =
-                                                            val?.firstOrNull);
-                                                        logFirebaseEvent(
-                                                            'CREATE_TREINO_ChoiceChips_c11fy1cp_ON_FO');
-                                                        if (_model.peitoralOn ==
-                                                            false) {
-                                                          _model.peitoralOn =
-                                                              true;
-                                                          _model.costasOn =
-                                                              false;
-                                                          _model.meusTreinosOn =
-                                                              false;
-                                                          safeSetState(() {});
-                                                        } else if (_model
-                                                                .costasOn ==
-                                                            false) {
-                                                          _model.peitoralOn =
-                                                              false;
-                                                          _model.costasOn =
-                                                              true;
-                                                          _model.meusTreinosOn =
-                                                              false;
-                                                          safeSetState(() {});
-                                                        } else if (_model
-                                                            .meusTreinosOn) {
-                                                          _model.peitoralOn =
-                                                              false;
-                                                          _model.costasOn =
-                                                              false;
-                                                          _model.meusTreinosOn =
-                                                              true;
-                                                          safeSetState(() {});
-                                                        }
-                                                      },
-                                                      selectedChipStyle:
-                                                          ChipStyle(
-                                                        backgroundColor:
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16.0),
+                                                    ),
+                                                  ).animateOnPageLoad(animationsMap[
+                                                      'containerOnPageLoadAnimation1']!),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          constraints: BoxConstraints(
+                                            maxWidth: 770.0,
+                                          ),
+                                          decoration: BoxDecoration(),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 12.0, 16.0, 12.0),
+                                            child: FFButtonWidget(
+                                              onPressed: () async {
+                                                logFirebaseEvent(
+                                                    'CREATE_TREINO_PAGE_SALVAR_BTN_ON_TAP');
+                                                _model.forms = true;
+                                                if (_model.formKey
+                                                            .currentState ==
+                                                        null ||
+                                                    !_model
+                                                        .formKey.currentState!
+                                                        .validate()) {
+                                                  safeSetState(() =>
+                                                      _model.forms = false);
+                                                  return;
+                                                }
+                                                if (_model.dropDownValue3 ==
+                                                    null) {
+                                                  FFAppState()
+                                                          .nullTextfieldValue =
+                                                      true;
+                                                  safeSetState(() {});
+                                                  _model.forms = false;
+                                                  safeSetState(() {});
+                                                  return;
+                                                }
+                                                if (_model.dropDownValue4 ==
+                                                    null) {
+                                                  FFAppState()
+                                                          .nullTextfieldValue =
+                                                      true;
+                                                  safeSetState(() {});
+                                                  _model.forms = false;
+                                                  safeSetState(() {});
+                                                  return;
+                                                }
+                                                if (_model
+                                                        .comecaemdarotinaModel1
+                                                        .datePicked ==
+                                                    null) {
+                                                  FFAppState()
+                                                          .nullTextfieldValue =
+                                                      true;
+                                                  safeSetState(() {});
+                                                  _model.forms = false;
+                                                  safeSetState(() {});
+                                                  return;
+                                                }
+                                                if (_model.datePicked1 ==
+                                                    null) {
+                                                  FFAppState()
+                                                          .nullTextfieldValue =
+                                                      true;
+                                                  safeSetState(() {});
+                                                  _model.forms = false;
+                                                  safeSetState(() {});
+                                                  return;
+                                                }
+                                                if (_model.forms!) {
+                                                  var createTreinosRecordReference =
+                                                      CreateTreinosRecord
+                                                          .createDoc(
+                                                              widget.users!);
+                                                  await createTreinosRecordReference
+                                                      .set(
+                                                          createCreateTreinosRecordData(
+                                                    obsInstrucao: _model
+                                                        .ageTextController2
+                                                        .text,
+                                                    diaDoTreino: _model
+                                                            .diaDoTreino
+                                                        ? _model.dropDownValue2
+                                                        : _model.dropDownValue1,
+                                                    nomeDoTreino: _model
+                                                        .ageTextController1
+                                                        .text,
+                                                    uid: createTreinoUsersRecord
+                                                        .uid,
+                                                    objetivoDaRotina:
+                                                        _model.dropDownValue4,
+                                                    dificuldadeDaRotina:
+                                                        _model.dropDownValue3,
+                                                    comecaEmDaRotina:
+                                                        FFAppState()
+                                                            .comecaemdarotina,
+                                                    yourName:
+                                                        createTreinoUsersRecord
+                                                            .displayName,
+                                                    imgUser:
+                                                        createTreinoUsersRecord
+                                                            .photoUrl,
+                                                    codigoDoPersonal:
+                                                        createTreinoUsersRecord
+                                                            .codigoPersonal,
+                                                    terminoDoTreino:
+                                                        _model.datePicked1,
+                                                    terminarEmDaRotina:
+                                                        _model.datePicked1,
+                                                    arquivos: false,
+                                                  ));
+                                                  _model.treinoscreates =
+                                                      CreateTreinosRecord
+                                                          .getDocumentFromData(
+                                                              createCreateTreinosRecordData(
+                                                                obsInstrucao: _model
+                                                                    .ageTextController2
+                                                                    .text,
+                                                                diaDoTreino: _model
+                                                                        .diaDoTreino
+                                                                    ? _model
+                                                                        .dropDownValue2
+                                                                    : _model
+                                                                        .dropDownValue1,
+                                                                nomeDoTreino: _model
+                                                                    .ageTextController1
+                                                                    .text,
+                                                                uid:
+                                                                    createTreinoUsersRecord
+                                                                        .uid,
+                                                                objetivoDaRotina:
+                                                                    _model
+                                                                        .dropDownValue4,
+                                                                dificuldadeDaRotina:
+                                                                    _model
+                                                                        .dropDownValue3,
+                                                                comecaEmDaRotina:
+                                                                    FFAppState()
+                                                                        .comecaemdarotina,
+                                                                yourName:
+                                                                    createTreinoUsersRecord
+                                                                        .displayName,
+                                                                imgUser:
+                                                                    createTreinoUsersRecord
+                                                                        .photoUrl,
+                                                                codigoDoPersonal:
+                                                                    createTreinoUsersRecord
+                                                                        .codigoPersonal,
+                                                                terminoDoTreino:
+                                                                    _model
+                                                                        .datePicked1,
+                                                                terminarEmDaRotina:
+                                                                    _model
+                                                                        .datePicked1,
+                                                                arquivos: false,
+                                                              ),
+                                                              createTreinosRecordReference);
+
+                                                  await _model
+                                                      .treinoscreates!.reference
+                                                      .update(
+                                                          createCreateTreinosRecordData(
+                                                    uidTreinos: _model
+                                                        .treinoscreates
+                                                        ?.reference
+                                                        .id,
+                                                  ));
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        'Seu personal adicionou novos treinos',
+                                                    notificationText:
+                                                        'Seu personal adicionou novos treinos, clique aqui para conferi-los',
+                                                    notificationSound:
+                                                        'default',
+                                                    userRefs: [widget.users!],
+                                                    initialPageName:
+                                                        'meusTreinos',
+                                                    parameterData: {},
+                                                  );
+                                                  context.safePop();
+                                                }
+
+                                                safeSetState(() {});
+                                              },
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'vbt34wgx' /* Salvar */,
+                                              ),
+                                              options: FFButtonOptions(
+                                                width: double.infinity,
+                                                height: 48.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleSmall
+                                                    .override(
+                                                      font: GoogleFonts.figtree(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .secondary,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
+                                                                .titleSmall
+                                                                .fontStyle,
+                                                      ),
+                                                      color: Colors.white,
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                                elevation: 3.0,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              showLoadingIndicator: false,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        150.0, 0.0, 150.0, 0.0),
+                                    child: wrapWithModel(
+                                      model: _model.headerwebModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: HeaderwebWidget(),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            } else {
+                              return Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: SingleChildScrollView(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, -1.0),
+                                            child: Container(
+                                              constraints: BoxConstraints(
+                                                maxWidth: 770.0,
+                                              ),
+                                              decoration: BoxDecoration(),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 12.0, 16.0, 0.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    if (_model.diaDoTreino)
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                1.0, 1.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            logFirebaseEvent(
+                                                                'CREATE_TREINO_PAGE_Text_ka9lgo2y_ON_TAP');
+                                                            _model.diaDoTreino =
+                                                                false;
+                                                            _model.diaTreinoText =
+                                                                true;
+                                                            safeSetState(() {});
+                                                          },
+                                                          child: Text(
+                                                            FFLocalizations.of(
                                                                     context)
+                                                                .getText(
+                                                              'wuqncgqe' /* Mudar dia do treino por dias d... */,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
+                                                                  font: GoogleFonts
+                                                                      .readexPro(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primaryText,
+                                                                      .primary,
+                                                                  fontSize:
+                                                                      13.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
-                                                        iconColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        iconSize: 18.0,
-                                                        elevation: 4.0,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(16.0),
+                                                          ),
+                                                        ),
                                                       ),
-                                                      unselectedChipStyle:
-                                                          ChipStyle(
-                                                        backgroundColor:
-                                                            FlutterFlowTheme.of(
+                                                    if (_model.diaTreinoText)
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                1.0, 1.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            logFirebaseEvent(
+                                                                'CREATE_TREINO_PAGE_Text_wloabv8w_ON_TAP');
+                                                            _model.diaDoTreino =
+                                                                true;
+                                                            _model.diaTreinoText =
+                                                                false;
+                                                            safeSetState(() {});
+                                                          },
+                                                          child: Text(
+                                                            FFLocalizations.of(
                                                                     context)
-                                                                .alternate,
+                                                                .getText(
+                                                              'vpa5gx7u' /* Mudar dia do treino por número */,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .readexPro(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  fontSize:
+                                                                      13.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    if (_model.diaTreinoText)
+                                                      FlutterFlowDropDown<
+                                                          String>(
+                                                        controller: _model
+                                                                .dropDownValueController5 ??=
+                                                            FormFieldController<
+                                                                String>(null),
+                                                        options: [
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'jnfoio9e' /* Domingo */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'h9peuxrw' /* Segunda */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'mm1m5ns8' /* Terça */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            've82nuh4' /* Quarta */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '58atcjaz' /* Quinta */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'a39xlrzl' /* Sexta */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'on76rgys' /* Sabado */,
+                                                          )
+                                                        ],
+                                                        onChanged: (val) =>
+                                                            safeSetState(() =>
+                                                                _model.dropDownValue5 =
+                                                                    val),
+                                                        width: double.infinity,
+                                                        height: 56.0,
                                                         textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
+                                                                  font: GoogleFonts
+                                                                      .readexPro(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
-                                                        iconColor:
+                                                        hintText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'vp37ltz1' /* Dia do treino */,
+                                                        ),
+                                                        icon: Icon(
+                                                          Icons
+                                                              .keyboard_arrow_down_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          size: 24.0,
+                                                        ),
+                                                        elevation: 2.0,
+                                                        borderColor:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .secondaryText,
-                                                        iconSize: 18.0,
-                                                        elevation: 0.0,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(16.0),
+                                                                .alternate,
+                                                        borderWidth: 2.0,
+                                                        borderRadius: 8.0,
+                                                        margin:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    4.0,
+                                                                    16.0,
+                                                                    4.0),
+                                                        hidesUnderline: true,
+                                                        isOverButton: true,
+                                                        isSearchable: false,
+                                                        isMultiSelect: false,
                                                       ),
-                                                      chipSpacing: 12.0,
-                                                      rowSpacing: 12.0,
-                                                      multiselect: false,
-                                                      alignment:
-                                                          WrapAlignment.start,
+                                                    if (_model.diaDoTreino)
+                                                      FlutterFlowDropDown<
+                                                          String>(
+                                                        controller: _model
+                                                                .dropDownValueController6 ??=
+                                                            FormFieldController<
+                                                                String>(null),
+                                                        options: [
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '84ls0hz6' /* 1 */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'sun5fi5q' /* 2 */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'klsr9wxl' /* 3 */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'v70virhs' /* 4 */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'm0zkp8zj' /* 5 */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'wmmabx6b' /* 6 */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'jageagve' /* 7 */,
+                                                          )
+                                                        ],
+                                                        onChanged: (val) =>
+                                                            safeSetState(() =>
+                                                                _model.dropDownValue6 =
+                                                                    val),
+                                                        width: double.infinity,
+                                                        height: 56.0,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .readexPro(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                        hintText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          '4s117j0c' /* Dia do treino por número */,
+                                                        ),
+                                                        icon: Icon(
+                                                          Icons
+                                                              .keyboard_arrow_down_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          size: 24.0,
+                                                        ),
+                                                        elevation: 2.0,
+                                                        borderColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        borderWidth: 2.0,
+                                                        borderRadius: 8.0,
+                                                        margin:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    4.0,
+                                                                    16.0,
+                                                                    4.0),
+                                                        hidesUnderline: true,
+                                                        isOverButton: true,
+                                                        isSearchable: false,
+                                                        isMultiSelect: false,
+                                                      ),
+                                                    TextFormField(
                                                       controller: _model
-                                                              .choiceChipsValueController ??=
-                                                          FormFieldController<
-                                                              List<String>>(
-                                                        [],
-                                                      ),
-                                                      wrapped: true,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ClipRRect(
-                                              borderRadius: BorderRadius.only(
-                                                bottomLeft:
-                                                    Radius.circular(12.0),
-                                                bottomRight:
-                                                    Radius.circular(12.0),
-                                                topLeft: Radius.circular(0.0),
-                                                topRight: Radius.circular(0.0),
-                                              ),
-                                              child: Container(
-                                                width: double.infinity,
-                                                height: 570.0,
-                                                decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(12.0),
-                                                    bottomRight:
-                                                        Radius.circular(12.0),
-                                                    topLeft:
-                                                        Radius.circular(0.0),
-                                                    topRight:
-                                                        Radius.circular(0.0),
-                                                  ),
-                                                ),
-                                                child: Column(
-                                                  children: [
-                                                    Align(
-                                                      alignment:
-                                                          Alignment(-1.0, 0),
-                                                      child:
-                                                          FlutterFlowButtonTabBar(
-                                                        useToggleButtonStyle:
-                                                            false,
-                                                        isScrollable: true,
+                                                          .ageTextController3,
+                                                      focusNode:
+                                                          _model.ageFocusNode3,
+                                                      autofocus: true,
+                                                      textCapitalization:
+                                                          TextCapitalization
+                                                              .none,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        labelText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          '5qlmkr18' /* Nome da rotina de treino: */,
+                                                        ),
                                                         labelStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyLarge
+                                                                .labelLarge
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
-                                                                  color: Color(
-                                                                      0xFF14181B),
+                                                                  font: GoogleFonts
+                                                                      .outfit(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
                                                                   fontSize:
                                                                       16.0,
                                                                   letterSpacing:
@@ -1544,643 +2289,1093 @@ class _CreateTreinoWidgetState extends State<CreateTreinoWidget>
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontStyle,
                                                                 ),
-                                                        unselectedLabelStyle:
-                                                            TextStyle(),
-                                                        labelColor:
-                                                            Color(0xFF14181B),
-                                                        unselectedLabelColor:
-                                                            Color(0xFF57636C),
-                                                        backgroundColor:
+                                                        hintStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .secondaryBackground,
-                                                        unselectedBackgroundColor:
-                                                            Colors.white,
-                                                        borderColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .alternate,
-                                                        unselectedBorderColor:
-                                                            Color(0xFFE0E3E7),
-                                                        borderWidth: 2.0,
-                                                        borderRadius: 12.0,
-                                                        elevation: 0.0,
-                                                        labelPadding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    0.0,
-                                                                    16.0,
-                                                                    0.0),
-                                                        buttonMargin:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    8.0,
-                                                                    0.0,
-                                                                    8.0),
-                                                        tabs: [
-                                                          Tab(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              '6wdlsk36' /* Peitoral */,
-                                                            ),
-                                                          ),
-                                                          Tab(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'y7ys7bwi' /* Costas */,
-                                                            ),
-                                                          ),
-                                                          Tab(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'dncysu3y' /* Meus treinos */,
-                                                            ),
-                                                          ),
-                                                        ],
-                                                        controller: _model
-                                                            .tabBarController,
-                                                        onTap: (i) async {
-                                                          [
-                                                            () async {},
-                                                            () async {},
-                                                            () async {}
-                                                          ][i]();
-                                                        },
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: TabBarView(
-                                                        controller: _model
-                                                            .tabBarController,
-                                                        children: [
-                                                          KeepAliveWidgetWrapper(
-                                                            builder: (context) =>
-                                                                StreamBuilder<
-                                                                    List<
-                                                                        TreinorsRecord>>(
-                                                              stream:
-                                                                  queryTreinorsRecord(
-                                                                queryBuilder: (treinorsRecord) =>
-                                                                    treinorsRecord
-                                                                        .where(
-                                                                          'colecao',
-                                                                          isEqualTo:
-                                                                              "Peitoral",
-                                                                        )
-                                                                        .orderBy(
-                                                                            'treinosNoLIst',
-                                                                            descending:
-                                                                                true),
-                                                              ),
-                                                              builder: (context,
-                                                                  snapshot) {
-                                                                // Customize what your widget looks like when it's loading.
-                                                                if (!snapshot
-                                                                    .hasData) {
-                                                                  return Center(
-                                                                    child:
-                                                                        SizedBox(
-                                                                      width:
-                                                                          50.0,
-                                                                      height:
-                                                                          50.0,
-                                                                      child:
-                                                                          SpinKitSquareCircle(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        size:
-                                                                            50.0,
-                                                                      ),
-                                                                    ),
-                                                                  );
-                                                                }
-                                                                List<TreinorsRecord>
-                                                                    columnTreinorsRecordList =
-                                                                    snapshot
-                                                                        .data!;
-
-                                                                return SingleChildScrollView(
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: List.generate(
-                                                                        columnTreinorsRecordList
-                                                                            .length,
-                                                                        (columnIndex) {
-                                                                      final columnTreinorsRecord =
-                                                                          columnTreinorsRecordList[
-                                                                              columnIndex];
-                                                                      return Visibility(
-                                                                        visible:
-                                                                            _model.peitoralOn ==
-                                                                                false,
-                                                                        child:
-                                                                            Material(
-                                                                          color:
-                                                                              Colors.transparent,
-                                                                          child:
-                                                                              Theme(
-                                                                            data:
-                                                                                ThemeData(
-                                                                              checkboxTheme: CheckboxThemeData(
-                                                                                visualDensity: VisualDensity.compact,
-                                                                                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                                                                              ),
-                                                                              unselectedWidgetColor: FlutterFlowTheme.of(context).secondaryText,
-                                                                            ),
-                                                                            child:
-                                                                                CheckboxListTile(
-                                                                              value: _model.checkboxListTileValueMap1[columnTreinorsRecord] ??= false,
-                                                                              onChanged: (newValue) async {
-                                                                                safeSetState(() => _model.checkboxListTileValueMap1[columnTreinorsRecord] = newValue!);
-                                                                              },
-                                                                              title: Text(
-                                                                                columnTreinorsRecord.treinosNoLIst,
-                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                      fontFamily: 'Outfit',
-                                                                                      fontSize: 18.0,
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                              subtitle: Text(
-                                                                                columnTreinorsRecord.colecao,
-                                                                                style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                      fontFamily: 'Readex Pro',
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                              tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              activeColor: FlutterFlowTheme.of(context).primary,
-                                                                              checkColor: FlutterFlowTheme.of(context).info,
-                                                                              dense: false,
-                                                                              controlAffinity: ListTileControlAffinity.trailing,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      );
-                                                                    }),
+                                                                .labelMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .outfit(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
                                                                   ),
-                                                                );
-                                                              },
-                                                            ),
-                                                          ),
-                                                          KeepAliveWidgetWrapper(
-                                                            builder:
-                                                                (context) =>
-                                                                    Container(),
-                                                          ),
-                                                          KeepAliveWidgetWrapper(
-                                                            builder: (context) =>
-                                                                StreamBuilder<
-                                                                    List<
-                                                                        TreinosDoProfessorRecord>>(
-                                                              stream:
-                                                                  queryTreinosDoProfessorRecord(
-                                                                parent: widget
-                                                                    .users,
-                                                              ),
-                                                              builder: (context,
-                                                                  snapshot) {
-                                                                // Customize what your widget looks like when it's loading.
-                                                                if (!snapshot
-                                                                    .hasData) {
-                                                                  return Center(
-                                                                    child:
-                                                                        SizedBox(
-                                                                      width:
-                                                                          50.0,
-                                                                      height:
-                                                                          50.0,
-                                                                      child:
-                                                                          SpinKitSquareCircle(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        size:
-                                                                            50.0,
-                                                                      ),
-                                                                    ),
-                                                                  );
-                                                                }
-                                                                List<TreinosDoProfessorRecord>
-                                                                    columnTreinosDoProfessorRecordList =
-                                                                    snapshot
-                                                                        .data!;
-
-                                                                return SingleChildScrollView(
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: List.generate(
-                                                                        columnTreinosDoProfessorRecordList
-                                                                            .length,
-                                                                        (columnIndex) {
-                                                                      final columnTreinosDoProfessorRecord =
-                                                                          columnTreinosDoProfessorRecordList[
-                                                                              columnIndex];
-                                                                      return Visibility(
-                                                                        visible:
-                                                                            _model.meusTreinosOn ==
-                                                                                false,
-                                                                        child:
-                                                                            Material(
-                                                                          color:
-                                                                              Colors.transparent,
-                                                                          child:
-                                                                              Theme(
-                                                                            data:
-                                                                                ThemeData(
-                                                                              checkboxTheme: CheckboxThemeData(
-                                                                                visualDensity: VisualDensity.compact,
-                                                                                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                                                                              ),
-                                                                              unselectedWidgetColor: FlutterFlowTheme.of(context).secondaryText,
-                                                                            ),
-                                                                            child:
-                                                                                CheckboxListTile(
-                                                                              value: _model.checkboxListTileValueMap2[columnTreinosDoProfessorRecord] ??= false,
-                                                                              onChanged: (newValue) async {
-                                                                                safeSetState(() => _model.checkboxListTileValueMap2[columnTreinosDoProfessorRecord] = newValue!);
-                                                                              },
-                                                                              title: Text(
-                                                                                columnTreinosDoProfessorRecord.nomeDoTreino,
-                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                      fontFamily: 'Outfit',
-                                                                                      fontSize: 18.0,
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                              tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              activeColor: FlutterFlowTheme.of(context).primary,
-                                                                              checkColor: FlutterFlowTheme.of(context).info,
-                                                                              dense: false,
-                                                                              controlAffinity: ListTileControlAffinity.trailing,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      );
-                                                                    }),
-                                                                  ),
-                                                                );
-                                                              },
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                            if ((_model.peitoralOn == true) ||
-                                                _model.costasOn ||
-                                                _model.meusTreinosOn)
-                                              StreamBuilder<
-                                                  List<TreinorsRecord>>(
-                                                stream: queryTreinorsRecord(
-                                                  queryBuilder:
-                                                      (treinorsRecord) =>
-                                                          treinorsRecord
-                                                              .where(
-                                                                'colecao',
-                                                                isEqualTo: _model
-                                                                            .peitoralOn ==
-                                                                        false
-                                                                    ? _model
-                                                                        .costasOn
-                                                                        .toString()
-                                                                    : _model
-                                                                        .meusTreinosOn
-                                                                        .toString(),
-                                                              )
-                                                              .orderBy(
-                                                                  'treinosNoLIst',
-                                                                  descending:
-                                                                      true),
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            SpinKitSquareCircle(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          size: 50.0,
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  List<TreinorsRecord>
-                                                      columnTreinorsRecordList =
-                                                      snapshot.data!;
-
-                                                  return SingleChildScrollView(
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: List.generate(
-                                                          columnTreinorsRecordList
-                                                              .length,
-                                                          (columnIndex) {
-                                                        final columnTreinorsRecord =
-                                                            columnTreinorsRecordList[
-                                                                columnIndex];
-                                                        return Material(
-                                                          color: Colors
-                                                              .transparent,
-                                                          child: Theme(
-                                                            data: ThemeData(
-                                                              checkboxTheme:
-                                                                  CheckboxThemeData(
-                                                                visualDensity:
-                                                                    VisualDensity
-                                                                        .compact,
-                                                                materialTapTargetSize:
-                                                                    MaterialTapTargetSize
-                                                                        .shrinkWrap,
-                                                              ),
-                                                              unselectedWidgetColor:
-                                                                  FlutterFlowTheme.of(
+                                                                  color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
-                                                            ),
-                                                            child:
-                                                                CheckboxListTile(
-                                                              value: _model
-                                                                      .checkboxListTileValueMap3[
-                                                                  columnTreinorsRecord] ??= false,
-                                                              onChanged:
-                                                                  (newValue) async {
-                                                                safeSetState(() =>
-                                                                    _model.checkboxListTileValueMap3[
-                                                                            columnTreinorsRecord] =
-                                                                        newValue!);
-                                                              },
-                                                              title: Text(
-                                                                columnTreinorsRecord
-                                                                    .treinosNoLIst,
-                                                                style: FlutterFlowTheme.of(
+                                                                  fontSize:
+                                                                      14.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                        errorStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .figtree(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: Color(
+                                                                      0xFFFF5963),
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                        enabledBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .alternate,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                        ),
+                                                        focusedBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondary,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                        ),
+                                                        errorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0xFFFF5963),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0xFFFF5963),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                        ),
+                                                        filled: true,
+                                                        fillColor:
+                                                            Colors.transparent,
+                                                        contentPadding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    20.0,
+                                                                    16.0,
+                                                                    20.0),
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .figtree(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleLarge
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Outfit',
-                                                                      fontSize:
-                                                                          18.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                              subtitle: Text(
-                                                                columnTreinorsRecord
-                                                                    .colecao,
-                                                                style: FlutterFlowTheme.of(
+                                                                    .secondaryText,
+                                                                fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Readex Pro',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
+                                                                    .bodyLarge
+                                                                    .fontStyle,
                                                               ),
-                                                              tileColor: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryBackground,
-                                                              activeColor:
+                                                      cursorColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      validator: _model
+                                                          .ageTextController3Validator
+                                                          .asValidator(context),
+                                                      inputFormatters: [
+                                                        if (!isAndroid &&
+                                                            !isiOS)
+                                                          TextInputFormatter
+                                                              .withFunction(
+                                                                  (oldValue,
+                                                                      newValue) {
+                                                            return TextEditingValue(
+                                                              selection: newValue
+                                                                  .selection,
+                                                              text: newValue
+                                                                  .text
+                                                                  .toCapitalization(
+                                                                      TextCapitalization
+                                                                          .none),
+                                                            );
+                                                          }),
+                                                      ],
+                                                    ),
+                                                    TextFormField(
+                                                      controller: _model
+                                                          .ageTextController4,
+                                                      focusNode:
+                                                          _model.ageFocusNode4,
+                                                      autofocus: true,
+                                                      textCapitalization:
+                                                          TextCapitalization
+                                                              .none,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        labelText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'wcgppj6b' /* Obs/Instruções */,
+                                                        ),
+                                                        labelStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .outfit(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                        hintStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .outfit(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  fontSize:
+                                                                      14.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                        errorStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .figtree(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: Color(
+                                                                      0xFFFF5963),
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                        enabledBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .alternate,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                        ),
+                                                        focusedBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondary,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                        ),
+                                                        errorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0xFFFF5963),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0xFFFF5963),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                        ),
+                                                        filled: true,
+                                                        fillColor:
+                                                            Colors.transparent,
+                                                        contentPadding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    20.0,
+                                                                    16.0,
+                                                                    20.0),
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .figtree(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontStyle,
+                                                              ),
+                                                      maxLines: 4,
+                                                      cursorColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      validator: _model
+                                                          .ageTextController4Validator
+                                                          .asValidator(context),
+                                                      inputFormatters: [
+                                                        if (!isAndroid &&
+                                                            !isiOS)
+                                                          TextInputFormatter
+                                                              .withFunction(
+                                                                  (oldValue,
+                                                                      newValue) {
+                                                            return TextEditingValue(
+                                                              selection: newValue
+                                                                  .selection,
+                                                              text: newValue
+                                                                  .text
+                                                                  .toCapitalization(
+                                                                      TextCapitalization
+                                                                          .none),
+                                                            );
+                                                          }),
+                                                      ],
+                                                    ),
+                                                    FlutterFlowDropDown<String>(
+                                                      controller: _model
+                                                              .dropDownValueController7 ??=
+                                                          FormFieldController<
+                                                              String>(null),
+                                                      options: [
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'nvkjeza7' /* Adaptação */,
+                                                        ),
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'fm72eba6' /* Iniciante */,
+                                                        ),
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '7ks66t0h' /* Intermédiario */,
+                                                        ),
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'd4nhr0x9' /* Avançado */,
+                                                        )
+                                                      ],
+                                                      onChanged: (val) =>
+                                                          safeSetState(() =>
+                                                              _model.dropDownValue7 =
+                                                                  val),
+                                                      width: double.infinity,
+                                                      height: 56.0,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .readexPro(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                      hintText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        '6zksyund' /* Dificuldade */,
+                                                      ),
+                                                      icon: Icon(
+                                                        Icons
+                                                            .keyboard_arrow_down_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 24.0,
+                                                      ),
+                                                      elevation: 2.0,
+                                                      borderColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderWidth: 2.0,
+                                                      borderRadius: 8.0,
+                                                      margin:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  4.0,
+                                                                  16.0,
+                                                                  4.0),
+                                                      hidesUnderline: true,
+                                                      isOverButton: true,
+                                                      isSearchable: false,
+                                                      isMultiSelect: false,
+                                                    ),
+                                                    FlutterFlowDropDown<String>(
+                                                      controller: _model
+                                                              .dropDownValueController8 ??=
+                                                          FormFieldController<
+                                                              String>(null),
+                                                      options: [
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'ui8dg3qf' /* Hipertrofia */,
+                                                        ),
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '2n9m9yei' /* Redução de gordura */,
+                                                        ),
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'gh9ieps5' /* Redução de gordura/Hipertrofia */,
+                                                        ),
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '1y02ubgj' /* Definição muscular */,
+                                                        ),
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'gx0uv506' /* Condicionamento físico */,
+                                                        ),
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'nej3rvfx' /* Qualidade de vida */,
+                                                        )
+                                                      ],
+                                                      onChanged: (val) =>
+                                                          safeSetState(() =>
+                                                              _model.dropDownValue8 =
+                                                                  val),
+                                                      width: double.infinity,
+                                                      height: 56.0,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .readexPro(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                      hintText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'ura98vto' /* Objetivo */,
+                                                      ),
+                                                      icon: Icon(
+                                                        Icons
+                                                            .keyboard_arrow_down_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 24.0,
+                                                      ),
+                                                      elevation: 2.0,
+                                                      borderColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderWidth: 2.0,
+                                                      borderRadius: 8.0,
+                                                      margin:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  4.0,
+                                                                  16.0,
+                                                                  4.0),
+                                                      hidesUnderline: true,
+                                                      isOverButton: true,
+                                                      isSearchable: false,
+                                                      isMultiSelect: false,
+                                                    ),
+                                                    wrapWithModel(
+                                                      model: _model
+                                                          .comecaemdarotinaModel2,
+                                                      updateCallback: () =>
+                                                          safeSetState(() {}),
+                                                      child:
+                                                          ComecaemdarotinaWidget(),
+                                                    ),
+                                                    InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        logFirebaseEvent(
+                                                            'CREATE_TREINO_Container_1xczxlgz_ON_TAP');
+                                                        final _datePicked2Date =
+                                                            await showDatePicker(
+                                                          context: context,
+                                                          initialDate:
+                                                              getCurrentTimestamp,
+                                                          firstDate:
+                                                              getCurrentTimestamp,
+                                                          lastDate:
+                                                              DateTime(2050),
+                                                          builder:
+                                                              (context, child) {
+                                                            return wrapInMaterialDatePickerTheme(
+                                                              context,
+                                                              child!,
+                                                              headerBackgroundColor:
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                              checkColor:
+                                                              headerForegroundColor:
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .info,
-                                                              dense: false,
-                                                              controlAffinity:
-                                                                  ListTileControlAffinity
-                                                                      .trailing,
+                                                              headerTextStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .outfit(
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .headlineLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        fontSize:
+                                                                            32.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .headlineLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                              pickerBackgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                              pickerForegroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                              selectedDateTimeBackgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary,
+                                                              selectedDateTimeForegroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                              actionButtonForegroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                              iconSize: 24.0,
+                                                            );
+                                                          },
+                                                        );
+
+                                                        if (_datePicked2Date !=
+                                                            null) {
+                                                          safeSetState(() {
+                                                            _model.datePicked2 =
+                                                                DateTime(
+                                                              _datePicked2Date
+                                                                  .year,
+                                                              _datePicked2Date
+                                                                  .month,
+                                                              _datePicked2Date
+                                                                  .day,
+                                                            );
+                                                          });
+                                                        } else if (_model
+                                                                .datePicked2 !=
+                                                            null) {
+                                                          safeSetState(() {
+                                                            _model.datePicked2 =
+                                                                getCurrentTimestamp;
+                                                          });
+                                                        }
+                                                      },
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 50.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                          border: Border.all(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .alternate,
+                                                            width: 2.0,
+                                                          ),
+                                                        ),
+                                                        child: Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              'Rotina termina em: ${dateTimeFormat(
+                                                                "d/M/y",
+                                                                _model
+                                                                    .datePicked2,
+                                                                locale: FFLocalizations.of(
+                                                                        context)
+                                                                    .languageCode,
+                                                              )}',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .readexPro(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                             ),
                                                           ),
-                                                        );
-                                                      }),
+                                                        ),
+                                                      ),
                                                     ),
-                                                  );
-                                                },
+                                                    if (FFAppState()
+                                                        .nullTextfieldValue)
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'lsj90zr5' /* Você não pode criar um treino ... */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .readexPro(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .error,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                  ]
+                                                      .divide(SizedBox(
+                                                          height: 12.0))
+                                                      .addToEnd(SizedBox(
+                                                          height: 32.0)),
+                                                ),
                                               ),
-                                          ],
-                                        ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 2.0, 0.0, 0.0),
+                                            child: Container(
+                                              width: double.infinity,
+                                              constraints: BoxConstraints(
+                                                maxWidth: 770.0,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 12.0,
+                                                    color: Color(0x1E000000),
+                                                    offset: Offset(
+                                                      0.0,
+                                                      5.0,
+                                                    ),
+                                                  )
+                                                ],
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                              ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'containerOnPageLoadAnimation2']!),
+                                          ),
+                                        ],
                                       ),
-                                    ).animateOnPageLoad(animationsMap[
-                                        'containerOnPageLoadAnimation1']!),
+                                    ),
                                   ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 2.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: double.infinity,
+                                  Container(
                                     constraints: BoxConstraints(
                                       maxWidth: 770.0,
                                     ),
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 12.0,
-                                          color: Color(0x1E000000),
-                                          offset: Offset(
-                                            0.0,
-                                            5.0,
+                                    decoration: BoxDecoration(),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 12.0, 16.0, 12.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          logFirebaseEvent(
+                                              'CREATE_TREINO_PAGE_SALVAR_BTN_ON_TAP');
+                                          _model.formsr = true;
+                                          if (_model.formKey.currentState ==
+                                                  null ||
+                                              !_model.formKey.currentState!
+                                                  .validate()) {
+                                            safeSetState(
+                                                () => _model.formsr = false);
+                                            return;
+                                          }
+                                          if (_model.dropDownValue3 == null) {
+                                            FFAppState().nullTextfieldValue =
+                                                true;
+                                            safeSetState(() {});
+                                            _model.formsr = false;
+                                            safeSetState(() {});
+                                            return;
+                                          }
+                                          if (_model.dropDownValue4 == null) {
+                                            FFAppState().nullTextfieldValue =
+                                                true;
+                                            safeSetState(() {});
+                                            _model.formsr = false;
+                                            safeSetState(() {});
+                                            return;
+                                          }
+                                          if (_model.comecaemdarotinaModel1
+                                                  .datePicked ==
+                                              null) {
+                                            FFAppState().nullTextfieldValue =
+                                                true;
+                                            safeSetState(() {});
+                                            _model.formsr = false;
+                                            safeSetState(() {});
+                                            return;
+                                          }
+                                          if (_model.datePicked1 == null) {
+                                            FFAppState().nullTextfieldValue =
+                                                true;
+                                            safeSetState(() {});
+                                            _model.formsr = false;
+                                            safeSetState(() {});
+                                            return;
+                                          }
+                                          if (_model.formsr!) {
+                                            var createTreinosRecordReference =
+                                                CreateTreinosRecord.createDoc(
+                                                    widget.users!);
+                                            await createTreinosRecordReference
+                                                .set(
+                                                    createCreateTreinosRecordData(
+                                              obsInstrucao: _model
+                                                  .ageTextController4.text,
+                                              diaDoTreino: _model.diaDoTreino
+                                                  ? _model.dropDownValue6
+                                                  : _model.dropDownValue5,
+                                              nomeDoTreino: _model
+                                                  .ageTextController3.text,
+                                              uid: createTreinoUsersRecord.uid,
+                                              objetivoDaRotina:
+                                                  _model.dropDownValue8,
+                                              dificuldadeDaRotina:
+                                                  _model.dropDownValue7,
+                                              comecaEmDaRotina:
+                                                  FFAppState().comecaemdarotina,
+                                              yourName: createTreinoUsersRecord
+                                                  .displayName,
+                                              imgUser: createTreinoUsersRecord
+                                                  .photoUrl,
+                                              codigoDoPersonal:
+                                                  createTreinoUsersRecord
+                                                      .codigoPersonal,
+                                              terminoDoTreino:
+                                                  _model.datePicked2,
+                                              terminarEmDaRotina:
+                                                  _model.datePicked2,
+                                              arquivos: false,
+                                            ));
+                                            _model.treinoscreatesrs =
+                                                CreateTreinosRecord.getDocumentFromData(
+                                                    createCreateTreinosRecordData(
+                                                      obsInstrucao: _model
+                                                          .ageTextController4
+                                                          .text,
+                                                      diaDoTreino: _model
+                                                              .diaDoTreino
+                                                          ? _model
+                                                              .dropDownValue6
+                                                          : _model
+                                                              .dropDownValue5,
+                                                      nomeDoTreino: _model
+                                                          .ageTextController3
+                                                          .text,
+                                                      uid:
+                                                          createTreinoUsersRecord
+                                                              .uid,
+                                                      objetivoDaRotina:
+                                                          _model.dropDownValue8,
+                                                      dificuldadeDaRotina:
+                                                          _model.dropDownValue7,
+                                                      comecaEmDaRotina:
+                                                          FFAppState()
+                                                              .comecaemdarotina,
+                                                      yourName:
+                                                          createTreinoUsersRecord
+                                                              .displayName,
+                                                      imgUser:
+                                                          createTreinoUsersRecord
+                                                              .photoUrl,
+                                                      codigoDoPersonal:
+                                                          createTreinoUsersRecord
+                                                              .codigoPersonal,
+                                                      terminoDoTreino:
+                                                          _model.datePicked2,
+                                                      terminarEmDaRotina:
+                                                          _model.datePicked2,
+                                                      arquivos: false,
+                                                    ),
+                                                    createTreinosRecordReference);
+
+                                            await _model
+                                                .treinoscreatesrs!.reference
+                                                .update(
+                                                    createCreateTreinosRecordData(
+                                              uidTreinos: _model
+                                                  .treinoscreatesrs
+                                                  ?.reference
+                                                  .id,
+                                            ));
+                                            triggerPushNotification(
+                                              notificationTitle:
+                                                  'Seu personal adicionou novos treinos',
+                                              notificationText:
+                                                  'Seu personal adicionou novos treinos, clique aqui para conferi-los',
+                                              notificationSound: 'default',
+                                              userRefs: [widget.users!],
+                                              initialPageName: 'meusTreinos',
+                                              parameterData: {},
+                                            );
+                                            context.safePop();
+                                          }
+
+                                          safeSetState(() {});
+                                        },
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'uhi4mc8s' /* Salvar */,
+                                        ),
+                                        options: FFButtonOptions(
+                                          width: double.infinity,
+                                          height: 48.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  24.0, 0.0, 24.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                font: GoogleFonts.figtree(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
+                                                color: Colors.white,
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontStyle,
+                                              ),
+                                          elevation: 3.0,
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
                                           ),
-                                        )
-                                      ],
-                                      borderRadius: BorderRadius.circular(16.0),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        showLoadingIndicator: false,
+                                      ),
                                     ),
-                                  ).animateOnPageLoad(animationsMap[
-                                      'containerOnPageLoadAnimation2']!),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        StreamBuilder<List<CreateTreinosRecord>>(
-                          stream: queryCreateTreinosRecord(
-                            parent: widget.users,
-                            singleRecord: true,
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: SpinKitSquareCircle(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 50.0,
                                   ),
-                                ),
+                                ],
                               );
                             }
-                            List<CreateTreinosRecord>
-                                maxWidthCreateTreinosRecordList =
-                                snapshot.data!;
-                            final maxWidthCreateTreinosRecord =
-                                maxWidthCreateTreinosRecordList.isNotEmpty
-                                    ? maxWidthCreateTreinosRecordList.first
-                                    : null;
-
-                            return Container(
-                              constraints: BoxConstraints(
-                                maxWidth: 770.0,
-                              ),
-                              decoration: BoxDecoration(),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 16.0, 12.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    logFirebaseEvent(
-                                        'CREATE_TREINO_PAGE_SALVAR_BTN_ON_TAP');
-                                    if (_model.formKey.currentState == null ||
-                                        !_model.formKey.currentState!
-                                            .validate()) {
-                                      return;
-                                    }
-                                    if (_model.dropDownValue1 == null) {
-                                      FFAppState().nullTextfieldValue = true;
-                                      safeSetState(() {});
-                                      return;
-                                    }
-                                    if (_model.dropDownValue2 == null) {
-                                      FFAppState().nullTextfieldValue = true;
-                                      safeSetState(() {});
-                                      return;
-                                    }
-                                    if (_model.dropDownValue3 == null) {
-                                      FFAppState().nullTextfieldValue = true;
-                                      safeSetState(() {});
-                                      return;
-                                    }
-                                    if (_model.dropDownValue4 == null) {
-                                      FFAppState().nullTextfieldValue = true;
-                                      safeSetState(() {});
-                                      return;
-                                    }
-                                    if (_model
-                                            .comecaemdarotinaModel.datePicked ==
-                                        null) {
-                                      FFAppState().nullTextfieldValue = true;
-                                      safeSetState(() {});
-                                      return;
-                                    }
-                                    if (_model.datePicked == null) {
-                                      FFAppState().nullTextfieldValue = true;
-                                      safeSetState(() {});
-                                      return;
-                                    }
-
-                                    await CreateTreinosRecord.createDoc(
-                                            widget.users!)
-                                        .set({
-                                      ...createCreateTreinosRecordData(
-                                        obsInstrucao:
-                                            _model.ageTextController2.text,
-                                        diaDoTreino: _model.diaDoTreino
-                                            ? _model.dropDownValue2
-                                            : _model.dropDownValue1,
-                                        nomeDoTreino:
-                                            _model.ageTextController1.text,
-                                        uid: createTreinoUsersRecord.uid,
-                                        objetivoDaRotina: _model.dropDownValue4,
-                                        dificuldadeDaRotina:
-                                            _model.dropDownValue3,
-                                        comecaEmDaRotina: _model
-                                            .comecaemdarotinaModel.datePicked,
-                                        yourName:
-                                            createTreinoUsersRecord.displayName,
-                                        imgUser:
-                                            createTreinoUsersRecord.photoUrl,
-                                        codigoDoPersonal:
-                                            createTreinoUsersRecord
-                                                .codigoPersonal,
-                                        arquivos: false,
-                                        uidTreinos: maxWidthCreateTreinosRecord
-                                            ?.reference.id,
-                                        terminarEmDaRotina: _model.datePicked,
-                                      ),
-                                      ...mapToFirestore(
-                                        {
-                                          'terminoDoTreino':
-                                              FieldValue.serverTimestamp(),
-                                        },
-                                      ),
-                                    });
-                                    triggerPushNotification(
-                                      notificationTitle:
-                                          'Seu personal adicionou novos treinos',
-                                      notificationText:
-                                          'Seu personal adicionou novos treinos, clique aqui para conferi-los',
-                                      notificationSound: 'default',
-                                      userRefs: [widget.users!],
-                                      initialPageName: 'meusTreinos',
-                                      parameterData: {},
-                                    );
-                                    context.safePop();
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'lmw3w1s1' /* Salvar */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: double.infinity,
-                                    height: 48.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Figtree',
-                                          color: Colors.white,
-                                          fontSize: 16.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  showLoadingIndicator: false,
-                                ),
-                              ),
-                            );
                           },
                         ),
                       ],

@@ -13,8 +13,6 @@ export '/autenticacao/autenticacao_personal/criacao_de_contas_personal_trainer/c
 export '/pagina_inicial/pagina_inicial_widget.dart' show PaginaInicialWidget;
 export '/autenticacao/autenticacao_personal/entrar_personal_trainer/entrar_personal_trainer_widget.dart'
     show EntrarPersonalTrainerWidget;
-export '/personal/set_treinos/rotina_de_treino/rotina_de_treino_widget.dart'
-    show RotinaDeTreinoWidget;
 export '/personal/create_treino/create_treino_widget.dart'
     show CreateTreinoWidget;
 export '/avaliacao_in_personal/avaliacoes_personal/avaliacoes_personal_widget.dart'
@@ -212,3 +210,9 @@ export '/pagina_de_central_de_ajuda/pagina_de_central_de_ajuda_widget.dart'
     show PaginaDeCentralDeAjudaWidget;
 export '/treinos_arquivados/treinos_arquivados_widget.dart'
     show TreinosArquivadosWidget;
+export '/deletarconta/deletarconta_widget.dart' show DeletarcontaWidget;
+export '/detalhesdaassintaura/detalhesdaassintaura_widget.dart'
+    show DetalhesdaassintauraWidget;
+export '/alterar_senha/alterar_senha_widget.dart' show AlterarSenhaWidget;
+export '/comocancelarassinatura/comocancelarassinatura_widget.dart'
+    show ComocancelarassinaturaWidget;

@@ -17,20 +17,26 @@ class GerenciarAlunosNovoModel
 
   // Stores action output result for [Firestore Query - Query a collection] action in gerenciarAlunosNovo widget.
   PersonalAccountRecord? queryPersonal;
-  // Stores action output result for [Firestore Query - Query a collection] action in gerenciarAlunosNovo widget.
-  List<UsersRecord>? queryUsers;
   // Model for headerweb component.
   late HeaderwebModel headerwebModel;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
+  // Stores action output result for [Firestore Query - Query a collection] action in TextField widget.
+  List<UsersRecord>? queryUsersweb;
   List<UsersRecord> simpleSearchResults1 = [];
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
+  // Stores action output result for [Firestore Query - Query a collection] action in TextField widget.
+  List<UsersRecord>? queryUsers;
   List<UsersRecord> simpleSearchResults2 = [];
+  // Stores action output result for [Firestore Query - Query a collection] action in Container widget.
+  List<UsersRecord>? userers0;
+  // Stores action output result for [Firestore Query - Query a collection] action in Container widget.
+  List<UsersRecord>? queryUsres;
 
   @override
   void initState(BuildContext context) {

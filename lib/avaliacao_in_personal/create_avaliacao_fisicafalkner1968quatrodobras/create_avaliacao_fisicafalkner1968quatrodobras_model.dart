@@ -161,8 +161,6 @@ class CreateAvaliacaoFisicafalkner1968quatrodobrasModel
 
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   AvaliacoesFisicasRecord? avakuacaiFisicas;
-  // Model for headerweb component.
-  late HeaderwebModel headerwebModel;
   // State field(s) for fullName widget.
   FocusNode? fullNameFocusNode23;
   TextEditingController? fullNameTextController23;
@@ -306,6 +304,8 @@ class CreateAvaliacaoFisicafalkner1968quatrodobrasModel
 
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   AvaliacoesFisicasRecord? avakuacaiFisica;
+  // Model for headerweb component.
+  late HeaderwebModel headerwebModel;
 
   @override
   void initState(BuildContext context) {
@@ -313,11 +313,11 @@ class CreateAvaliacaoFisicafalkner1968quatrodobrasModel
     datePickerFormulasModel1 =
         createModel(context, () => DatePickerFormulasModel());
     ageTextController1Validator = _ageTextController1Validator;
-    headerwebModel = createModel(context, () => HeaderwebModel());
     fullNameTextController24Validator = _fullNameTextController24Validator;
     datePickerFormulasModel2 =
         createModel(context, () => DatePickerFormulasModel());
     ageTextController2Validator = _ageTextController2Validator;
+    headerwebModel = createModel(context, () => HeaderwebModel());
   }
 
   @override
@@ -392,7 +392,6 @@ class CreateAvaliacaoFisicafalkner1968quatrodobrasModel
     ageFocusNode1?.dispose();
     ageTextController1?.dispose();
 
-    headerwebModel.dispose();
     fullNameFocusNode23?.dispose();
     fullNameTextController23?.dispose();
 
@@ -462,5 +461,7 @@ class CreateAvaliacaoFisicafalkner1968quatrodobrasModel
     datePickerFormulasModel2.dispose();
     ageFocusNode2?.dispose();
     ageTextController2?.dispose();
+
+    headerwebModel.dispose();
   }
 }

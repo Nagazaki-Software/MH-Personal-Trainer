@@ -1,9 +1,9 @@
 import '/backend/backend.dart';
+import '/components/headerweb_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'create_rotina_de_treino_copy_widget.dart'
     show CreateRotinaDeTreinoCopyWidget;
-import 'dart:async';
 import 'package:flutter/material.dart';
 
 class CreateRotinaDeTreinoCopyModel
@@ -28,12 +28,11 @@ class CreateRotinaDeTreinoCopyModel
   TreinorsRecord? treinors;
   // Stores action output result for [Firestore Query - Query a collection] action in CreateRotinaDeTreinoCopy widget.
   List<TreinorsRecord>? treinorsList;
-  Completer<CreateTreinosRecord>? documentRequestCompleter;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
-  List<TreinorsRecord> simpleSearchResults = [];
+  FocusNode? textFieldFocusNode1;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
+  List<TreinorsRecord> simpleSearchResults1 = [];
   // State field(s) for CheckboxListTile widget.
   Map<TreinorsRecord, bool> checkboxListTileValueMap1 = {};
   List<TreinorsRecord> get checkboxListTileCheckedItems1 =>
@@ -58,28 +57,51 @@ class CreateRotinaDeTreinoCopyModel
           .map((e) => e.key)
           .toList();
 
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
+  TextEditingController? textController2;
+  String? Function(BuildContext, String?)? textController2Validator;
+  List<TreinorsRecord> simpleSearchResults2 = [];
+  // State field(s) for CheckboxListTile widget.
+  Map<TreinorsRecord, bool> checkboxListTileValueMap4 = {};
+  List<TreinorsRecord> get checkboxListTileCheckedItems4 =>
+      checkboxListTileValueMap4.entries
+          .where((e) => e.value)
+          .map((e) => e.key)
+          .toList();
+
+  // State field(s) for CheckboxListTile widget.
+  Map<TreinorsRecord, bool> checkboxListTileValueMap5 = {};
+  List<TreinorsRecord> get checkboxListTileCheckedItems5 =>
+      checkboxListTileValueMap5.entries
+          .where((e) => e.value)
+          .map((e) => e.key)
+          .toList();
+
+  // State field(s) for CheckboxListTile widget.
+  Map<TreinorsRecord, bool> checkboxListTileValueMap6 = {};
+  List<TreinorsRecord> get checkboxListTileCheckedItems6 =>
+      checkboxListTileValueMap6.entries
+          .where((e) => e.value)
+          .map((e) => e.key)
+          .toList();
+
+  // Model for headerweb component.
+  late HeaderwebModel headerwebModel;
+
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    headerwebModel = createModel(context, () => HeaderwebModel());
+  }
 
   @override
   void dispose() {
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
-  }
+    textFieldFocusNode1?.dispose();
+    textController1?.dispose();
 
-  /// Additional helper methods.
-  Future waitForDocumentRequestCompleted({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = documentRequestCompleter?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
+    textFieldFocusNode2?.dispose();
+    textController2?.dispose();
+
+    headerwebModel.dispose();
   }
 }

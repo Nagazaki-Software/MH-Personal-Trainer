@@ -125,11 +125,6 @@ final parametersBuilderMap =
   'CriacaoDeContasPersonalTrainer': ParameterData.none(),
   'PaginaInicial': ParameterData.none(),
   'EntrarPersonalTrainer': ParameterData.none(),
-  'RotinaDeTreino': (data) async => ParameterData(
-        allParams: {
-          'users': getParameter<DocumentReference>(data, 'users'),
-        },
-      ),
   'CreateTreino': (data) async => ParameterData(
         allParams: {
           'users': getParameter<DocumentReference>(data, 'users'),
@@ -501,6 +496,10 @@ final parametersBuilderMap =
           'users': getParameter<DocumentReference>(data, 'users'),
         },
       ),
+  'deletarconta': ParameterData.none(),
+  'detalhesdaassintaura': ParameterData.none(),
+  'alterarSenha': ParameterData.none(),
+  'comocancelarassinatura': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

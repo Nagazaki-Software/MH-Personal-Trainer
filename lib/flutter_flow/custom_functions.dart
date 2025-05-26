@@ -1025,3 +1025,19 @@ bool cadahoramostre(DateTime currentTime) {
     return false;
   }
 }
+
+DateTime daquiTalDias(String dias) {
+  // retorne o datetime baseado no dia atual e quantos dias falta
+  int diasInt = int.parse(dias);
+  return DateTime.now().add(Duration(days: diasInt));
+}
+
+List<String> retireUmTreino(
+  String treino,
+  List<String> treinos,
+) {
+  // retorne o treinos list sem o treino single
+// Remove the specified treino from the list if it exists
+  treinos.remove(treino);
+  return treinos;
+}

@@ -4,6 +4,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'empty_list_model.dart';
 export 'empty_list_model.dart';
 
@@ -86,9 +87,19 @@ class _EmptyListWidgetState extends State<EmptyListWidget>
                 'z4z05oit' /* Olá! */,
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Outfit',
+                    font: GoogleFonts.outfit(
+                      fontWeight: FlutterFlowTheme.of(context)
+                          .headlineMedium
+                          .fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                    ),
                     color: FlutterFlowTheme.of(context).primaryText,
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).headlineMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                     lineHeight: 1.5,
                   ),
             )),
@@ -101,9 +112,18 @@ class _EmptyListWidgetState extends State<EmptyListWidget>
                 ),
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                      fontFamily: 'Readex Pro',
+                      font: GoogleFonts.readexPro(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                      ),
                       color: FlutterFlowTheme.of(context).primaryText,
                       letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).labelLarge.fontStyle,
                     ),
               )),
             ),
@@ -114,10 +134,16 @@ class _EmptyListWidgetState extends State<EmptyListWidget>
                   '7hdf1seh' /* Beta 0.1 (Pode ocorrer erros) */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Readex Pro',
+                      font: GoogleFonts.readexPro(
+                        fontWeight: FontWeight.w600,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                       color: FlutterFlowTheme.of(context).secondary,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w600,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                     ),
               ),
             ),

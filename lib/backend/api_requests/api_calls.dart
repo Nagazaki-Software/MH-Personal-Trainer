@@ -69,6 +69,99 @@ class SendFullPromptCall {
 
 /// End OpenAI ChatGPT Group Code
 
+/// Start bancodedados Group Code
+
+class BancodedadosGroup {
+  static String getBaseUrl() =>
+      'https://southamerica-east1-profissions-2746d.cloudfunctions.net';
+  static Map<String, String> headers = {};
+  static CriarSubinscricaoCall criarSubinscricaoCall = CriarSubinscricaoCall();
+  static CriarTreinosIaCall criarTreinosIaCall = CriarTreinosIaCall();
+}
+
+class CriarSubinscricaoCall {
+  Future<ApiCallResponse> call({
+    String? stripeSubscriptionId = '',
+  }) async {
+    final baseUrl = BancodedadosGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'Criar Subinscricao',
+      apiUrl: '${baseUrl}/detalhesDaAssinatura',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {
+        'stripeSubscriptionId': stripeSubscriptionId,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  String? id(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.subscription.id''',
+      ));
+  bool? ativo(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$.subscription.items.data[:].plan.active''',
+      ));
+  String? valor(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.subscription.items.data[:].plan.amount_decimal''',
+      ));
+  String? periodo(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.subscription.items.data[:].plan.interval''',
+      ));
+  String? invoice(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.subscription.latest_invoice''',
+      ));
+  int? daysquefalta(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.subscription.days_until_due''',
+      ));
+  dynamic todospagamentos(dynamic response) => getJsonField(
+        response,
+        r'''$.subscription.items.data[:].price''',
+      );
+}
+
+class CriarTreinosIaCall {
+  Future<ApiCallResponse> call({
+    String? userId = '',
+    String? novoTema = '',
+  }) async {
+    final baseUrl = BancodedadosGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'criarTreinosIa',
+      apiUrl: '${baseUrl}/criarTreinosIa',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {
+        'userId': userId,
+        'novoTema ': novoTema,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+/// End bancodedados Group Code
+
 class GeminiApiCall {
   static Future<ApiCallResponse> call({
     String? prompt = '',
