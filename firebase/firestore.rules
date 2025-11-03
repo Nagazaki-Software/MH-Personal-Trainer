@@ -1,0 +1,387 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if false;
+    }
+
+    match /professorAccount/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /users/{parent}/personalAccount/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/personalAccount/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/rotinaDeTreinosForAlunos/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/rotinaDeTreinosForAlunos/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/createTreinos/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/createTreinos/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/treinos/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/treinos/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/avaliacoesFisicas/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/avaliacoesFisicas/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/avaliacaoPostural/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/avaliacaoPostural/{document} {
+      allow read: if true;
+    }
+
+
+    match /treinoPeitoral/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/peitoralTreinos/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /users/{parent}/avaliacaoOnline/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/avaliacaoOnline/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/meuProgresso/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/meuProgresso/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/megaTreinos/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /treinors/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /treinosWithVideo/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/arquivos/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /users/{parent}/arquivosDoPersonal/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/arquivosDoPersonal/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/seriesRepeticoes/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/seriesRepeticoes/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/feedback/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/feedback/{document} {
+      allow read: if true;
+    }
+
+
+    match /treinors/{parent}/treinosCriados/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/treinosCriados/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/seustreinos/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /users/{parent}/treinosDoProfessor/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/treinosDoProfessor/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/evolucaoDeCarga/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/evolucaoDeCarga/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/group/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /treinosPrescritos/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /seriesPrescritas/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /treinosChatGpt/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/avaliacaoPersonalizada/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/avaliacaoPersonalizada/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/perguntasDasAvaliacoesPersonalizadas/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/perguntasDasAvaliacoesPersonalizadas/{document} {
+      allow read: if true;
+    }
+
+
+    match /notificacao/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/pagamentos/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/pagamentos/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/recomendadosDoUsuario/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /users/{parent}/grupo_de_gerenciamentos/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth != null;
+    }
+
+    match /{path=**}/grupo_de_gerenciamentos/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/aerobico/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if true;
+    }
+
+    match /{path=**}/aerobico/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/treinoaerobico/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/treinoaerobico/{document} {
+      allow read: if true;
+    }
+
+
+    match /conversa/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /conversa/{parent}/InChat/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/InChat/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/agendamentoMHAgendamento/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /supporte/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /ff_user_push_notifications/{id} {
+      allow read, update, delete: if false;
+      allow create: if /databases/$(database)/documents/users/$(request.auth.uid) == request.resource.data.sender;
+    }
+  }
+}

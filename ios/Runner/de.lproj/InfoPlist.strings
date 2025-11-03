@@ -1,0 +1,5 @@
+NSCameraUsageDescription = "Wir verwenden die Kamera, um Fotos an Kontaktanzeigen zu senden.";
+NSPhotoLibraryUsageDescription = "Wir verwenden Ihre Bibliothek für die Übermittlung von Profilfotos.";
+NSMicrophoneUsageDescription = "Wir verwenden das Mikrofon, damit der Benutzer mit unserer künstlichen Intelligenz sprechen kann.";
+NSLocationWhenInUseUsageDescription = "Wir nutzen den Standort, um Personal in der Region einzusetzen.";
+PermissionGroupNotification = "Wir verwenden Benachrichtigungen, um den Personal Trainer zu benachrichtigen, wenn das Training abgeschlossen ist.";

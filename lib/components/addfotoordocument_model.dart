@@ -1,0 +1,35 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
+import 'dart:ui';
+import '/flutter_flow/random_data_util.dart' as random_data;
+import 'addfotoordocument_widget.dart' show AddfotoordocumentWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+class AddfotoordocumentModel extends FlutterFlowModel<AddfotoordocumentWidget> {
+  ///  State fields for stateful widgets in this component.
+
+  bool isDataUploading_uploadDataSnv = false;
+  FFUploadedFile uploadedLocalFile_uploadDataSnv =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl_uploadDataSnv = '';
+
+  bool isDataUploading_uploadData4fb = false;
+  FFUploadedFile uploadedLocalFile_uploadData4fb =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl_uploadData4fb = '';
+
+  @override
+  void initState(BuildContext context) {}
+
+  @override
+  void dispose() {}
+}

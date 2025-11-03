@@ -1,0 +1,124 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "createTreinos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "arquivos",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "nomeDoTreino",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "createTreinos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "arquivos",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "diaDoTreino",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "seriesRepeticoes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "uidTreinos",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "treinos",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "notificacao",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "para",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "paraTodos",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "data",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "feedback",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "codigoDoPersonal",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "horaDeTermino",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "codigoPersonal",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "codigodospersonaisagendado",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "fcm_tokens",
+      "fieldPath": "fcm_token",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "personalAccount",
+      "fieldPath": "codigoPersonal",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "personalAccount",
+      "fieldPath": "uid",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "733790875876",
+    "firebase_url": "https://profissions-2746d-default-rtdb.firebaseio.com",
+    "project_id": "profissions-2746d",
+    "storage_bucket": "profissions-2746d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733790875876:android:6bf340bb14b4a917c53cf1",
+        "android_client_info": {
+          "package_name": "com.mycompany.mfitfitnessapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733790875876-2nd21bq3fr5h4h6grcf2uf1thvepnhhv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.mfitfitnessapp",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "733790875876-3j642po1f5bvlttba1vdgeh63dj6fkh4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.mfitfitnessapp",
+            "certificate_hash": "bb2caa9bfb7428bd84d29bbe6efc81bdfe1bc7e3"
+          }
+        },
+        {
+          "client_id": "733790875876-n11hnvfaei9tl2kjrfvr40r3uktdst7c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.mfitfitnessapp",
+            "certificate_hash": "ff11760992df4fdb96ea5feb652ebbe00103d7f8"
+          }
+        },
+        {
+          "client_id": "733790875876-2lq1n2oqs2l859s9ivh41okvk491ph38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2iAtLwdf3OOJoLrZfSdpt9YlXMjzQ2IE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733790875876-2lq1n2oqs2l859s9ivh41okvk491ph38.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "733790875876-bdhb055p2ng79osu3cgr9dr9cft01li8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.mfitfitnessapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
